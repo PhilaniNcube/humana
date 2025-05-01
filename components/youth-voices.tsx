@@ -11,7 +11,7 @@ import { Button } from './ui/button'
 const YouthVoices = () => {
   return (
     <section id='youth-voices ' className='mb-16'>
-      <div className='px-[60px] pt-20'>
+      <div className='px-[60px] pt-20 max-w-7xl mx-auto'>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>Youth Voices</h2>
         <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />
