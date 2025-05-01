@@ -2,7 +2,7 @@
 
 import { bebasNeue } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import React, { use } from 'react'
+import React from 'react'
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
