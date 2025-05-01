@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
 import { roboto } from "@/lib/fonts";
 import DesktopNavigation from "@/components/desktop-navigation";
