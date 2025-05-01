@@ -11,8 +11,8 @@ const DesktopNavigation = () => {
           <Image
             src="/images/nepad-logo.png"
             alt="logo"
-            width={100}
-            height={100}
+            width={1037}
+            height={240}
             className="w-[247px] object-cover"
           />
           <span className="sr-only">AUDA-Nepad</span>
@@ -22,8 +22,8 @@ const DesktopNavigation = () => {
           <Image
             src="/images/humana-logo.png"
             alt="logo"
-            width={100}
-            height={100}
+            width={668}
+            height={285}
             className="w-[160px]  object-cover"
           />
           <span className="sr-only">AUDA-Nepad</span>
