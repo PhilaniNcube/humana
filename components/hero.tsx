@@ -20,8 +20,8 @@ const Hero = () => {
           <Image
             src="/images/humana-hero.png"
             alt="hero"
-            width={500}
-            height={500}
+            width={2480}
+            height={1469}
             className="w-[70vw] max-w-[1100px] mx-auto object-cover object-bottom"
           />
         </div>
