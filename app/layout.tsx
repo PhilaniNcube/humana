@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { roboto } from "@/lib/fonts";
 import DesktopNavigation from "@/components/desktop-navigation";
+import YouthFooter from "@/components/footer";
 
 
 
@@ -23,11 +24,8 @@ export default function RootLayout({
         className={`${roboto.className} antialiased`}
       >
         <DesktopNavigation />
-         
-         
-         {children}
-
-        
+        {children}
+        <YouthFooter />
       </body>
     </html>
   );

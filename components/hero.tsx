@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import React from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
+import { ChevronDown } from 'lucide-react'
 
 const Hero = () => {
   return (
@@ -25,7 +26,8 @@ const Hero = () => {
             className="w-[70vw] max-w-[1100px] mx-auto object-cover object-bottom"
           />
         </div>
-
+        
+       
       </div>
     </section>
   )

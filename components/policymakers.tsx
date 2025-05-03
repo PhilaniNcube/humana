@@ -138,7 +138,9 @@ export default function YouthPolicyCall() {
   return (
     <div className="container mx-auto py-12 px-[60px]" id='policymakers'>
       <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>YOUTH CALL TO POLICYMAKERS</h2>
-
+      <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="112" height="9" fill="#F38E22" />
+      </svg>
       <div className="bg-white rounded-lg shadow-lg max-w-5xl mx-auto p-6">
         <div className="space-y-1">
           {policyAreas.map((area, index) => (
@@ -150,9 +152,13 @@ export default function YouthPolicyCall() {
               isOpen={openSection === index}
               toggleOpen={() => toggleSection(index)}
             />
-          ))}
+          )          )}
         </div>
       </div>
+      
+      <ChevronDown 
+        className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' 
+      />
     </div>
   )
 }

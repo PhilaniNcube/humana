@@ -1,7 +1,6 @@
 'use client';
 
-import { bebasNeue } from '@/lib/fonts'
-import { cn } from '@/lib/utils'
+import { bebasNeue } from '@/lib/fonts'        
 import React from 'react'
 import { useRef } from 'react';
 import gsap from 'gsap';
@@ -9,6 +8,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import Africa from './africa';
 import { ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
@@ -16,11 +16,32 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 const Initiative = () => {
 
   const container = useRef<HTMLElement>(null);
+  const dashedLineRef = useRef<HTMLDivElement>(null);
 
-
-
-
-
+  useGSAP(() => {
+    if (dashedLineRef.current) {
+      // Initial state - line at 0 height
+      gsap.set(dashedLineRef.current, { 
+        height: 0,
+        opacity: 0.5
+      });
+      
+      // Create the scroll trigger animation
+      ScrollTrigger.create({
+        trigger: dashedLineRef.current,
+        start: "top 75%", // Start when the top of the line reaches 75% from the top of the viewport
+        once: false, // Animation will run every time it enters viewport
+        onEnter: () => {
+          gsap.to(dashedLineRef.current, {
+            height: "calc(340% - 84px)", // Final height matching the original
+            opacity: 1,
+            duration: 1.5, // Animation duration in seconds
+            ease: "power2.out" // Easing function for smooth animation
+          });
+        }
+      });
+    }
+  }, []);
 
   return (
     <section id='initiative' ref={container}>
@@ -81,7 +102,10 @@ const Initiative = () => {
 
         <div className='mt-16'>
           <div className='grid grid-cols-2 lg:grid-cols-5 gap-6 relative'>
-            <div className="hidden lg:block  absolute left-[40px] top-[84px] bottom-0 border-l-2 border-dashed border-green-800 h-[calc(340%-84px)] z-[-1]" />
+            <div 
+              ref={dashedLineRef}
+              className="hidden lg:block absolute left-[40px] top-[84px] bottom-0 border-l-2 border-dashed border-green-800 h-[calc(340%-84px)] z-[-1]" 
+            />
             <div className='col-span-2 flex space-x-4'>
               <div >
                 <svg className='w-20 h-20 bg-brand-green p-6 rounded-md' width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
