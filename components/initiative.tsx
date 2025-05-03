@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import Africa from './africa';
+import { ChevronDown } from 'lucide-react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
@@ -18,35 +19,12 @@ const Initiative = () => {
 
 
 
-  useGSAP(() => {
 
-    ScrollSmoother.create({
-      smooth: 1,
-      effects: true,
-    });
-
-    gsap.to('#arrow', {
-      y: 20,
-      duration: 1,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut',
-    });
-
-
-
-
-
-
-
-  }, {
-    scope: container,
-  })
 
 
   return (
     <section id='initiative' ref={container}>
-      <div className='px-[60px] pt-12 max-w-7xl mx-auto'>
+      <div className='px-[60px] pt-12 container mx-auto'>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>The Initiative</h2>
         <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />
@@ -55,9 +33,8 @@ const Initiative = () => {
           Africa Skills Revolution is an initiative focused on promoting youth-led dialogue on skills development and TVET in Africa, spotlighting the voices and talents of a generation ready to lead.
         </p>
 
-        <svg id='arrow' className='w-fit mx-auto mt-12' width="141" height="89" viewBox="0 0 141 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M34.4526 26.1583L70.5001 62.2058L106.548 26.1583" stroke="#F38E22" strokeWidth="3.19005" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+
+        <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
 
         <div className='flex items-center justify-end translate-y-0 lg:translate-y-[-100px]'>
           <svg id='triangles' width="451" height="400" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,26 +50,14 @@ const Initiative = () => {
         <p className='text-3xl max-w-5xl mx-auto text-balance font-light text-center leading-10'>
           AUDA-NEPAD, in partnership with Humana People to People, launched the campaign to spotlight the power of Technical and Vocational Education and Training (TVET) — not just as a pathway to employment, but as a driver of inclusive growth, innovation, and youth-led development.
         </p>
-        <div className="max-w-5xl mx-auto relative">
-          <div className="absolute inset-0 flex items-start justify-center">
-            <svg id='arrow' className='w-fit mx-auto mt-12' width="141" height="89" viewBox="0 0 141 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M34.4526 26.1583L70.5001 62.2058L106.548 26.1583" stroke="#F38E22" strokeWidth="3.19005" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <svg id='triangles' width="372" height="459" viewBox="0 0 372 459" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M62.5019 446.442L191.709 347.105L0.000160247 347.328L62.5019 446.442Z" fill="#D9D9D9" />
-            <path d="M371.15 347.743L215.545 113.164L194.587 317.046L371.15 347.743Z" fill="#F38E22" />
-            <path d="M98.2134 193.308L183.67 53.6831L41.9476 91.1447L98.2134 193.308Z" fill="#00651B" />
-            <path d="M316 459L306 375L363.5 423L316 459Z" fill="#00B6CC" />
-          </svg>
+        <div className="max-w-5xl mx-auto ">
+          <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
         </div>
 
         <p className='text-3xl max-w-5xl mx-auto text-balance font-light text-center mt-12 leading-10'>
           This pan-African initiative took shape across months of virtual events, youth-led dialogues, social media storytelling, data collection, and a continent-wide competition. It was created in the spirit of the African Union’s 2024 theme: Educate an African fit for the 21st Century.
         </p>
-        <svg id='arrow' className='w-fit mx-auto mt-12' width="141" height="89" viewBox="0 0 141 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M34.4526 26.1583L70.5001 62.2058L106.548 26.1583" stroke="#F38E22" strokeWidth="3.19005" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
 
         <div className='flex items-center justify-center flex-col mt-12'>
           <svg id='triangles' width="74" height="60" viewBox="0 0 74 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,9 +66,7 @@ const Initiative = () => {
           <p className='text-3xl max-w-5xl mx-auto text-balance font-light text-center mt-12 leading-10'>
             We are proud to present the outcome — a comprehensive report that weaves together the motivations, experiences, challenges, and aspirations of young people enrolled in or graduated from TVET institutions. We hope these insights will inspire others to collectively shape the future of skills development systems across the continent.
           </p>
-          <svg id='arrow' className='w-fit mx-auto mt-12' width="141" height="89" viewBox="0 0 141 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M34.4526 26.1583L70.5001 62.2058L106.548 26.1583" stroke="#F38E22" strokeWidth="3.19005" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
         </div>
 
         <div>
@@ -180,17 +143,12 @@ const Initiative = () => {
             </div>
             <div className='col-span-2 lg:col-span-3'>
               <p className='text-balance font-light'>
-                The Youth Advocacy Campaign aimed to inform and engage young people across Africa to reshape the perception of TVET by providing accurate, data-driven information and highlighting the role of TVET in building practical skills, supporting career development, and contributing to broader societal progress.
-
+                In order to celebrate youth innovation and recognize the incredible ways African TVET graduates are using their skills to make a difference in their communities, we launched the Africa Skills Revolution Competition for young graduates across Africa.
               </p>
               <p className='text-balance font-light py-4'>
-
-                To reach a diverse youth audience, a multilingual social media toolkit was developed in English, French, and Portuguese with advocacy messages, inspiring success stories and spotlighting TVET initiatives.
-
-              </p>
+                With 490 entries from 36 countries, the competition highlighted many youth-led innovations in sectors like agriculture, health, tech, and fashion. The ten winning projects were awarded during the Africa Skills Week Conference hosted by the African Union in Accra, Ghana— each recognised for creativity, impact, and alignment with Africa’s development goals.</p>
               <p className='text-balance font-light'>
-
-                With over 31,000 engagements and wide partner participation, the campaign amplified youth voices and tackled stigma — showing that TVET is not just a pathway to work, but a gateway to opportunity.
+                More than a contest, it was a celebration of youth vision, showing that with the right skills, young people don’t just imagine change, they lead it.
               </p>
             </div>
           </div>
@@ -219,17 +177,22 @@ const Initiative = () => {
             </div>
             <div className='col-span-2 lg:col-span-3'>
               <p className='text-balance font-light'>
-                The Youth Advocacy Campaign aimed to inform and engage young people across Africa to reshape the perception of TVET by providing accurate, data-driven information and highlighting the role of TVET in building practical skills, supporting career development, and contributing to broader societal progress.
-
+                Listening to youth perspectives was central to the campaign. The “Make Yourself Heard” survey, conducted
+                from August to October 2024, gathered over 300 responses from young Africans engaged in or aspiring
+                to join TVET education. This initiative focused on bringing the calls and needs of youth to the centre of
+                the conversation about TVET in Africa, ensuring their voices shape the future of skills development across
+                the continent.
               </p>
               <p className='text-balance font-light py-4'>
-
-                To reach a diverse youth audience, a multilingual social media toolkit was developed in English, French, and Portuguese with advocacy messages, inspiring success stories and spotlighting TVET initiatives.
-
+                The survey data will contribute to evidence-based recommendations for improving TVET systems, aligning
+                them with the aspirations and priorities of Africa’s youth. It also provides a foundation for actionable
+                strategies to address structural gaps, expand access, and foster equity within TVET.
               </p>
-              <p className='text-balance font-light'>
-
-                With over 31,000 engagements and wide partner participation, the campaign amplified youth voices and tackled stigma — showing that TVET is not just a pathway to work, but a gateway to opportunity.
+              <p className='text-balance font-light py-4'>
+                By amplifying youth voices, the survey emphasises the importance of designing TVET systems that are
+                inclusive, responsive, and capable of meeting the continent’s socio-economic needs. These insights are
+                integral to placing young people at the heart of discussions on TVET, reinforcing their role in shaping a
+                prosperous future for Africa.
               </p>
             </div>
           </div>
@@ -237,7 +200,7 @@ const Initiative = () => {
         </div>
       </div>
       <div className='mt-16 bg-brand-blue px-[60px] py-12'>
-        <div className='grid grid-cols-1 lg:grid-cols-3 max-w-7xl mx-auto'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 container mx-auto'>
           <div className='col-span-1 flex justify-center'>
             <svg className='min-w-[240px]' width="272" height="308" viewBox="0 0 272 308" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_46_255)">

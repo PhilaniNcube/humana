@@ -44,25 +44,25 @@ const DesktopLinks = () => {
   {
     name: 'The Initiative',
     href: '/#initiative',
-    isActie: currentHref?.includes('/#initiative'),
+    // isActie: currentHref?.includes('/#initiative'),
     id: 'initiative',
   },
   {
     name: 'Youth Voices',
     href: '/#youth',
-    isActie: currentHref?.includes('/#youth'),
+    // isActie: currentHref?.includes('/#youth'),
     id: 'youth',
   },
   {
     name: 'Youth Call To Policymakers',
     href: '/#policymakers',
-    isActie: currentHref?.includes('/#policymakers'),
+    // isActie: currentHref?.includes('/#policymakers'),
     id: 'policymakers',
   },
   {
     name: 'Resources',
     href: '/#resources',
-    isActie: currentHref?.includes('/#resources'),
+    // isActie: currentHref?.includes('/#resources'),
     id: 'resources',
   },
 ]
@@ -79,7 +79,7 @@ const DesktopLinks = () => {
           }}
           key={link.name}
           href={link.href}
-          className={`uppercase ${link.isActie ? 'text-[#F9A800]' : 'text-[#000]'} text-[16px] font-[500] hover:text-[#F9A800] transition-all duration-300`}
+          className='text-[#000] text-[16px] font-[500] hover:text-[#F9A800] transition-all duration-300'
         >
           {link.name}
         </Link>

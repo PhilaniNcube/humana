@@ -23,10 +23,11 @@ export default function RootLayout({
         className={`${roboto.className} antialiased`}
       >
         <DesktopNavigation />
+         
+         
+         {children}
 
-        <div className="relative z-[-2]">
-          {children}
-        </div>
+        
       </body>
     </html>
   );

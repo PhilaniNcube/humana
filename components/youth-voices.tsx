@@ -5,7 +5,7 @@ import React from 'react'
 import { Avatar, AvatarImage } from './ui/avatar'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
-import { Lightbulb, Package } from 'lucide-react'
+import { ChevronDown, Lightbulb, Package } from 'lucide-react'
 import { Button } from './ui/button'
 import Link from 'next/link'
 
@@ -162,7 +162,7 @@ const youthVoices = [
 const YouthVoices = () => {
   return (
     <section id='youth' className='mb-16'>
-      <div className='px-[60px] pt-20 max-w-7xl mx-auto'>
+      <div className='px-[60px] pt-20 container mx-auto'>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>Youth Voices</h2>
         <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />
@@ -171,18 +171,14 @@ const YouthVoices = () => {
         <p className='text-3xl max-w-5xl mx-auto text-balance  font-light text-center mt-4'>
           The Africa Skills Revolution stands as a powerful testament to the potential of young people when they are empowered with the right tools, opportunities, and platforms to lead.    </p>
 
-        <svg className='w-fit mx-auto mt-12' width="141" height="89" viewBox="0 0 141 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M34.4526 26.1583L70.5001 62.2058L106.548 26.1583" stroke="#F38E22" strokeWidth="3.19005" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+          <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
 
         <p className='text-3xl max-w-5xl mx-auto text-balance  font-light text-center mt-10'>
           Discover the insights gathered from the advocacy campaign, the competition, and the youth survey — now forming a powerful foundation for action. These findings reflect the real experiences, challenges, and aspirations of young people across Africa.
         </p>
         <p className='text-3xl max-w-5xl mx-auto text-balance  font-light text-center mt-10'>Their voices won’t be left behind, they’re being brought to the heart of the conversation on TVET and skills development. </p>
 
-        <svg className='w-fit mx-auto mt-12' width="141" height="89" viewBox="0 0 141 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M34.4526 26.1583L70.5001 62.2058L106.548 26.1583" stroke="#F38E22" strokeWidth="3.19005" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+       <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
 
         <div className='w-full grid lg:grid-cols-2 gap-10  mx-auto'>
           <div className='flex flex-col justify-center'>
@@ -233,9 +229,7 @@ const YouthVoices = () => {
             className="w-full object-cover object-bottom mt-10 self-end"
           />
         </div>
-        <svg className='w-fit mx-auto mt-12' width="141" height="89" viewBox="0 0 141 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M34.4526 26.1583L70.5001 62.2058L106.548 26.1583" stroke="#F38E22" strokeWidth="3.19005" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+      <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
         <div>
           <h4 className='text-center uppercase text-6xl mt-16 font-bold'>Stories</h4>
           <div className='h-1 rounded-full max-w-3xl mx-auto bg-brand-orange gap-6 my-10' />
@@ -253,9 +247,12 @@ const YouthVoices = () => {
                 </div>
                 <div className='grid lg:grid-cols-3 gap-4'>
                   {item.stories.map((story) => (
-                    <Card className=' flex flex-col z-auto justify-between relative' key={story.name}>
-                      <CardHeader className='isolate'>
-                        <div className='flex justify-end absolute top-2 right-2'>
+                    <Card className=' flex flex-col justify-between isolate' key={story.name}>
+                      <CardHeader className=''>
+
+                        
+                        <div className=' flex justify-between space-x-3 relative isolate z-[-2]'>
+                          <div className='flex justify-end absolute top-0 -right-4 '>
                             <Image
                               src={story.flag}
                               alt={story.name}
@@ -264,8 +261,6 @@ const YouthVoices = () => {
                               className='w-12 object-cover'
                             />
                           </div>
-                        <div className=' flex justify-between space-x-3 '>
-                          
                           <div className='flex space-x-3'>
                             <Avatar className='bg-brand-blue h-16 w-16'>
                               <AvatarImage
@@ -280,7 +275,7 @@ const YouthVoices = () => {
 
 
                             <div className='flex flex-col min-h-[90px]'>
-                              <h4 className='text-2xl font-bold w-5/6'>
+                              <h4 className='text-2xl lg:text-3xl font-bold w-5/6'>
                                 {story.name}
                               </h4>
                             </div>
@@ -293,12 +288,12 @@ const YouthVoices = () => {
                             <Package className='mr-1' />
                             Sector
                           </Badge>
-                          <p className='my-2 text-xs'>{story.sector}</p>
-                          <Badge className='bg-brand-orange rounded-full text-sm text-white'>
+                          <p className='my-2 text-md'>{story.sector}</p>
+                          <Badge className='bg-brand-orange rounded-full text-md text-white'>
                             <Lightbulb className='mr-1' />
                             Innovation
                           </Badge>
-                          <p className='my-2 text-xs'>
+                          <p className='my-2 text-md'>
                             {story.innovation}
                           </p>
                         </div>
@@ -311,8 +306,8 @@ const YouthVoices = () => {
                           <div className='bg-brand-blue text-white rounded-2xl p-3'>
                             <p className='leading-7 italic'>{story.story}</p>
                           </div>
-                          <div className='flex flex-1   h-full flex-col justify-end'>
-                            <Link href={story.video} className='bg-brand-red py-2 place-self text-white w-full mt-4 rounded-md flex items-center justify-center'>
+                          <div className='flex flex-1 z-[2] h-full flex-col justify-end'>
+                            <Link target='_blank' href={story.video} className='bg-brand-red py-2 place-self cursor-pointer text-white w-full mt-4 rounded-md flex items-center justify-center'>
                               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 15L15.19 12L10 9V15ZM21.56 7.17C21.69 7.64 21.78 8.27 21.84 9.07C21.91 9.87 21.94 10.56 21.94 11.16L22 12C22 14.19 21.84 15.8 21.56 16.83C21.31 17.73 20.73 18.31 19.83 18.56C19.36 18.69 18.5 18.78 17.18 18.84C15.88 18.91 14.69 18.94 13.59 18.94L12 19C7.81 19 5.2 18.84 4.17 18.56C3.27 18.31 2.69 17.73 2.44 16.83C2.31 16.36 2.22 15.73 2.16 14.93C2.09 14.13 2.06 13.44 2.06 12.84L2 12C2 9.81 2.16 8.2 2.44 7.17C2.69 6.27 3.27 5.69 4.17 5.44C4.64 5.31 5.5 5.22 6.82 5.16C8.12 5.09 9.31 5.06 10.41 5.06L12 5C16.19 5 18.8 5.16 19.83 5.44C20.73 5.69 21.31 6.27 21.56 7.17Z" fill="white" />
                               </svg>
