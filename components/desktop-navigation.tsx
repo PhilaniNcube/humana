@@ -5,8 +5,8 @@ import DesktopLinks from './desktop-links'
 
 const DesktopNavigation = () => {
   return (
-    <header className="bg-white z-[9999] sticky top-0 left-0 right-0 shadow-md">
-      <div className="py-5 px-[60px] flex items-center justify-between max-w-7xl mx-auto">
+    <header className="bg-white shadow-md sticky top-0">
+      <div className="py-5 px-[60px] flex items-center justify-between max-w-7xl mx-auto ">
         <Link href="/" className="flex items-center">
           <Image
             src="/images/nepad-logo.png"

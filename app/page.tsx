@@ -5,10 +5,10 @@ import YouthVoices from "@/components/youth-voices";
 
 export default function Home() {
   return (
-     <main>
+     <div>
        <Hero />
        <Initiative />
        <YouthVoices />
-     </main>
+     </div>
   );
 }
