@@ -80,7 +80,8 @@ const Initiative = () => {
         </div>
 
         <div className='mt-16'>
-          <div className='grid grid-cols-2 lg:grid-cols-5 gap-6'>
+          <div className='grid grid-cols-2 lg:grid-cols-5 gap-6 relative'>
+            <div className="hidden lg:block  absolute left-[40px] top-[84px] bottom-0 border-l-2 border-dashed border-green-800 h-[calc(340%-84px)] z-[-1]" />
             <div className='col-span-2 flex space-x-4'>
               <div >
                 <svg className='w-20 h-20 bg-brand-green p-6 rounded-md' width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
