@@ -8,7 +8,9 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className="bg-brand-orange">
+    <section className="bg-brand-orange relative isolate">
+   
+
       <div className="px-[60px] pt-36 text-center flex flex-col items-center w-full h-full">
         <h1 className={cn(bebasNeue.className, 'text-6xl lg:text-[76px] text-center text-white')}>
           Africa Skills Revolution</h1>
@@ -17,11 +19,11 @@ const Hero = () => {
         </p>
         <div className="flex items-center justify-center mt-10">
           <Link href="/#initiative">
-          <Button className='bg-brand-blue hover:bg-blue-800 text-white text-2xl px-20 py-6 font-light rounded-sm'>Introduction</Button>
+            <Button className='bg-brand-blue hover:bg-blue-800 text-white text-2xl px-20 py-6 font-light rounded-sm'>Introduction</Button>
           </Link>
         </div>
         <div className=" relative isolate">
-             <svg className='absolute -top-24 left-40 z-[-1] rotate-45' id='triangles' width="451" height="400" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='absolute -top-24 left-40 z-[-1] rotate-45' id='triangles' width="451" height="400" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
             <path d="M434.5 144.999L162.5 217.499L349 302.499L434.5 144.999Z" fill="#F38E22" />
             <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00651B" />
@@ -35,8 +37,8 @@ const Hero = () => {
             className="w-[70vw] max-w-[1100px] mx-auto object-cover object-bottom"
           />
         </div>
-        
-       
+
+
       </div>
     </section>
   )
