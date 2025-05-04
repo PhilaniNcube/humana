@@ -41,7 +41,10 @@ const DesktopNavigation = () => {
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+            <SheetContent 
+              side="right" 
+              className="!w-full !max-w-full sm:!max-w-full"
+            >
               <div className="py-6">
                 <Link href="/" className="flex items-center justify-center mb-6">
                   <Image
