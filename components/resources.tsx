@@ -8,6 +8,7 @@ import { useRef, useEffect } from "react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/all"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -46,8 +47,12 @@ function ResourceCard({ icon, title, description, quote, downloadUrl }: Resource
 export default function YouthResources() {
   const resourcesRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
+  const isMobile = useIsMobile()
   
   useGSAP(() => {
+    // Skip animations on mobile devices
+    if (isMobile) return
+    
     const resourcesSection = resourcesRef.current
     
     if (resourcesSection) {
@@ -108,50 +113,44 @@ export default function YouthResources() {
         })
       }
     }
-  }, [])
+  }, [isMobile]) // Add isMobile as a dependency so the effect reruns if mobile status changes
 
   return (
-    <div className="container mx-auto py-12 px-[60px]" id='resources' ref={resourcesRef}>
-      <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>Resources</h2>
-      <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="112" height="9" fill="#F38E22" />
-      </svg>
-      <div className="mt-8 text-center max-w-3xl mx-auto">
-        <p className="">
+    <div id="resources" className="bg-stone-100 py-16">
+      <div className="container mx-auto px-4" ref={resourcesRef}>
+        <h2 className="text-3xl font-bold text-center mb-4">Resources</h2>
+        <p className="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
           Want to know more? Download here the full reports of the Africa Skills Revolution Campaign. Each resource
           captures critical insights, youth-led recommendations, and powerful evidence to inform policy, practice, and
           future programming.
         </p>
-        <p className=" mt-4">
-          Whether you're a policymaker, educator, or development partner, these tools are designed to support more
-          inclusive, responsive, and impactful TVET systems across Africa.
-        </p>
-      </div>
+        <div 
+          className={`grid md:grid-cols-3 gap-6 mt-10 ${isMobile ? "opacity-100" : ""}`} 
+          ref={cardsRef}>
+          <ResourceCard
+            icon={<FileText className="h-8 w-8 text-brand-orange" />}
+            title="Hearing the Voices of Young People"
+            description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Campaign. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change."
+            quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
+            downloadUrl="#"
+          />
 
-      <div className="grid md:grid-cols-3 gap-6 mt-10" ref={cardsRef}>
-        <ResourceCard
-          icon={<FileText className="h-8 w-8 text-brand-orange" />}
-          title="Hearing the Voices of Young People"
-          description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Campaign. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change."
-          quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
-          downloadUrl="#"
-        />
+          <ResourceCard
+            icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
+            title="Youth Call to Policymakers"
+            description="This policy brief captures the voices of over 350 young Africans who shared their insights through the Make Yourself Heard survey. It highlights what youth want from TVET: education that is inclusive, practical, and aligned with the realities of their lives and future industries."
+            quote="Put us, the youth, at the centre of the TVET revolution in Africa."
+            downloadUrl="#"
+          />
 
-        <ResourceCard
-          icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
-          title="Youth Call to Policymakers"
-          description="This policy brief captures the voices of over 350 young Africans who shared their insights through the Make Yourself Heard survey. It highlights what youth want from TVET: education that is inclusive, practical, and aligned with the realities of their lives and future industries."
-          quote="Put us, the youth, at the centre of the TVET revolution in Africa."
-          downloadUrl="#"
-        />
-
-        <ResourceCard
-          icon={<BarChart className="h-8 w-8 text-brand-orange" />}
-          title="How the Youth View TVET in Africa"
-          description="This one-pager offers a snapshot of the Make Yourself Heard survey findings — spotlighting the priorities, challenges, and aspirations of young Africans in TVET. It captures where participants came from, what skills they value most, and the barriers they face."
-          quote="Explore the numbers. Understand the need. Join the revolution."
-          downloadUrl="#"
-        />
+          <ResourceCard
+            icon={<BarChart className="h-8 w-8 text-brand-orange" />}
+            title="How the Youth View TVET in Africa"
+            description="This one-pager offers a snapshot of the Make Yourself Heard survey findings — spotlighting the priorities, challenges, and aspirations of young Africans in TVET. It captures where participants came from, what skills they value most, and the barriers they face."
+            quote="Explore the numbers. Understand the need. Join the revolution."
+            downloadUrl="#"
+          />
+        </div>
       </div>
     </div>
   )

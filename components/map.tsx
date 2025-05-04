@@ -60,7 +60,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         <Card
 
           onClick={handleMouseLeavePath}
-          className="overflow-hidden pointer-events-none absolute z-30 bg-white border border-gray-300 rounded p-2 aspect-square w-[200px] top-52 -left-24"
+          className="overflow-hidden pointer-events-none absolute z-30 bg-white border border-gray-300 rounded p-2 aspect-square w-[200px] lg:top-52 lg:-left-24  left-24 top-44"
 
         >
           <CardContent className="flex-1 flex flex-col justify-between p-6">

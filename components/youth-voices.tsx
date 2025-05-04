@@ -170,17 +170,17 @@ const YouthVoices = () => {
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
 
-        <p className='text-3xl max-w-5xl mx-auto text-balance  font-light text-center mt-4'>
+        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
           The Africa Skills Revolution stands as a powerful testament to the potential of young people when they are empowered with the right tools, opportunities, and platforms to lead.    </p>
 
           <ChevronDown 
             className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' 
           />
 
-        <p className='text-3xl max-w-5xl mx-auto text-balance  font-light text-center mt-10'>
+        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
           Discover the insights gathered from the advocacy campaign, the competition, and the youth survey — now forming a powerful foundation for action. These findings reflect the real experiences, challenges, and aspirations of young people across Africa.
         </p>
-        <p className='text-3xl max-w-5xl mx-auto text-balance  font-light text-center mt-10'>Their voices won’t be left behind, they’re being brought to the heart of the conversation on TVET and skills development. </p>
+        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>Their voices won’t be left behind, they’re being brought to the heart of the conversation on TVET and skills development. </p>
 
        <ChevronDown 
          className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' 
@@ -246,11 +246,11 @@ const YouthVoices = () => {
 
             return (
               <div key={item.title}>
-                <h3 className='text-center text-4xl font-bold my-3'>{item.title}</h3>
-                <p className='text-center text-2xl font-light mt-4'>{item.description}</p>
+                <h3 className='text-center text-2xl lg:text-4xl font-bold my-3'>{item.title}</h3>
+                <p className='text-center text-xl lg:text-2xl font-light mt-4'>{item.description}</p>
                 <div className='bg-brand-orange text-white  rounded-2xl p-3 my-4 font-medium '>
                   {item.stats.map((stat, index) => (
-                    <p key={index} className='text-center my-2 max-w-4xl mx-auto'>{stat}</p>
+                    <p key={index} className='text-center my-4 max-w-4xl mx-auto'>{stat}</p>
                   ))}
                 </div>
                 <div className='grid lg:grid-cols-3 gap-4'>

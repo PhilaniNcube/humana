@@ -50,7 +50,7 @@ const Initiative = () => {
         <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
-        <p className='text-5xl max-w-5xl mx-auto text-balance leading-16 font-light text-center mt-4'>
+        <p className='text-2xl md:text-3xl lg:text-5xl max-w-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4'>
           Africa Skills Revolution is an initiative focused on promoting youth-led dialogue on skills development and TVET in Africa, spotlighting the voices and talents of a generation ready to lead.
         </p>
 
@@ -68,14 +68,14 @@ const Initiative = () => {
 
         </div>
 
-        <p className='text-3xl max-w-5xl mx-auto text-balance font-light text-center leading-10'>
+        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10'>
           AUDA-NEPAD, in partnership with Humana People to People, launched the campaign to spotlight the power of Technical and Vocational Education and Training (TVET) — not just as a pathway to employment, but as a driver of inclusive growth, innovation, and youth-led development.
         </p>
         <div className="max-w-5xl mx-auto ">
           <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
         </div>
 
-        <p className='text-3xl max-w-5xl mx-auto text-balance font-light text-center mt-12 leading-10'>
+        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10'>
           This pan-African initiative took shape across months of virtual events, youth-led dialogues, social media storytelling, data collection, and a continent-wide competition. It was created in the spirit of the African Union’s 2024 theme: Educate an African fit for the 21st Century.
         </p>
         <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
@@ -84,18 +84,18 @@ const Initiative = () => {
           <svg id='triangles' width="74" height="60" viewBox="0 0 74 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M-2.83525e-05 45.4653L73.1006 0.188728L52.9243 59.4549L-2.83525e-05 45.4653Z" fill="#F38E22" />
           </svg>
-          <p className='text-3xl max-w-5xl mx-auto text-balance font-light text-center mt-12 leading-10'>
+          <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10'>
             We are proud to present the outcome — a comprehensive report that weaves together the motivations, experiences, challenges, and aspirations of young people enrolled in or graduated from TVET institutions. We hope these insights will inspire others to collectively shape the future of skills development systems across the continent.
           </p>
           <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
         </div>
 
         <div>
-          <h2 className={cn(bebasNeue.className, 'text-5xl text-center font-bold text-brand-blue uppercase mt-12')}>The campaign’s approach was anchored on three tenets</h2>
-          <h3 className='text-3xl max-w-5xl mx-auto text-balance font-bold text-center mt-12 leading-10'>
+          <h2 className={cn(bebasNeue.className, 'text-4xl lg:text-5xl text-center font-bold text-brand-blue uppercase mt-12')}>The campaign’s approach was anchored on three tenets</h2>
+          <h3 className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-bold text-center mt-12 leading-10'>
             Engage <span className='text-brand-orange font-extrabold'>|</span> Elevate <span className='text-brand-orange font-extrabold'>|</span> Connect
           </h3>
-          <p className='text-xl max-w-5xl mx-auto text-balance text-center leading-10'>
+          <p className='text-lg lg:text-xl max-w-5xl mx-auto text-balance text-center lg:leading-10'>
             These pillars drove dialogues, competitions, and surveys, creating a platform to engage with Africa’s youth.
           </p>
         </div>
@@ -106,7 +106,7 @@ const Initiative = () => {
               ref={dashedLineRef}
               className="hidden lg:block absolute left-[40px] top-[84px] bottom-0 border-l-2 border-dashed border-green-800 h-[calc(340%-84px)] z-[-1]" 
             />
-            <div className='col-span-2 flex space-x-4'>
+            <div className='col-span-2 flex flex-col lg:flex-row lg:space-x-4'>
               <div >
                 <svg className='w-20 h-20 bg-brand-green p-6 rounded-md' width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <mask id="mask0_46_97" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
@@ -145,7 +145,7 @@ const Initiative = () => {
 
 
           <div className='grid grid-cols-2 lg:grid-cols-5 gap-6 mt-24'>
-            <div className='col-span-2 flex space-x-4'>
+            <div className='col-span-2 flex flex-col lg:flex-row lg:space-x-4'>
               <div >
                 <svg className='w-20 h-20 bg-brand-green p-6 rounded-md' width="35" height="38" viewBox="0 0 35 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <mask id="mask0_46_108" maskUnits="userSpaceOnUse" x="0" y="0" width="35" height="38">
@@ -179,7 +179,7 @@ const Initiative = () => {
           </div>
 
           <div className='grid grid-cols-2 lg:grid-cols-5 gap-6 mt-24'>
-            <div className='col-span-2 flex space-x-4'>
+            <div className='col-span-2 flex flex-col lg:flex-row lg:space-x-4'>
               <div >
                 <svg className='w-20 h-20 bg-brand-green p-6 rounded-md' width="35" height="38" viewBox="0 0 35 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <mask id="mask0_46_108" maskUnits="userSpaceOnUse" x="0" y="0" width="35" height="38">
