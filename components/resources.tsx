@@ -36,7 +36,7 @@ function ResourceCard({ icon, title, description, quote, downloadUrl }: Resource
         )}
       </CardContent>
       <CardFooter>
-        <Button className="w-full bg-brand-green hover:bg-green-900 text-white">
+        <Button className="w-full py-6 bg-brand-green hover:bg-green-900 text-white">
           <Download className="mr-2 h-4 w-4" /> Download Report
         </Button>
       </CardFooter>
@@ -48,25 +48,25 @@ export default function YouthResources() {
   const resourcesRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
   const isMobile = useIsMobile()
-  
+
   useGSAP(() => {
     // Skip animations on mobile devices
     if (isMobile) return
-    
+
     const resourcesSection = resourcesRef.current
-    
+
     if (resourcesSection) {
       const heading = resourcesSection.querySelector('h2')
       const cardElements = cardsRef.current?.querySelectorAll('.resource-card')
       const cards = cardElements ? Array.from(cardElements) : []
-      
+
       if (heading && cards.length > 0) {
         // Set initial state (invisible)
-        gsap.set(cards, { 
+        gsap.set(cards, {
           opacity: 0,
           y: 50
         })
-        
+
         // Create animation that triggers when the h2 comes into viewport
         ScrollTrigger.create({
           trigger: resourcesSection,
@@ -117,15 +117,18 @@ export default function YouthResources() {
 
   return (
     <div id="resources" className="bg-stone-100 py-16">
-      <div className="container mx-auto px-4" ref={resourcesRef}>
-        <h2 className="text-3xl font-bold text-center mb-4">Resources</h2>
+      <div className="container mx-auto px-[60px]" ref={resourcesRef}>
+        <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>Resources</h2>
+        <svg className='text-center w-fit mx-auto mt-4 mb-8' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="112" height="9" fill="#F38E22" />
+        </svg>
         <p className="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
           Want to know more? Download here the full reports of the Africa Skills Revolution Campaign. Each resource
           captures critical insights, youth-led recommendations, and powerful evidence to inform policy, practice, and
           future programming.
         </p>
-        <div 
-          className={`grid md:grid-cols-3 gap-6 mt-10 ${isMobile ? "opacity-100" : ""}`} 
+        <div
+          className={`grid lg:grid-cols-3 gap-6 mt-10 ${isMobile ? "opacity-100" : ""}`}
           ref={cardsRef}>
           <ResourceCard
             icon={<FileText className="h-8 w-8 text-brand-orange" />}
