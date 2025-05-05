@@ -81,14 +81,14 @@ export default function YouthFooter() {
               <h3 className="text-xl font-semibold text-brand-orange mb-4">Want to learn more or collaborate?</h3>
               <div className="flex items-center gap-2 text-gray-300 mb-3">
                 <Mail className="h-5 w-5 text-brand-blue" />
-                <span>Email us at </span>
+                <span className='hidden md:block'>Email us at </span>
                 <a href="mailto:africaskillsrevolution@nepad.org" className="text-brand-blue hover:underline">
                   africaskillsrevolution@nepad.org
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <Globe className="h-5 w-5 text-brand-blue" />
-                <span>Visit:</span>
+                <span className='hidden md:block'>Visit:</span>
                 <a
                   href="https://www.nepad.org"
                   target="_blank"
