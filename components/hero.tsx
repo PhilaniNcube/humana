@@ -11,7 +11,7 @@ const Hero = () => {
     <section className="bg-brand-orange relative isolate">
    
 
-      <div className="px-[60px] pt-36 text-center flex flex-col items-center w-full h-full">
+      <div className="px-4 lg:px-[40px] pt-36 text-center flex flex-col items-center w-full h-full">
         <h1 className={cn(bebasNeue.className, 'text-6xl lg:text-[76px] text-center text-white')}>
           Africa Skills Revolution</h1>
         <p className='text-muted text-3xl font-light'>

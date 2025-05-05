@@ -16,7 +16,7 @@ const DesktopNavigation = () => {
 
   return (
     <header className="bg-white shadow-md fixed top-0 w-full z-50">
-      <div className="py-5 px-4 md:px-[60px] flex items-center justify-between container mx-auto">
+      <div className="py-5 px-4 md:px-4 lg:px-[40px] flex items-center justify-between container mx-auto">
         <Link href="/" className="flex items-center">
           <Image
             src="/images/nepad-logo.png"

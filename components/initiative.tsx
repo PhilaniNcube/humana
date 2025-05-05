@@ -45,7 +45,7 @@ const Initiative = () => {
 
   return (
     <section id='initiative' ref={container}>
-      <div className='px-[60px] pt-12 container mx-auto'>
+      <div className='px-4 lg:px-[40px] pt-12 container mx-auto'>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>The Initiative</h2>
         <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />
@@ -224,7 +224,7 @@ const Initiative = () => {
 
         </div>
       </div>
-      <div className='mt-16 bg-brand-blue px-[60px] py-12'>
+      <div className='mt-16 bg-brand-blue px-4 lg:px-[40px] py-12'>
         <div className='grid grid-cols-1 lg:grid-cols-3 container mx-auto'>
           <div className='col-span-1 flex justify-center'>
             <svg className='min-w-[240px]' width="272" height="308" viewBox="0 0 272 308" fill="none" xmlns="http://www.w3.org/2000/svg">

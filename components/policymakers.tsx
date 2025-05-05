@@ -136,7 +136,7 @@ export default function YouthPolicyCall() {
   ]
 
   return (
-    <div id="policymakers" className="container mx-auto py-12 px-[60px]">
+    <div id="policymakers" className="container mx-auto py-12 px-4 lg:px-[40px]">
       <h2 className="text-4xl lg:text-5xl text-center font-bold text-brand-blue uppercase">YOUTH CALL TO POLICYMAKERS</h2>
       <svg className="text-center w-fit mx-auto mt-4" width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="112" height="9" fill="#F38E22" />

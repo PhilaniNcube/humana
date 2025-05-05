@@ -117,7 +117,7 @@ export default function YouthResources() {
 
   return (
     <div id="resources" className="bg-stone-100 py-16">
-      <div className="container mx-auto px-[60px]" ref={resourcesRef}>
+      <div className="container mx-auto px-4 lg:px-[40px]" ref={resourcesRef}>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>Resources</h2>
         <svg className='text-center w-fit mx-auto mt-4 mb-8' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />

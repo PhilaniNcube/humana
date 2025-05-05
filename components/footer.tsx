@@ -10,7 +10,7 @@ export default function YouthFooter() {
 
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6">
-      <div className="container mx-auto px-[60px]">
+      <div className="container mx-auto px-4 lg:px-[40px]">
         {/* Acknowledgments */}
         <div className="text-center mb-10">
           <p className="max-w-3xl mx-auto text-gray-300">
