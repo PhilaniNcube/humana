@@ -8,6 +8,7 @@ import { ChevronDown, ChevronUp, Lightbulb, Package } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from './ui/button';
 
 // Story props interface
 export interface StoryProps {
@@ -83,7 +84,7 @@ const StoryCard: React.FC<{ story: StoryProps }> = ({ story }) => {
       </CardHeader>
       <CardContent className='flex flex-col justify-between h-full'>
         <div className='flex flex-col h-full flex-1 '>
-          <div className='bg-brand-blue text-white rounded-2xl p-3 overflow-hidden'>
+          <div className='lg:bg-brand-blue lg:text-white rounded-2xl lg:p-3 text-sm lg:text-md overflow-hidden'>
             <div 
               className='transition-all duration-500 ease-in-out'
               style={{ 
@@ -94,8 +95,8 @@ const StoryCard: React.FC<{ story: StoryProps }> = ({ story }) => {
               <p className='leading-7 italic'>{story.story}</p>
             </div>
             {isMobile && (
-              <button 
-                className='flex items-center text-white mt-2 text-sm font-medium cursor-pointer hover:underline'
+              <Button 
+                className='flex items-center bg-brand-blue text-white mt-2 rounded-full text-sm font-medium cursor-pointer hover:underline'
                 onClick={() => setIsExpanded(!isExpanded)}
               >
                 {isExpanded ? (
@@ -109,7 +110,7 @@ const StoryCard: React.FC<{ story: StoryProps }> = ({ story }) => {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </>
                 )}
-              </button>
+              </Button>
             )}
           </div>
           <div className='flex flex-1 z-[2] h-full flex-col justify-end'>
