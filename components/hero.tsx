@@ -11,17 +11,13 @@ const Hero = () => {
     <section className="bg-brand-orange relative isolate">
    
 
-      <div className="px-4 lg:px-[40px] pt-36 text-center flex flex-col items-center w-full h-full">
-        <h1 className={cn(bebasNeue.className, 'text-6xl lg:text-[76px] text-center text-white')}>
+      <div className="px-4 lg:px-[40px] pt-40 text-center flex flex-col items-center w-full h-full">
+        <h1 className={cn(bebasNeue.className, 'text-6xl lg:text-[88px] text-center text-white')}>
           Africa Skills Revolution</h1>
-        <p className='text-muted text-3xl font-light'>
+        <p className='text-muted text-3xl md:text-4xl text-balance max-w-5xl mx-auto font-light'>
           Putting youth at the centre of the TVET revolution across the continent
         </p>
-        <div className="flex items-center justify-center mt-10">
-          <Link href="/#initiative">
-            <Button className='bg-brand-blue hover:bg-blue-800 text-white text-2xl px-20 py-6 font-light rounded-sm'>Introduction</Button>
-          </Link>
-        </div>
+      
         <div className=" relative isolate">
           <svg className='absolute -top-24 left-40 z-[-1] rotate-45' id='triangles' width="451" height="400" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
