@@ -4,11 +4,12 @@ import { bebasNeue } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, GitGraph } from 'lucide-react'
 import Link from 'next/link'
 import StoryCard, { StoryProps } from './story-card'
 import { useIsMobile } from '@/hooks/use-mobile'
-import { Card } from './ui/card'
+import { Card, CardContent } from './ui/card'
+import DataVisualization from './data-visualization'
 
 
 
@@ -16,6 +17,23 @@ const youthVoices = [
   {
     title: 'PERCEPTIONS AND MOTIVATIONS BEHIND TVET',
     description: 'Understanding the motivations driving young Africans to pursue TVET is foundational to addressing barriers, enhancing accessibility, and designing systems that resonate with their aspirations.',
+    data: [{
+      value: 42,
+      label: 'secured a relevant job'
+    },
+    {
+      value: 41,
+      label: 'sought more practical training'
+    },
+    {
+      value: 72,
+      label: 'aligned with labor market needs'
+    },
+    {
+      value: 80,
+      label: 'socioeconomic development'
+    },
+    ],
     stats: [
       '42% of young people chose TVET to secure a relevant job, and 41% sought more practical training',
       '72% agree that TVET is aligned with labor market needs, and 80% believe it plays a major role in their country’s socioeconomic development'
@@ -56,6 +74,33 @@ const youthVoices = [
   {
     title: 'TVET PROGRAMMES',
     description: 'Addressing the barriers that prevent African youth from accessing TVET is crucial to advancing inclusive systems, ensuring equitable access, and strengthening the continent’s young workforce.',
+    data: [
+      {
+        value: 72,
+        label: 'financial constraints'
+      },
+      {
+        value: 54,
+        label: 'lack of information'
+      },
+      {
+        value: 38,
+        label: 'poor rural accessibility'
+      },
+      {
+        value: 68,
+        label: 'digital literacy'
+      },
+      {
+        value: 66,
+        label: 'soft skills training'
+      },
+      {
+        value: 70,
+        label: 'entrepreneurship training'
+      },
+
+    ],
     stats: [
       '72% of youth cite financial constraints as the top barrier to accessing TVET programmes',
       '54% point to a lack of information, and 38% to poor rural accessibility',
@@ -68,7 +113,7 @@ const youthVoices = [
         innovation: 'Solar-powered irrigation systems (based in Kenya’s Dadaab Camp)',
         country: 'Somalia',
         flag: "/images/somalia.png",
-        image: '/images/martha.png',
+        image: '/images/omar.png',
         story: 'As a Somali refugee in Kenya’s Dadaab Camp, I faced limited access to education and technical training, leaving my community and me struggling to find solutions for everyday challenges. Despite these circumstances, I remained determined to make a difference. Through TVET, I learnt solar installation and electrical engineering skills, which enabled me to create solar-powered irrigation systems for sustainable farming in an arid environment. I also received support to train over 50 young people in the camp, ensuring the benefits of my learning reached others. TVET gave me not just knowledge but the confidence and resources to create meaningful change.',
         video: 'https://www.youtube.com/watch?si=HvG9Ezfc8zEZuPMt&v=wQiHYtc0DyM&feature=youtu.be',
       },
@@ -78,7 +123,7 @@ const youthVoices = [
         innovation: 'Training women in traditional crafts and expanding global markets (based in Kenya’s Kakuma Camp)',
         country: 'Sudan',
         flag: "/images/south-sudan.png",
-        image: '/images/martha.png',
+        image: '/images/huda.png',
         story: 'In Kenya’s Kakuma Refugee Camp, I saw talented women unable to earn a living due to a lack of market access and training. The skills were there, but the tools to turn them into income were not. Through TVET, I gained modern craft techniques and digital marketing skills, which enabled me to launch Craft for Life, an initiative that helps women transform their talents into marketable products now sold internationally.TVET also gave me the ability to teach financial literacy, empowering over 75 women to achieve economic independence.',
         video: 'https://www.youtube.com/watch?si=ln3-5_tA34ZDHKMY&v=nMI2srP33fQ&feature=youtu.be',
       },
@@ -88,7 +133,7 @@ const youthVoices = [
         innovation: 'Public transport mobile app for efficiency and inclusion',
         country: 'Rwanda',
         flag: "/images/rwanda.png",
-        image: '/images/martha.png',
+        image: '/images/aline.png',
         story: 'In Rwanda, I encountered gender stereotypes that made it difficult for women like me to succeed in technology. Many doubted my ability to lead or create innovative solutions, but I was determined to prove them wrong. TVET equipped me with automation and app development skills, enabling me to design Sot, a mobile app that improves public transport by letting commuters book tickets and track buses. My work has made transport more accessible, especially for communities with limited access to resources. More importantly, my success is encouraging other women to consider careers in technology.',
         video: 'https://www.youtube.com/watch?v=JxFih7STgNA',
       },
@@ -97,6 +142,20 @@ const youthVoices = [
   {
     title: 'CAREER DEVELOPMENT',
     description: 'The survey offers a multi-dimensional view of the enablers and barriers young Africans face when entering the job market after graduating from vocational education.',
+    data: [
+      {
+        value: 46,
+        label: 'financial support or scholarships'
+      },
+      {
+        value: 19,
+        label: 'job placement assistance and internships'
+      },
+      {
+        value: 16,
+        label: 'networking opportunities'
+      }
+    ],
     stats: [
       '46% say financial support or scholarships are the most important enabler of career success after graduating',
       'This is followed by job placement assistance and internships (19%) and networking opportunities (16%).'
@@ -108,7 +167,7 @@ const youthVoices = [
         innovation: 'EcoFusion sustainable fashion',
         country: 'Ghana',
         flag: "/images/ghana.png",
-        image: '/images/martha.png',
+        image: '/images/victory.png',
         story: 'Achieving my dream of transforming African fashion required more than creativity—it demanded access to training and resources to bridge the gap between my vision and reality. Through TVET, I gained the technical knowledge to combine upcycled materials with traditional African techniques, leading to the creation of EcoFusion, a sustainable fashion brand that celebrates heritage while reducing environmental impact. Mentorship opportunities during my training helped me refine my approach and scale my work, including training young designers to adopt sustainable practices.',
         video: 'https://www.youtube.com/watch?v=f4Q_EXCT_i8',
       },
@@ -118,7 +177,7 @@ const youthVoices = [
         innovation: 'Wearable devices for pain management (Zambia)',
         country: 'Zambia',
         flag: "/images/zambia.png",
-        image: '/images/martha.png',
+        image: '/images/retiana.png',
         story: 'When I recognised the challenge of chronic pain in my community, I knew addressing it required both innovation and expertise. However, creating practical solutions was impossible without specialised training and mentorship. Through TVET, I developed the skills to design wearable medical devices that provide real-time pain management, reducing dependency on opioids. Hands-on training and mentorship enabled me to refine my designs and ensure their effectiveness. Today, my devices are improving lives and setting an example for young innovators across Africa.',
         video: 'https://www.youtube.com/watch?v=6wWJamyTSSM',
       }
@@ -126,10 +185,24 @@ const youthVoices = [
   },
   {
     title: 'YOUTH ARE HELPING RESHAPE THE TVET NARRATIVE',
-    description: '',
+    description: 'Advocating for TVET and making it competitive with traditional higher education',
+    data: [
+      {
+        value: 86,
+        label: 'recommend TVET to their peers'
+      },
+      {
+        value: 80,
+        label: 'advocating for TVET'
+      },{
+        value: 62,
+        label: 'leads to likley career success'
+      }
+    ],
     stats: [
       '86% of youth would recommend TVET to their peers',
-      'Over 80% believe young people themselves have a key role to play in advocating for TVET and making it competitive with traditional higher education'
+      'Over 80% believe young people themselves have a key role to play in advocating for TVET and making it competitive with traditional higher education',
+      '62% believe that TVET likely leads to career success,'
     ],
     stories: [
       {
@@ -138,7 +211,7 @@ const youthVoices = [
         innovation: 'Circular economy in design (Nigeria)',
         country: 'Nigeria',
         flag: "/images/nigeria.png",
-        image: '/images/martha.png',
+        image: '/images/felix.png',
         story: 'I saw the growing issue of textile waste in my community as both a challenge and an opportunity. I believed that vocational skills could help me transform this waste into something valuable while also raising awareness about sustainability. Through TVET, I learned eco-conscious design techniques and business management skills, which allowed me to launch Araverme Wardrobe. This initiative repurposes discarded materials into clothing and home décor, blending environmental responsibility with economic opportunity. By training others in these techniques, I am building a network of artisans committed to sustainable practices.',
         video: 'https://www.youtube.com/watch?v=pURv1n07QyM',
       },
@@ -148,7 +221,7 @@ const youthVoices = [
         innovation: 'Bamboo cages for fish farming',
         country: 'Kenya',
         flag: "/images/kenya.png",
-        image: '/images/martha.png',
+        image: '/images/benedict.png',
         story: 'Growing up near Lake Victoria, I was deeply concerned about the environmental damage caused by unsustainable fishing practices. I wanted to develop methods that were both environmentally friendly and economically viable, but I needed specialised training to make my ideas a reality. Through TVET, I gained expertise in aquaculture and sustainable materials, enabling me to introduce bamboo cages for fish farming. These cages have reduced environmental degradation while increasing fish yields, providing a reliable food source for my community. My success demonstrates how TVET can deliver the knowledge and skills needed to address pressing issues like food security and sustainability.',
         video: 'https://www.youtube.com/watch?v=zz4qzDDu4sA',
       }
@@ -173,15 +246,15 @@ const YouthVoices = () => {
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
           The Africa Skills Revolution stands as a powerful testament to the potential of young people when they are empowered with the right tools, opportunities, and platforms to lead.    </p>
 
-        
+
 
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
           Discover the insights gathered from the advocacy campaign, the competition, and the youth survey — now forming a powerful foundation for action. These findings reflect the real experiences, challenges, and aspirations of young people across Africa.
         </p>
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>Their voices won’t be left behind, they’re being brought to the heart of the conversation on TVET and skills development. </p>
 
-    
 
+        {/* 
         <div className='w-full grid lg:grid-cols-2 gap-10  mx-auto'>
           <div className='flex flex-col justify-center'>
             <h3 className={cn(bebasNeue.className, 'text-brand-blue text-6xl text-balance')}>PERCEPTIONS AND MOTIVATIONS BEHIND TVET</h3>
@@ -199,9 +272,9 @@ const YouthVoices = () => {
               className="w-full object-cover object-bottom mt-10"
             />
           </div>
-        </div>
+        </div> */}
 
-        <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 w-full'>
+        {/* <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 w-full'>
           <Image
             src="/images/job-stat.png"
             alt="Jobs"
@@ -231,9 +304,27 @@ const YouthVoices = () => {
             className="w-full object-cover object-bottom mt-10 self-end"
           />
         </div>
-     
+      */}
         <div>
-          <h4 className='text-center uppercase text-6xl mt-16 font-bold'>Stories</h4>
+          <h4 className='text-center uppercase text-brand text-6xl mt-16 font-bold'>Stories</h4>
+          {/* <div className='w-full grid lg:grid-cols-2 gap-10  mx-auto'>
+            <div className='flex flex-col justify-center'>
+              <h3 className={cn(bebasNeue.className, 'text-brand-blue text-6xl text-balance')}>PERCEPTIONS AND MOTIVATIONS BEHIND TVET</h3>
+              <p className='leading-7 mt-8 max-w-xl'>
+                Understanding the motivations driving young Africans to pursue TVET is foundational to addressing barriers, enhancing accessibility, and designing systems that resonate with their aspirations.
+              </p>
+
+            </div>
+            <div className='flex justify-end'>
+              <Image
+                src="/images/vocational.png"
+                alt="Vocational"
+                width={1000}
+                height={1000}
+                className="w-full object-cover object-bottom mt-10"
+              />
+            </div>
+          </div> */}
           <div className='h-1 rounded-full max-w-3xl mx-auto bg-brand-orange gap-6 my-10' />
 
           {youthVoices.map((item) => {
@@ -242,10 +333,35 @@ const YouthVoices = () => {
               <div key={item.title}>
                 <h3 className='text-center text-2xl lg:text-4xl font-bold my-3'>{item.title}</h3>
                 <p className='text-center text-xl lg:text-2xl font-light mt-4'>{item.description}</p>
-                <div className='bg-brand-orange text-white  rounded-2xl p-3 my-4 font-medium '>
-                  {item.stats.map((stat, index) => (
-                    <p key={index} className='text-center my-4 max-w-4xl mx-auto'>{stat}</p>
-                  ))}
+                {/* Data Visualization */}
+                <div className='mt-10 mb-12'>
+                  {item.data && item.data.length > 0 ? (
+                    <Card className="p-6 shadow-md border-t-4 border-t-brand-orange">
+                      <DataVisualization 
+                        data={item.data} 
+                        title="Key Statistics"
+                      />
+                      <div className='mt-6 border-t pt-4'>
+                        <h5 className="font-medium text-gray-800 mb-2">Key Insights:</h5>
+                        {item.stats && item.stats.map((stat, index) => (
+                          <p key={index} className='text-sm text-gray-600 mt-2'>• {stat}</p>
+                        ))}
+                      </div>
+                    </Card>
+                  ) : (
+                    <div className='flex flex-col lg:flex-row gap-4 justify-center items-center'>
+                      {item.stats.map((stat, index) => (
+                        <Card key={index} className='flex items-center gap-2'>
+                          <CardContent>
+                            <div className='h-20 w-20 text-brand-orange mx-auto text-center flex items-center justify-center text-4xl font-bold'>
+                              {stat.match(/\d+%/)?.[0] || ""}
+                            </div>
+                            <p>{stat}</p>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className='grid lg:grid-cols-3 gap-4'>
                   {item.stories.map((story) => (
