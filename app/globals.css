@@ -128,3 +128,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* 3D Card Flip Styles */
+.story-card-container {
+  perspective: 1000px;
+}
+
+.story-card-container > div {
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}

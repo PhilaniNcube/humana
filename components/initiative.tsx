@@ -249,7 +249,6 @@ const Initiative = () => {
 
           <div className='flex items-start justify-center space-x-10'>
             <Africa />
-
           </div>
         </div>
 
