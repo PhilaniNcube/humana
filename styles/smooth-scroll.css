@@ -1,0 +1,58 @@
+/* Smooth Scrolling Styles */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  /* Mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+.smooth-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  will-change: transform;
+}
+
+.smooth-content {
+  width: 100%;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Fix for iOS overscroll */
+@supports (-webkit-touch-callout: none) {
+  .smooth-wrapper {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Additional optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) during GSAP initialization */
+.gsap-init-loading .smooth-content {
+  opacity: 0;
+}
+
+.smooth-content {
+  transition: opacity 0.2s;
+}
