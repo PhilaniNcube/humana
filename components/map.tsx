@@ -42,10 +42,10 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
     const name = event.currentTarget.dataset.name;
     const countryCode = event.currentTarget.dataset.id;
     const responses = Number(event.currentTarget.dataset.responses) || 0;
-    
+
     // Get the bounding rectangle of the country element
     const countryRect = event.currentTarget.getBoundingClientRect();
-    
+
     // Calculate position for the tooltip to appear to the left of the country
     // We use the center-left of the country's bounding rectangle
     // Ensure the tooltip has enough space from the left edge of the screen
@@ -59,10 +59,10 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
     ) || null;
 
     // Only show tooltip if the country has data (story, image, or responses)
-    const hasContent = 
-      (countryData && (countryData.story || countryData.image || countryData.video)) || 
+    const hasContent =
+      (countryData && (countryData.story || countryData.image || countryData.video)) ||
       responses > 0;
-    
+
     if (name && hasContent) {
       // Show tooltip with the country name and data
       setTooltip(prev => ({
@@ -73,7 +73,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         x: tooltipX,
         y: tooltipY
       }));
-      
+
       // Show tooltip
       setShowTooltip(true);
     }
@@ -94,7 +94,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
     <div
       className="relative w-full h-full overflow-hidden"
     >
-      {showTooltip && (
+      {showTooltip && tooltip.countryData && (
         <Card
           onClick={handleMouseLeavePath}
           className="overflow-y-scroll overflow-x-hidden pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[350px] max-h-[500px] tooltip-card"
@@ -155,15 +155,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
                     )}
                   </div>
                 </div>
-              ) : (
-                <div className="space-y-1.5">
-                  <div className="flex flex-col items-center justify-between">
-                    <h4 className="text-sm font-medium text-muted-foreground">Respondents</h4>
-                    <span className="text-5xl font-bold">{tooltip.responses}%</span>
-                  </div>
-                  <Progress value={tooltip.responses} className="h-2" color='bg-green-600' />
-                </div>
-              )}
+              ) : null}
             </div>
 
           </CardContent>
@@ -498,7 +490,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
           data-name="Rwanda"
           data-id="RW"
           d="m 667.9,533 -7.4,4.3 -2.9,-1.4 -3.5,3.8 -0.5,8.3 -1.7,1 -1.2,7.6 7.4,1.1 3.8,-7.9 6.5,0.9 0,0 3.5,-1.8 0.8,-8.1 -4.8,-7.8 z"
-
+          className='fill-amber-600 hover:fill-amber-500 transition-colors duration-200 ease-in-out cursor-pointer'
         />
         {/* W. Sahara */}
         <path
