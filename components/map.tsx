@@ -85,7 +85,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
       {showTooltip && (
         <Card
           onClick={handleMouseLeavePath}
-          className="overflow-y-auto pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[300px] max-h-[400px]"
+          className="overflow-y-auto pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[300px] max-h-[500px]"
           style={{
             left: `${0 - (tooltip.x * 0.003)}px`,
             top: `${tooltip.y * 0.00003}px`,
