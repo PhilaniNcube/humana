@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Card, CardContent, CardFooter, CardTitle } from './ui/card';
+import '../styles/tooltip.css';
 import { Progress } from './ui/progress';
 import { mapData } from '@/data/countries';
 import { Button } from './ui/button';
@@ -34,18 +35,22 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
 
   const [showTooltip, setShowTooltip] = useState(false);
 
-  // Handler for mouse movement over the SVG container
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    // Update tooltip position relative to the container
-    // Adjustments (+10) position the tooltip slightly offset from the cursor
-    setTooltip(prev => ({ ...prev, x: event.clientX + 10, y: event.clientY + 10 }));
-  };
+  // No longer needed as we position based on the country element
 
   // Handler for mouse entering a country path
   const handleMouseEnterPath = (event: React.MouseEvent<SVGPathElement>) => {
     const name = event.currentTarget.dataset.name;
     const countryCode = event.currentTarget.dataset.id;
     const responses = Number(event.currentTarget.dataset.responses) || 0;
+    
+    // Get the bounding rectangle of the country element
+    const countryRect = event.currentTarget.getBoundingClientRect();
+    
+    // Calculate position for the tooltip to appear to the left of the country
+    // We use the center-left of the country's bounding rectangle
+    // Ensure the tooltip has enough space from the left edge of the screen
+    const tooltipX = Math.max(340, countryRect.left);
+    const tooltipY = countryRect.top + (countryRect.height / 2);
 
     // Find country data in mapData array by either name or country code
     const countryData = mapData.find(item =>
@@ -59,7 +64,9 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         ...prev,
         name: name,
         responses: responses,
-        countryData: countryData
+        countryData: countryData,
+        x: tooltipX,
+        y: tooltipY
       }));
     }
     // Show tooltip
@@ -79,17 +86,16 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
 
 
     <div
-      className="relative w-full h-full "
-      onMouseMove={handleMouseMove}
+      className="relative w-full h-full overflow-hidden"
     >
       {showTooltip && (
         <Card
           onClick={handleMouseLeavePath}
-          className="overflow-y-auto pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[300px] max-h-[500px]"
+          className="overflow-y-auto pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[300px] max-h-[500px] tooltip-card"
           style={{
-            left: `${0 - (tooltip.x * 0.003)}px`,
-            top: `${tooltip.y * 0.00003}px`,
-            transform: 'translate(10px, -10%)'
+            left: `${Math.max(20, tooltip.x - 320)}px`,
+            top: `${tooltip.y}px`,
+            transform: 'translateY(-50%)'
           }}
         >
 

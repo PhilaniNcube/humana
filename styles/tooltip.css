@@ -1,0 +1,30 @@
+/* Tooltip arrow styling */
+.tooltip-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff; /* Match background color */
+  filter: drop-shadow(1px 0 1px rgba(0, 0, 0, 0.1));
+  z-index: 40;
+}
+
+/* Add a border arrow effect */
+.tooltip-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -11px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 11px solid #d1d5db; /* Match border color */
+  z-index: 39;
+}
