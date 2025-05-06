@@ -141,6 +141,12 @@ export default function YouthPolicyCall() {
       <svg className="text-center w-fit mx-auto mt-4" width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="112" height="9" fill="#F38E22" />
       </svg>
+
+      <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
+        Click through the tiles to explore what young Africans are asking of policymakers. From access and equity to digital innovation and entrepreneurship, these recommendations are rooted in lived experience. </p>
+
+      <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
+        Each priority reflects their vision for change and marks the beginning of a movement that places Africa’s youth at the heart of building a more resilient, skilled future. </p>
       <div className="bg-white rounded-lg shadow-lg max-w-5xl mx-auto p-6">
         <div className="space-y-1">
           {policyAreas.map((area, index) => (
