@@ -248,7 +248,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         />
         {/* Dem. Rep. Congo */}
         <path
-          onMouseEnter={handleMouseEnterPath}
+
           id="CD"
           data-name="DRC"
           data-responses={6}
