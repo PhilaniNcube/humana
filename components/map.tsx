@@ -91,9 +91,9 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
       {showTooltip && (
         <Card
           onClick={handleMouseLeavePath}
-          className="overflow-y-auto pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[300px] max-h-[500px] tooltip-card"
+          className="overflow-y-scroll overflow-x-hidden pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[350px] max-h-[500px] tooltip-card"
           style={{
-            left: `${Math.max(20, tooltip.x - 320)}px`,
+            left: `${Math.max(20, -tooltip.x)}px`,
             top: `${tooltip.y}px`,
             transform: 'translateY(-50%)'
           }}
@@ -114,7 +114,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
                     <img
                       src={tooltip.countryData.image}
                       alt={tooltip.countryData.name}
-                      className="w-full object-cover rounded-md"
+                      className="w-1/3 object-cover"
                     />
                   )}
 
