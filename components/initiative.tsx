@@ -1,6 +1,6 @@
 'use client';
 
-import { bebasNeue } from '@/lib/fonts'        
+import { bebasNeue } from '@/lib/fonts'
 import React from 'react'
 import { useRef } from 'react';
 import gsap from 'gsap';
@@ -21,11 +21,11 @@ const Initiative = () => {
   useGSAP(() => {
     if (dashedLineRef.current) {
       // Initial state - line at 0 height
-      gsap.set(dashedLineRef.current, { 
+      gsap.set(dashedLineRef.current, {
         height: 0,
         opacity: 0.5
       });
-      
+
       // Create the scroll trigger animation
       ScrollTrigger.create({
         trigger: dashedLineRef.current,
@@ -33,9 +33,9 @@ const Initiative = () => {
         once: false, // Animation will run every time it enters viewport
         onEnter: () => {
           gsap.to(dashedLineRef.current, {
-            height: "calc(340% - 84px)", // Final height matching the original
+            height: "calc(340% - 120px)", // Final height matching the original
             opacity: 1,
-            duration: 1.5, // Animation duration in seconds
+            duration: 2.5, // Animation duration in seconds
             ease: "power2.out" // Easing function for smooth animation
           });
         }
@@ -55,56 +55,42 @@ const Initiative = () => {
         </p>
 
 
-        <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
 
-        <div className='flex items-center justify-end translate-y-0 lg:translate-y-[-100px]'>
-          <svg id='triangles' width="451" height="400" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
-            <path d="M434.5 144.999L162.5 217.499L349 302.499L434.5 144.999Z" fill="#F38E22" />
-            <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00651B" />
-            <path d="M231 399.499L221 315.499L278.5 363.499L231 399.499Z" fill="#00B6CC" />
-          </svg>
-
-
-        </div>
-
-        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10'>
-          AUDA-NEPAD, in partnership with Humana People to People, launched the campaign to spotlight the power of Technical and Vocational Education and Training (TVET) — not just as a pathway to employment, but as a driver of inclusive growth, innovation, and youth-led development.
-        </p>
-        <div className="max-w-5xl mx-auto ">
-          <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
-        </div>
-
-        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10'>
-          This pan-African initiative took shape across months of virtual events, youth-led dialogues, social media storytelling, data collection, and a continent-wide competition. It was created in the spirit of the African Union’s 2024 theme: Educate an African fit for the 21st Century.
-        </p>
-        <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
-
-        <div className='flex items-center justify-center flex-col mt-12'>
-          <svg id='triangles' width="74" height="60" viewBox="0 0 74 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-2.83525e-05 45.4653L73.1006 0.188728L52.9243 59.4549L-2.83525e-05 45.4653Z" fill="#F38E22" />
-          </svg>
-          <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10'>
-            We are proud to present the outcome — a comprehensive report that weaves together the motivations, experiences, challenges, and aspirations of young people enrolled in or graduated from TVET institutions. We hope these insights will inspire others to collectively shape the future of skills development systems across the continent.
+        <div className='lg:columns-3 mt-6 lg:mt-12'>
+          <p className='text-xl  mx-auto font-light  '>
+            AUDA-NEPAD and Humana People to People launched the campaign to spotlight TVET as both a path to employment and a catalyst for inclusive growth, innovation, and youth-led development.
           </p>
-          <ChevronDown className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' />
+          <p className='text-xl  mx-auto font-light  '>
+            This pan-African initiative unfolded through months of virtual events, youth dialogues, storytelling, data collection, and a continent-wide competition.
+          </p>
+          <p className='text-xl  mx-auto font-light  '>
+            We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
+          </p>
+
+
+
         </div>
+
+
+
 
         <div>
-          <h2 className={cn(bebasNeue.className, 'text-4xl lg:text-5xl text-center font-bold text-brand-blue uppercase mt-12')}>The campaign’s approach was anchored on three tenets</h2>
-          <h3 className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-bold text-center mt-12 leading-10'>
+          <p className='text-2xl md:text-3xl lg:text-5xl max-w-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4'>
+            Anchored on three pillars — Engage, Elevate, and Connect — the campaign sparked dialogue, competitions, and surveys to actively involve Africa’s youth.
+          </p>
+          {/* <h3 className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-bold text-center mt-12 leading-10'>
             Engage <span className='text-brand-orange font-extrabold'>|</span> Elevate <span className='text-brand-orange font-extrabold'>|</span> Connect
           </h3>
           <p className='text-lg lg:text-xl max-w-5xl mx-auto text-balance text-center lg:leading-10'>
             These pillars drove dialogues, competitions, and surveys, creating a platform to engage with Africa’s youth.
-          </p>
+          </p> */}
         </div>
 
         <div className='mt-16'>
           <div className='grid grid-cols-2 lg:grid-cols-5 gap-6 relative'>
-            <div 
+            <div
               ref={dashedLineRef}
-              className="hidden lg:block absolute left-[40px] top-[84px] bottom-0 border-l-2 border-dashed border-green-800 h-[calc(340%-84px)] z-[-1]" 
+              className="hidden lg:block absolute left-[40px] top-[84px] bottom-0 border-l-2 border-dashed border-green-800 h-[calc(330%-120px)] z-[-1]"
             />
             <div className='col-span-2 flex flex-col lg:flex-row lg:space-x-4'>
               <div >
@@ -128,12 +114,12 @@ const Initiative = () => {
             </div>
             <div className='col-span-2 lg:col-span-3'>
               <p className='text-balance font-light'>
-                The Youth Advocacy Campaign aimed to inform and engage young people across Africa to reshape the perception of TVET by providing accurate, data-driven information and highlighting the role of TVET in building practical skills, supporting career development, and contributing to broader societal progress.
+                The  Campaign engaged young people across Africa to reshape perceptions of TVET by sharing accurate, data-driven insights and showcasing its role in building skills, advancing careers, and driving societal progress.
 
               </p>
               <p className='text-balance font-light py-4'>
 
-                To reach a diverse youth audience, a multilingual social media toolkit was developed in English, French, and Portuguese with advocacy messages, inspiring success stories and spotlighting TVET initiatives.
+                To reach diverse audiences, a multilingual toolkit in English, French, and Portuguese featured advocacy messages, success stories, and TVET highlights. With over 31,000 engagements and strong partner support, the campaign amplified youth voices and challenged stigma — positioning TVET as a true gateway to opportunity.
 
               </p>
               <p className='text-balance font-light'>
@@ -168,13 +154,12 @@ const Initiative = () => {
             </div>
             <div className='col-span-2 lg:col-span-3'>
               <p className='text-balance font-light'>
-                In order to celebrate youth innovation and recognize the incredible ways African TVET graduates are using their skills to make a difference in their communities, we launched the Africa Skills Revolution Competition for young graduates across Africa.
+                The competition was launched to celebrate youth innovation and spotlight how African TVET graduates are driving change in their communities. Open to young graduates across the continent, it drew 490 entries from 36 countries, showcasing youth-led solutions in agriculture, health, tech, fashion, and more.
               </p>
               <p className='text-balance font-light py-4'>
-                With 490 entries from 36 countries, the competition highlighted many youth-led innovations in sectors like agriculture, health, tech, and fashion. The ten winning projects were awarded during the Africa Skills Week Conference hosted by the African Union in Accra, Ghana— each recognised for creativity, impact, and alignment with Africa’s development goals.</p>
-              <p className='text-balance font-light'>
-                More than a contest, it was a celebration of youth vision, showing that with the right skills, young people don’t just imagine change, they lead it.
+                Ten winning projects were honoured at the Africa Skills Week Conference in Accra, Ghana, recognised for their creativity, impact, and alignment with Africa’s development goals. More than a contest, it was a powerful reminder that with the right skills, youth don’t just imagine change — they lead it.
               </p>
+
             </div>
           </div>
 
@@ -202,23 +187,12 @@ const Initiative = () => {
             </div>
             <div className='col-span-2 lg:col-span-3'>
               <p className='text-balance font-light'>
-                Listening to youth perspectives was central to the campaign. The “Make Yourself Heard” survey, conducted
-                from August to October 2024, gathered over 300 responses from young Africans engaged in or aspiring
-                to join TVET education. This initiative focused on bringing the calls and needs of youth to the centre of
-                the conversation about TVET in Africa, ensuring their voices shape the future of skills development across
-                the continent.
+                The survey centred youth perspectives in TVET policy discussions across Africa, capturing their motivations, experiences, challenges, and aspirations as students or graduates of TVET institutions.
               </p>
               <p className='text-balance font-light py-4'>
-                The survey data will contribute to evidence-based recommendations for improving TVET systems, aligning
-                them with the aspirations and priorities of Africa’s youth. It also provides a foundation for actionable
-                strategies to address structural gaps, expand access, and foster equity within TVET.
+                With over 350 responses from across the continent, the survey brought youth voices to the forefront, offering insights that inform evidence-based recommendations for more inclusive, relevant, and accessible skills systems.
               </p>
-              <p className='text-balance font-light py-4'>
-                By amplifying youth voices, the survey emphasises the importance of designing TVET systems that are
-                inclusive, responsive, and capable of meeting the continent’s socio-economic needs. These insights are
-                integral to placing young people at the heart of discussions on TVET, reinforcing their role in shaping a
-                prosperous future for Africa.
-              </p>
+
             </div>
           </div>
 
