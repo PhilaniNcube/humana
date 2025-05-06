@@ -58,8 +58,13 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
       (countryCode && item.country && item.country.includes(countryCode))
     ) || null;
 
-    if (name) {
-      // Show tooltip with the country name and data if available
+    // Only show tooltip if the country has data (story, image, or responses)
+    const hasContent = 
+      (countryData && (countryData.story || countryData.image || countryData.video)) || 
+      responses > 0;
+    
+    if (name && hasContent) {
+      // Show tooltip with the country name and data
       setTooltip(prev => ({
         ...prev,
         name: name,
@@ -68,9 +73,10 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         x: tooltipX,
         y: tooltipY
       }));
+      
+      // Show tooltip
+      setShowTooltip(true);
     }
-    // Show tooltip
-    setShowTooltip(true);
   };
 
   // Handler for mouse leaving a country path
