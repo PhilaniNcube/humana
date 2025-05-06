@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardFooter, CardTitle } from './ui/card';
 import { Progress } from './ui/progress';
+import { mapData } from '@/data/countries';
+import { Button } from './ui/button';
+import { X } from 'lucide-react';
 
 
 
@@ -11,6 +14,16 @@ interface TooltipState {
   responses?: number | null;
   x: number;
   y: number;
+  countryData?: {
+    name?: string;
+    sector?: string;
+    innovation?: string;
+    country?: string;
+    flag?: string;
+    image?: string;
+    story?: string;
+    video?: string;
+  } | null;
 }
 
 
@@ -31,10 +44,23 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
   // Handler for mouse entering a country path
   const handleMouseEnterPath = (event: React.MouseEvent<SVGPathElement>) => {
     const name = event.currentTarget.dataset.name;
-    const responses = Number(event.currentTarget.dataset.responses);
-    if (name && responses) {
-      // Show tooltip with the country name
-      setTooltip(prev => ({ ...prev, name: name, responses: responses }));
+    const countryCode = event.currentTarget.dataset.id;
+    const responses = Number(event.currentTarget.dataset.responses) || 0;
+
+    // Find country data in mapData array by either name or country code
+    const countryData = mapData.find(item =>
+      item.country === name ||
+      (countryCode && item.country && item.country.includes(countryCode))
+    ) || null;
+
+    if (name) {
+      // Show tooltip with the country name and data if available
+      setTooltip(prev => ({
+        ...prev,
+        name: name,
+        responses: responses,
+        countryData: countryData
+      }));
     }
     // Show tooltip
     setShowTooltip(true);
@@ -42,8 +68,8 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
 
   // Handler for mouse leaving a country path
   const handleMouseLeavePath = () => {
-    // Hide tooltip
-    setTooltip(prev => ({ ...prev, name: null, responses: null }));
+    // Hide tooltip and reset data
+    setTooltip(prev => ({ ...prev, name: null, responses: null, countryData: null }));
     setShowTooltip(false);
   };
 
@@ -53,37 +79,87 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
 
 
     <div
-      className="relative w-full h-full"
+      className="relative w-full h-full "
       onMouseMove={handleMouseMove}
     >
       {showTooltip && (
         <Card
-
           onClick={handleMouseLeavePath}
-          className="overflow-hidden pointer-events-none absolute z-30 bg-white border border-gray-300 rounded p-2 aspect-square w-[200px] lg:top-52 lg:-left-24  left-24 top-44"
-
+          className="overflow-y-auto pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[300px] max-h-[400px]"
+          style={{
+            left: `${0 - (tooltip.x * 0.003)}px`,
+            top: `${tooltip.y * 0.00003}px`,
+            transform: 'translate(10px, -10%)'
+          }}
         >
-          <CardContent className="flex-1 flex flex-col justify-between p-6">
-            <div className="space-y-1">
 
-              <CardTitle className="text-xl font-bold truncate">{tooltip.name}</CardTitle>
-            </div>
-
-            <div className="space-y-6">
-              <div className="space-y-1.5">
-                <div className="flex flex-col items-center justify-between">
-                  <h4 className="text-sm font-medium text-muted-foreground">Respondents</h4>
-                  <span className="text-5xl font-bold">{tooltip.responses}%</span>
-                </div>
-                <Progress value={tooltip.responses} className="h-2" color='bg-green-600' />
+          <CardContent className="flex-1 flex flex-col justify-between p-4">
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-xl font-bold truncate">{tooltip.name}</CardTitle>
+                {tooltip.countryData?.flag && (
+                  <img src={tooltip.countryData.flag} alt={`${tooltip.name} flag`} className="h-6 w-auto ml-2" />
+                )}
               </div>
+
+              {tooltip.countryData ? (
+                <div className="space-y-3">
+                  {tooltip.countryData.image && (
+                    <img
+                      src={tooltip.countryData.image}
+                      alt={tooltip.countryData.name}
+                      className="w-full object-cover rounded-md"
+                    />
+                  )}
+
+                  <div>
+                    <h4 className="font-medium text-gray-700">{tooltip.countryData.name}</h4>
+                    <p className="text-sm text-gray-600">
+                      <span className="font-medium">Sector:</span> {tooltip.countryData.sector}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      <span className="font-medium">Innovation:</span> {tooltip.countryData.innovation}
+                    </p>
+                    {tooltip.countryData.story && (
+                      <p className="text-xs text-gray-500 mt-2 line-clamp-4">
+                        {tooltip.countryData.story}
+                      </p>
+                    )}
+                    {tooltip.countryData.video && (
+                      <div className='flex items-center justify-between mt-2'>
+                        <a
+                          href={tooltip.countryData.video}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs bg-brand-blue text-white px-2 py-2 rounded-md inline-block"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Watch video
+                        </a>
+                        <Button variant='ghost' size='icon' className="text-xs text-white bg-red-700">
+                          <X className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-1.5">
+                  <div className="flex flex-col items-center justify-between">
+                    <h4 className="text-sm font-medium text-muted-foreground">Respondents</h4>
+                    <span className="text-5xl font-bold">{tooltip.responses}%</span>
+                  </div>
+                  <Progress value={tooltip.responses} className="h-2" color='bg-green-600' />
+                </div>
+              )}
             </div>
+
           </CardContent>
 
         </Card>
       )}
       <svg
-        onMouseLeave={handleMouseLeavePath}
+        onClick={handleMouseLeavePath}
         className='w-full h-full hover:cursor-pointer'
         height={height} // Use prop or default
         version="1.1"
@@ -104,7 +180,6 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
           data-name="Angola"
           data-id="AO"
           d="m 495.3,598.6 -36,-0.2 -4.3,1.7 -3.5,-0.3 -5.1,1.9 -1.1,2.7 6,8.7 2.4,9.3 3.6,13.4 -3.8,5.5 -0.6,2.8 2.9,8.3 3.1,8.4 3.6,5 0.6,7.8 -1.4,10.3 -4,6.1 -7.1,9.1 -2.9,5.6 -4.1,12.5 -0.8,5.9 -4.3,12.7 -1.9,12.2 1,8.7 5.9,-2.7 7.2,-2.3 7.8,0.4 7.1,6.3 1.9,-1 48.8,-0.6 8.2,6.6 29.1,2 22.4,-5.7 -7.6,-8.6 -7.8,-11.3 1.6,-44 25.3,0.1 -1,-4.7 2,-5.2 -2,-6.5 1.5,-6.7 -1.2,-4.3 -5.5,-0.8 -7.6,2 -5.3,-0.3 -3,1.3 0.9,-16.5 -3.9,-5.1 -0.8,-8.5 1.9,-8.4 -2.4,-5.3 -0.1,-8.7 -14.8,0.1 1.1,-5 -6.2,0.1 -0.7,2.4 -7.6,0.5 -3.1,8.1 -1.9,3.4 -6.7,-1.9 -4,1.9 -8.1,1.1 -4.6,-7.2 -2.7,-4.5 -3.5,-8.3 -2.9,-10.3 z m -47.4,-2.7 0.4,-6 2,-3.5 4.5,-2.9 -4.6,-4.8 -3.7,2.3 -5,6 3.3,10.4 3.1,-1.5 z"
-
         />
         {/* Burundi */}
         <path
@@ -151,7 +226,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         {/* Côte d'Ivoire */}
         <path
           onMouseEnter={handleMouseEnterPath}
-          // onMouseLeave={handleMouseLeavePath}
+
           id="CI"
           data-name="Côte d'Ivoire"
           data-responses={2}
@@ -197,7 +272,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         <path
           className='bg-brand-orange fill-brand-orange hover:bg-amber-300'
           onMouseEnter={handleMouseEnterPath}
-          // onMouseLeave={handleMouseLeavePath}
+
           id="DZ"
           data-name="Algeria"
           data-responses={21}
@@ -395,7 +470,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         <g onClick={() => console.log('Nigeria clicked')}>
           <path
             onMouseEnter={handleMouseEnterPath}
-            // onMouseLeave={handleMouseLeavePath}
+
             id="NG"
             data-name="Nigeria"
             data-responses={32}
@@ -406,6 +481,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         </g>
         {/* Rwanda */}
         <path
+          onMouseEnter={handleMouseEnterPath}
           id="RW"
           data-name="Rwanda"
           data-id="RW"
@@ -443,12 +519,12 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
         {/* Senegal */}
         <path
           onMouseEnter={handleMouseEnterPath}
-          // onMouseLeave={handleMouseLeavePath}
+
           id="SN"
           data-name="Senegal"
           data-responses={2}
           data-id="SN"
-          d="m 148.8,315.1 -7.8,-9.5 -7.2,-10.2 -7.9,-3.7 -5.7,-4 -6.8,0.1 -5.9,3 -6,-1.2 -4.2,4.5 -3,7.1 -6.1,9.7 -5.4,2.6 6,4.9 4.8,10.8 13.2,-0.4 2.8,-3.3 3.8,-0.2 4.7,3.4 3.8,0.1 4,-2.3 2.4,4 -5.3,3.1 -5.2,-0.3 -5.2,-2.9 -4.5,3.2 -2.2,0.1 -3,1.9 -11,-0.2 1.8,10.6 6.5,-2.3 4,0.5 3.3,-1.6 22.4,0.6 5.8,0.1 8.7,3.4 2.7,-0.3 0.9,-1.6 6.6,1.1 1.8,-0.7 0.6,-4.4 -1,-5.3 -4.5,-3.9 -2.3,-7.9 -0.4,-8.6 z"
+          d="m 148.8,315.1 -7.8,-9.5 -7.2,-10.2 -7.9,-3.7 -5.7,-4 -6.8,0.1 -5.9,3 -6,-1.2 -4.2,4.5 -3,7.1 -6.1,9.7 -5.4,2.6 6,4.9 4.8,10.8 13.2,-0.4 2.8,-3.3 3.8,-0.2 4.7,3.4 3.8,0.1 4,-2.3  2.4,4 -5.3,3.1 -5.2,-0.3 -5.2,-2.9 -4.5,3.2 -2.2,0.1 -3,1.9 -11,-0.2 1.8,10.6 6.5,-2.3 4,0.5 3.3,-1.6 22.4,0.6 5.8,0.1 8.7,3.4 2.7,-0.3 0.9,-1.6 6.6,1.1 1.8,-0.7 0.6,-4.4 -1,-5.3 -4.5,-3.9 -2.3,-7.9 -0.4,-8.6 z"
           className='fill-sky-200 hover:fill-amber-500 transition-colors duration-200 ease-in-out cursor-pointer'
         />
         {/* Sierra Leone */}
@@ -530,7 +606,6 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
           onMouseEnter={handleMouseEnterPath}
           id="ZM"
           data-name="Zambia"
-          data-responses={1}
           data-id="ZM"
           d="m 671.3,636 -4.1,-1.1 0.7,-3 -2.1,-0.6 -16.4,2.3 -3.3,1.7 -3.6,8.8 2.6,6.1 -2.5,16.4 -1.9,13.9 3.2,2.4 8.4,5.4 3.4,-2.5 0.6,14.9 -9.3,-0.1 -4.8,-7.6 -4.3,-5.9 -9.2,-1.9 -2.6,-7.3 -7.5,4.4 -9.7,-2 -3.9,-6.2 -7.7,-1.3 -5.7,0.3 -0.6,-4.3 -4.2,-0.3 1.2,4.3 -1.5,6.7 2,6.5 -2,5.2 1,4.7 -25.3,-0.1 -1.6,44 7.8,11.3 7.6,8.6 9.9,-3.1 7.8,0.8 4.7,3.1 0,1.2 2.2,1 13.4,1.5 3.8,1.6 4.1,-0.3 7,-9 10.9,-11.4 4.4,-1 1.7,-4.8 7,-5.5 9.3,-1.9 -0.8,-9.9 37.1,-11.4 -6.2,-3.6 4.1,-12.8 4,-4.8 -2,-11.5 2.7,-11.2 2.2,-3.8 -2.8,-11.7 -5.6,-6.2 -6.8,-4.1 -7.7,-2.4 -4.8,-2.3 -0.6,-0.4 0,0 0.9,2.3 -2,0.8 -2.6,-2.9 z"
           className='fill-sky-200 hover:fill-amber-500 transition-colors duration-200 ease-in-out cursor-pointer'

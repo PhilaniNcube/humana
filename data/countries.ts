@@ -39,7 +39,7 @@ export const countries: Country[] = [
     coordinates: { lat: 9.3077, lng: 2.3158 },
     emoji: '🇧🇯',
   },
-   {
+  {
     code: 'BW',
     name: 'Botswana',
     capital: 'Gaborone',
@@ -66,7 +66,7 @@ export const countries: Country[] = [
     coordinates: { lat: -3.3731, lng: 29.9189 },
     emoji: '🇧🇮',
   },
-   {
+  {
     code: 'CM',
     name: 'Cameroon',
     capital: 'Yaoundé',
@@ -102,7 +102,7 @@ export const countries: Country[] = [
     coordinates: { lat: 15.4542, lng: 18.7322 },
     emoji: '🇹🇩',
   },
-   {
+  {
     code: 'KM',
     name: 'Comoros',
     capital: 'Moroni',
@@ -174,7 +174,7 @@ export const countries: Country[] = [
     coordinates: { lat: 15.1794, lng: 39.7823 },
     emoji: '🇪🇷',
   },
-   {
+  {
     code: 'SZ',
     name: 'Eswatini',
     capital: 'Mbabane',
@@ -219,7 +219,7 @@ export const countries: Country[] = [
     coordinates: { lat: 7.9465, lng: -1.0232 },
     emoji: '🇬🇭',
   },
-   {
+  {
     code: 'GN',
     name: 'Guinea',
     capital: 'Conakry',
@@ -246,7 +246,7 @@ export const countries: Country[] = [
     coordinates: { lat: -0.0236, lng: 37.9062 },
     emoji: '🇰🇪',
   },
-   {
+  {
     code: 'LS',
     name: 'Lesotho',
     capital: 'Maseru',
@@ -300,7 +300,7 @@ export const countries: Country[] = [
     coordinates: { lat: 17.5707, lng: -3.9962 },
     emoji: '🇲🇱',
   },
-   {
+  {
     code: 'MR',
     name: 'Mauritania',
     capital: 'Nouakchott',
@@ -318,7 +318,7 @@ export const countries: Country[] = [
     coordinates: { lat: -20.3484, lng: 57.5522 },
     emoji: '🇲🇺',
   },
-   {
+  {
     code: 'MA',
     name: 'Morocco',
     capital: 'Rabat',
@@ -336,7 +336,7 @@ export const countries: Country[] = [
     coordinates: { lat: -18.6657, lng: 35.5296 },
     emoji: '🇲🇿',
   },
-   {
+  {
     code: 'NA',
     name: 'Namibia',
     capital: 'Windhoek',
@@ -372,7 +372,7 @@ export const countries: Country[] = [
     coordinates: { lat: -1.9403, lng: 29.8739 },
     emoji: '🇷🇼',
   },
-   {
+  {
     code: 'ST',
     name: 'Sao Tome and Principe',
     capital: 'São Tomé',
@@ -390,7 +390,7 @@ export const countries: Country[] = [
     coordinates: { lat: 14.4974, lng: -14.4524 },
     emoji: '🇸🇳',
   },
-   {
+  {
     code: 'SC',
     name: 'Seychelles',
     capital: 'Victoria',
@@ -508,3 +508,107 @@ export const countries: Country[] = [
     emoji: '🇿🇼',
   },
 ];
+
+
+export const mapData = [
+  {
+    name: "Raina Augustus",
+    sector: "Digital Technology",
+    innovation: "SILA-EB Platform For Digital Inclusion",
+    country: 'Namibia',
+    flag: "/images/namibia.png",
+    image: "/images/raina.png",
+    story: "Growing up in Namibia’s remote Rola community, I experienced firsthand the challenges of limited access to technology. This lack of connectivity meant young people in my area struggled to access vital information and opportunities. Determined to change this, I turned to TVET to gain the skills to address these gaps. Through my training in digital platform development, I created SILA-EB, a system designed to connect underserved communities with essential resources. TVET also gave me the confidence to involve women and youth in using these tools, inspiring them to embrace technology to improve their livelihoods.",
+    video: "https://www.youtube.com/watch?v=uWd8d6CfuyU",
+  },
+  {
+    name: 'Célio Monteiro José',
+    sector: 'Agriculture',
+    innovation: 'Climate-smart farming practices',
+    country: 'Mozambique',
+    flag: "/images/mozambique.png",
+    image: '/images/celio.png',
+    story: 'Growing up in Mozambique, I was deeply troubled by the effects of deforestation and environmental degradation in my community. I wanted to show that farming could be both productive and sustainable. Through TVET, I learned climate-smart agricultural techniques, which I now use to train local farmers in practices that preserve the environment while boosting yields. TVET also equipped me with the tools to develop solutions tailored to my community’s needs, enabling me to make a meaningful difference in their lives.',
+    video: 'https://www.youtube.com/watch?si=FcEIBLQp91-2TfHB&v=p_S4ltwYMeQ&feature=youtu.be',
+  },
+  {
+    name: 'Jonathan Shauri Kalibatha',
+    sector: 'Sustainable Manufacturing',
+    innovation: 'Re-banatex for eco-friendly textiles',
+    country: 'Rwanda',
+    flag: "/images/rwanda.png",
+    image: '/images/jonathan.png',
+    story: 'In Rwanda, I saw potential where others saw waste. Discarded banana stems, often left to rot, inspired me to explore how agricultural waste could be transformed into valuable products. Through TVET, I mastered fibre extraction and textile production, which enabled me to launch Re-banatex. This initiative produces eco-friendly textiles while creating additional income streams for local farmers. My education also connected me with mentors who supported me in scaling my efforts, turning my vision of sustainability into reality.',
+    video: 'https://www.youtube.com/watch?si=yTkZxtUelgJfaXWx&v=SukDvlF7HQs&feature=youtu.be',
+  },
+    {
+        name: 'Malak Abshir Omar',
+        sector: 'Electrical Engineering',
+        innovation: 'Solar-powered irrigation systems (based in Kenya’s Dadaab Camp)',
+        country: 'Somalia',
+        flag: "/images/somalia.png",
+        image: '/images/martha.png',
+        story: 'As a Somali refugee in Kenya’s Dadaab Camp, I faced limited access to education and technical training, leaving my community and me struggling to find solutions for everyday challenges. Despite these circumstances, I remained determined to make a difference. Through TVET, I learnt solar installation and electrical engineering skills, which enabled me to create solar-powered irrigation systems for sustainable farming in an arid environment. I also received support to train over 50 young people in the camp, ensuring the benefits of my learning reached others. TVET gave me not just knowledge but the confidence and resources to create meaningful change.',
+        video: 'https://www.youtube.com/watch?si=HvG9Ezfc8zEZuPMt&v=wQiHYtc0DyM&feature=youtu.be',
+      },
+      {
+        name: 'Huda Arbab',
+        sector: 'Cultural Heritage and Entrepreneurship',
+        innovation: 'Training women in traditional crafts and expanding global markets (based in Kenya’s Kakuma Camp)',
+        country: 'Sudan',
+        flag: "/images/south-sudan.png",
+        image: '/images/martha.png',
+        story: 'In Kenya’s Kakuma Refugee Camp, I saw talented women unable to earn a living due to a lack of market access and training. The skills were there, but the tools to turn them into income were not. Through TVET, I gained modern craft techniques and digital marketing skills, which enabled me to launch Craft for Life, an initiative that helps women transform their talents into marketable products now sold internationally.TVET also gave me the ability to teach financial literacy, empowering over 75 women to achieve economic independence.',
+        video: 'https://www.youtube.com/watch?si=ln3-5_tA34ZDHKMY&v=nMI2srP33fQ&feature=youtu.be',
+      },
+      {
+        name: 'Aline Niyomubyeyi',
+        sector: 'Technology and Innovation',
+        innovation: 'Public transport mobile app for efficiency and inclusion',
+        country: 'Rwanda',
+        flag: "/images/rwanda.png",
+        image: '/images/martha.png',
+        story: 'In Rwanda, I encountered gender stereotypes that made it difficult for women like me to succeed in technology. Many doubted my ability to lead or create innovative solutions, but I was determined to prove them wrong. TVET equipped me with automation and app development skills, enabling me to design Sot, a mobile app that improves public transport by letting commuters book tickets and track buses. My work has made transport more accessible, especially for communities with limited access to resources. More importantly, my success is encouraging other women to consider careers in technology.',
+        video: 'https://www.youtube.com/watch?v=JxFih7STgNA',
+      },
+        {
+        name: 'Naleh Befii Victory',
+        sector: 'Creative Arts',
+        innovation: 'EcoFusion sustainable fashion',
+        country: 'Ghana',
+        flag: "/images/ghana.png",
+        image: '/images/martha.png',
+        story: 'Achieving my dream of transforming African fashion required more than creativity—it demanded access to training and resources to bridge the gap between my vision and reality. Through TVET, I gained the technical knowledge to combine upcycled materials with traditional African techniques, leading to the creation of EcoFusion, a sustainable fashion brand that celebrates heritage while reducing environmental impact. Mentorship opportunities during my training helped me refine my approach and scale my work, including training young designers to adopt sustainable practices.',
+        video: 'https://www.youtube.com/watch?v=f4Q_EXCT_i8',
+      },
+      {
+        name: 'Retiana Tiyamike Phiri',
+        sector: 'Biomedical Engineering',
+        innovation: 'Wearable devices for pain management (Zambia)',
+        country: 'Zambia',
+        flag: "/images/zambia.png",
+        image: '/images/martha.png',
+        story: 'When I recognised the challenge of chronic pain in my community, I knew addressing it required both innovation and expertise. However, creating practical solutions was impossible without specialised training and mentorship. Through TVET, I developed the skills to design wearable medical devices that provide real-time pain management, reducing dependency on opioids. Hands-on training and mentorship enabled me to refine my designs and ensure their effectiveness. Today, my devices are improving lives and setting an example for young innovators across Africa.',
+        video: 'https://www.youtube.com/watch?v=6wWJamyTSSM',
+      },
+       {
+        name: 'Adaugo Felix',
+        sector: 'Sustainable Fashion',
+        innovation: 'Circular economy in design (Nigeria)',
+        country: 'Nigeria',
+        flag: "/images/nigeria.png",
+        image: '/images/martha.png',
+        story: 'I saw the growing issue of textile waste in my community as both a challenge and an opportunity. I believed that vocational skills could help me transform this waste into something valuable while also raising awareness about sustainability. Through TVET, I learned eco-conscious design techniques and business management skills, which allowed me to launch Araverme Wardrobe. This initiative repurposes discarded materials into clothing and home décor, blending environmental responsibility with economic opportunity. By training others in these techniques, I am building a network of artisans committed to sustainable practices.',
+        video: 'https://www.youtube.com/watch?v=pURv1n07QyM',
+      },
+      {
+        name: 'Ochieng Benedict Onyando',
+        sector: 'Fisheries',
+        innovation: 'Bamboo cages for fish farming',
+        country: 'Kenya',
+        flag: "/images/kenya.png",
+        image: '/images/martha.png',
+        story: 'Growing up near Lake Victoria, I was deeply concerned about the environmental damage caused by unsustainable fishing practices. I wanted to develop methods that were both environmentally friendly and economically viable, but I needed specialised training to make my ideas a reality. Through TVET, I gained expertise in aquaculture and sustainable materials, enabling me to introduce bamboo cages for fish farming. These cages have reduced environmental degradation while increasing fish yields, providing a reliable food source for my community. My success demonstrates how TVET can deliver the knowledge and skills needed to address pressing issues like food security and sustainability.',
+        video: 'https://www.youtube.com/watch?v=zz4qzDDu4sA',
+      }
+]
