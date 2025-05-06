@@ -23,7 +23,7 @@ const DesktopNavigation = () => {
             alt="logo"
             width={1037}
             height={240}
-            className="w-[120px] md:w-[180px] lg:w-[247px] object-cover grayscale-0"
+            className="w-[120px] md:w-[180px] lg:w-[247px] object-cover grayscale"
           />
           <span className="sr-only">AUDA-Nepad</span>
         </Link>
@@ -52,7 +52,7 @@ const DesktopNavigation = () => {
                     alt="logo"
                     width={1037}
                     height={240}
-                    className="w-[180px] object-cover grayscale-0"
+                    className="w-[180px] object-cover grayscale"
                   />
                 </Link>
                 <MobileLinks onClose={() => setIsOpen(false)} />
