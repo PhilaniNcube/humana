@@ -173,18 +173,14 @@ const YouthVoices = () => {
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
           The Africa Skills Revolution stands as a powerful testament to the potential of young people when they are empowered with the right tools, opportunities, and platforms to lead.    </p>
 
-          <ChevronDown 
-            className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' 
-          />
+        
 
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
           Discover the insights gathered from the advocacy campaign, the competition, and the youth survey — now forming a powerful foundation for action. These findings reflect the real experiences, challenges, and aspirations of young people across Africa.
         </p>
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>Their voices won’t be left behind, they’re being brought to the heart of the conversation on TVET and skills development. </p>
 
-       <ChevronDown 
-         className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' 
-       />
+    
 
         <div className='w-full grid lg:grid-cols-2 gap-10  mx-auto'>
           <div className='flex flex-col justify-center'>
@@ -235,9 +231,7 @@ const YouthVoices = () => {
             className="w-full object-cover object-bottom mt-10 self-end"
           />
         </div>
-      <ChevronDown 
-        className='text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out' 
-      />
+     
         <div>
           <h4 className='text-center uppercase text-6xl mt-16 font-bold'>Stories</h4>
           <div className='h-1 rounded-full max-w-3xl mx-auto bg-brand-orange gap-6 my-10' />

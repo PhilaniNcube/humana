@@ -9,6 +9,7 @@ import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import Africa from './africa';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import SurveyDashboard from './survey-dashboard';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
@@ -248,8 +249,14 @@ const Initiative = () => {
 
           <div className='flex items-start justify-center space-x-10'>
             <Africa />
+
           </div>
         </div>
+
+      </div>
+      <div className="container mx-auto py-8 px-4 lg:px-[60px]">
+        <h3 className='text-5xl text-center font-bold text-brand-blue uppercase'>Survey Results</h3>
+        <SurveyDashboard />
       </div>
     </section>
   )
