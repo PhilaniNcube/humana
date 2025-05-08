@@ -7,11 +7,34 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import Africa from './africa';
-import { ChevronDown } from 'lucide-react';
+import { ArrowBigUpDashIcon, ChevronDown, Link } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import SurveyDashboard from './survey-dashboard';
+import { title } from 'process';
+import { text } from 'stream/consumers';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
+
+const initiativeCards = [
+  {
+    title: 'Engage',
+    description: 'Dialogue and Youth-Centred Advocacy Campaign',
+    icon: <ArrowBigUpDashIcon className='w-20 h-20 bg-brand-green p-6 rounded-md' />,
+    text: 'The Campaign engaged young people across Africa to reshape perceptions of TVET by sharing accurate, data-driven insights and showcasing its role in building skills, advancing careers, and driving societal progress.'
+  },
+  {
+    title: 'Elevate',
+    description: 'The 2024 Africa Skills Revolution Competition',
+    icon: <ArrowBigUpDashIcon className='w-20 h-20 bg-brand-green p-6 rounded-md' />,
+    text: 'The competition was launched to celebrate youth innovation and spotlight how African TVET graduates are driving change in their communities. Open to young graduates across the continent, it drew 490 entries from 36 countries, showcasing youth-led solutions in agriculture, health, tech, fashion, and more.'
+  },
+  {
+    title: 'Connect',
+    description: 'The “Make Yourself Heard” Survey',
+    icon: <Link className='w-20 h-20 bg-brand-green p-6 rounded-md' />,
+    text: 'The survey centred youth perspectives in TVET policy discussions across Africa, capturing their motivations, experiences, challenges, and aspirations as students or graduates of TVET institutions.'
+  }
+]
 
 
 const Initiative = () => {
@@ -57,16 +80,39 @@ const Initiative = () => {
 
 
 
-        <div className='lg:columns-3 mt-6 lg:mt-12'>
-          <p className='text-xl  mx-auto font-light  '>
-            AUDA-NEPAD and Humana People to People launched the campaign to spotlight TVET as both a path to employment and a catalyst for inclusive growth, innovation, and youth-led development.
-          </p>
-          <p className='text-xl  mx-auto font-light  '>
-            This pan-African initiative unfolded through months of virtual events, youth dialogues, storytelling, data collection, and a continent-wide competition.
-          </p>
-          <p className='text-xl  mx-auto font-light  '>
-            We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
-          </p>
+        <div className='mt-6 lg:mt-12'>
+          <div className='grid md:grid-cols-2 lg:max-w-5xl mx-auto gap-8'>
+            <p className='text-xl  mx-auto font-light  '>
+              AUDA-NEPAD and Humana People to People launched the campaign to spotlight TVET as both a path to employment and a catalyst for inclusive growth, innovation, and youth-led development.
+            </p>
+            <svg className='rotate-45' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
+
+              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
+
+            </svg>
+          </div>
+          <div className='grid md:grid-cols-2 lg:max-w-5xl mx-auto gap-8'>
+            <svg className='rotate-45' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
+
+              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
+
+            </svg>
+            <p className='text-xl  mx-auto font-light  '>
+              This pan-African initiative unfolded through months of virtual events, youth dialogues, storytelling, data collection, and a continent-wide competition.
+            </p>
+
+            <p className='text-xl  mx-auto font-light  '>
+              We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
+            </p>
+            <svg className='rotate-45' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
+
+              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
+
+            </svg>
+          </div>
 
 
 
@@ -87,7 +133,7 @@ const Initiative = () => {
           </p> */}
         </div>
 
-        <div className='mt-16'>
+        {/* <div className='mt-16'>
           <div className='grid grid-cols-2 lg:grid-cols-5 gap-6 relative'>
             <div
               ref={dashedLineRef}
@@ -197,66 +243,32 @@ const Initiative = () => {
             </div>
           </div>
 
-        </div>
-      </div>
-      <div className='mt-16 bg-brand-blue px-4 lg:px-[40px] py-12'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 container mx-auto'>
-
-
-          <div className='flex items-start space-x-10'>
-            <div className='col-span-1 flex justify-center'>
-              <svg className='min-w-[240px]' width="272" height="308" viewBox="0 0 272 308" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clipPath="url(#clip0_46_255)">
-                  <path d="M183.509 69.2193C191.818 88.7583 198.463 101.092 210.88 118.41C219.149 129.938 227.458 141.625 239.122 150.191C267.616 171.145 264.723 143.158 259.756 123.064C251.381 89.1285 220.999 35.35 192.307 14.8592C162.506 -6.41153 170.63 32.5739 175.267 48.874C177.407 56.3961 180.643 62.4508 183.523 69.2193M271.235 136.958V151.473C265.053 172.599 248.514 168.646 234.208 157.925C203.099 134.605 160.815 60.8115 161.766 21.6543C162.229 2.73662 174.976 -5.63156 191.792 4.07183C228.066 24.9857 253.362 77.8255 266.612 116.19L271.222 136.958H271.235Z" fill="#335353" />
-                  <path d="M234.222 157.925C208.291 157.184 182.598 161.388 157.579 167.826C150.379 169.677 142.44 171.647 136.826 174.859C132.256 177.477 111.332 184.51 105.44 186.149C105.07 186.255 99.5485 186.109 98.2011 186.956C85.9293 171.568 74.384 154.792 67.6206 136.152C90.5263 124.333 115.347 91.4156 130.248 70.2902C141.384 54.4925 151.119 37.7561 161.779 21.6543C160.828 60.8116 203.113 134.618 234.222 157.925Z" fill="#B1E0E7" />
-                  <path d="M210.88 118.411C225.173 107.491 225.569 86.0088 211.699 74.4546C203.271 67.4349 193.892 67.4217 183.522 69.2196C180.643 62.451 177.393 56.3963 175.266 48.8742C170.63 32.5741 162.519 -6.41129 192.307 14.8595C221.012 35.3503 251.381 89.1287 259.756 123.064C264.723 143.158 267.616 171.132 239.122 150.178C227.458 141.612 219.149 129.925 210.88 118.397" fill="#0AB3CA" />
-                  <path d="M210.88 118.41C198.463 101.092 191.818 88.7581 183.509 69.2191C193.879 67.4212 203.271 67.4344 211.686 74.4542C225.569 86.0083 225.16 107.491 210.867 118.41" fill="#E97927" />
-                  <path d="M113.577 307.957C176.304 307.957 227.154 257.067 227.154 194.292C227.154 131.517 176.304 80.6279 113.577 80.6279C50.8502 80.6279 0 131.517 0 194.292C0 257.067 50.8502 307.957 113.577 307.957Z" fill="#E6E7E8" />
-                  <mask id="mask0_46_255" maskUnits="userSpaceOnUse" x="0" y="80" width="228" height="228">
-                    <path d="M113.577 307.957C176.304 307.957 227.154 257.067 227.154 194.292C227.154 131.517 176.304 80.6279 113.577 80.6279C50.8502 80.6279 0 131.517 0 194.292C0 257.067 50.8502 307.957 113.577 307.957Z" fill="white" />
-                  </mask>
-                  <g mask="url(#mask0_46_255)">
-                    <path d="M234.221 157.924C208.29 157.184 182.597 161.388 157.578 167.826C150.379 169.677 142.44 171.646 136.826 174.859C132.255 177.476 111.331 184.509 105.44 186.149C105.07 186.254 99.548 186.109 98.2006 186.955C85.9288 171.567 74.3835 154.791 67.6201 136.151C90.5258 124.333 115.347 91.4151 130.247 70.2897C141.383 54.492 151.119 37.7556 161.779 21.6538C160.828 60.8111 203.112 134.618 234.221 157.924Z" fill="#B1E0E7" />
-                    <path d="M35.415 276.85V339.354L106.127 257.364L82.6134 233.78L35.415 276.85Z" fill="#E97927" />
-                    <path d="M142.454 186.955C148.451 186.876 146.813 190.67 148.53 193.366C149.111 194.292 150.868 194.781 151.753 195.786C153.84 198.139 157.896 206.005 159.547 207.736C160.287 208.516 162.202 208.331 163.298 210.01C164.884 212.43 163.629 215.245 164.184 216.792C155.267 222.186 147.064 228.954 138.821 235.353C137.843 236.106 137.315 237.362 136.813 237.746C131.278 242.055 116.14 253.186 109.205 252.116C105.955 251.613 92.2566 235.525 88.0824 232.881C86.4179 229.126 92.8907 222.292 94.4759 219.132C95.9818 216.118 96.6951 212.35 98.3199 209.27C100.592 204.934 104.832 199.686 108.637 196.632C108.676 196.711 109.799 196.473 110.248 197.213C111.569 199.395 114.396 206.11 116.932 205.41L140.089 187.391C140.816 186.889 141.608 186.968 142.44 186.955" fill="#7A5841" />
-                    <path d="M67.6073 136.151C74.3706 154.791 85.9159 171.567 98.1878 186.955C98.0821 187.021 98.1217 188.462 96.9064 189.255C77.1975 202.105 63.5519 206.824 50.0515 183.161C45.5338 175.229 38.4534 157.329 45.4414 149.82C51.4386 143.369 60.157 139.985 67.6073 136.138" fill="#0AB3CA" />
-                    <path d="M164.197 216.779C164.342 217.202 169.097 221.895 170.035 223.429C171.528 225.888 173.932 230.092 172.651 232.881C171.33 235.723 148.873 249.34 146.099 249.075C143.986 248.877 139.244 239.451 136.839 237.746C137.341 237.349 137.883 236.107 138.847 235.34C147.09 228.942 155.293 222.173 164.21 216.779" fill="#E97927" />
-                  </g>
-                </g>
-                <defs>
-                  <clipPath id="clip0_46_255">
-                    <rect width="271.235" height="307.944" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-            <div className='text-white'>
-              <h3 className={cn(bebasNeue.className, 'text-6xl')}>A generation <br />
-                ready to lead</h3>
-              <h4 className='text-brand-green text-2xl font-bold'>
-                it&apos;s time to put their voices
-                at the center.
-              </h4>
-              <p className='mt-8'><strong>Explore the voices behind the Africa Skills Revolution.</strong></p>
-              <p className='mt-6'>
-
-
-                Use the map to discover where our youth survey respondents and competition winners come from. From rural communities to refugee camps, these young people are reimagining vocational education — and using their skills to respond to Africa’s evolving challenges and opportunities.
-
-              </p>
-            </div>
-          </div>
-
-          <div className='flex items-start justify-center space-x-10'>
-            <Africa />
+        </div> */}
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {initiativeCards.map((card, index) => (
+              <div
+                key={index}
+                className="flex flex-col h-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
+              >
+                <div className="p-6">
+                  <div className="flex justify-center mb-6">
+                    <div className="w-20 h-20 bg-emerald-600 p-6 rounded-md flex items-center justify-center">
+                      {card.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-center mb-2">{card.title}</h3>
+                  <p className="text-gray-600 text-center mb-4">{card.description}</p>
+                  <div className="border-t border-gray-200 pt-4">
+                    <p className="text-gray-700">{card.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-
       </div>
-      <div className="container mx-auto py-8 px-4 lg:px-[60px]">
-        <h3 className='text-5xl text-center font-bold text-brand-blue uppercase'>Survey Results</h3>
-        <SurveyDashboard />
-      </div>
+    
     </section>
   )
 }

@@ -76,7 +76,7 @@ const DesktopLinks = () => {
           key={link.name}
           href={link.href}
           className={`
-            text-[16px] lg:text-lg transition-all uppercase duration-300 px-3 py-1 rounded-md
+            text-[14px] lg:text-[16px] transition-all uppercase duration-300 px-3 py-1 rounded-md
             ${
               activeSection === link.id
                 ? "bg-brand-orange text-white rounded-none"

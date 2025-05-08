@@ -52,8 +52,8 @@
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
   --brand-orange: hsl(31, 90%, 54%);
-  --brand-blue:hsl(186, 100%, 40%);
-  --brand-green: hsl(136, 100%, 20%);
+  --brand-blue:#00b8cc;
+  --brand-green: #00661b;
   --brand-red: hsl(0, 100%, 47%);              
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.147 0.004 49.25);

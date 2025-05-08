@@ -21,10 +21,10 @@ export default function SurveyDashboard() {
             value="demographics"
             className="data-[state=active]:bg-brand-blue data-[state=active]:text-white"
           >
-            Demographics
+            Who Responded
           </TabsTrigger>
           <TabsTrigger value="location" className="data-[state=active]:bg-brand-blue data-[state=active]:text-white">
-            Location
+            Where They Are From
           </TabsTrigger>
           <TabsTrigger value="education" className="data-[state=active]:bg-brand-blue data-[state=active]:text-white">
             Education

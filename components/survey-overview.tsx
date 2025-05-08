@@ -5,8 +5,8 @@ export default function SurveyOverview() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Survey Overview</CardTitle>
-        <CardDescription>Key statistics from the survey</CardDescription>
+        <CardTitle className="sr-only">Survey Overview</CardTitle>
+        <CardDescription className="sr-only">Key statistics from the survey</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

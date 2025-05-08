@@ -23,7 +23,7 @@ const DesktopNavigation = () => {
             alt="logo"
             width={1037}
             height={240}
-            className="w-[120px] md:w-[180px] lg:w-[247px] object-cover grayscale"
+            className="w-[120px] md:w-[180px] lg:w-[247px] object-cover"
           />
           <span className="sr-only">AUDA-Nepad</span>
         </Link>
