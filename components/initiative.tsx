@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import Africa from './africa';
-import { ArrowBigUpDashIcon, ChevronDown, Link } from 'lucide-react';
+import { ArrowBigUpDashIcon, ChevronDown, EarIcon, Link } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import SurveyDashboard from './survey-dashboard';
 import { title } from 'process';
@@ -19,19 +19,19 @@ const initiativeCards = [
   {
     title: 'Engage',
     description: 'Dialogue and Youth-Centred Advocacy Campaign',
-    icon: <ArrowBigUpDashIcon className='w-20 h-20 bg-brand-green p-6 rounded-md' />,
+    icon: <EarIcon className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
     text: 'The Campaign engaged young people across Africa to reshape perceptions of TVET by sharing accurate, data-driven insights and showcasing its role in building skills, advancing careers, and driving societal progress.'
   },
   {
     title: 'Elevate',
     description: 'The 2024 Africa Skills Revolution Competition',
-    icon: <ArrowBigUpDashIcon className='w-20 h-20 bg-brand-green p-6 rounded-md' />,
+    icon: <ArrowBigUpDashIcon className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
     text: 'The competition was launched to celebrate youth innovation and spotlight how African TVET graduates are driving change in their communities. Open to young graduates across the continent, it drew 490 entries from 36 countries, showcasing youth-led solutions in agriculture, health, tech, fashion, and more.'
   },
   {
     title: 'Connect',
     description: 'The “Make Yourself Heard” Survey',
-    icon: <Link className='w-20 h-20 bg-brand-green p-6 rounded-md' />,
+    icon: <Link className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
     text: 'The survey centred youth perspectives in TVET policy discussions across Africa, capturing their motivations, experiences, challenges, and aspirations as students or graduates of TVET institutions.'
   }
 ]
@@ -253,7 +253,7 @@ const Initiative = () => {
               >
                 <div className="p-6">
                   <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 bg-emerald-600 p-6 rounded-md flex items-center justify-center">
+                    <div className="rounded-md flex items-center justify-center">
                       {card.icon}
                     </div>
                   </div>

@@ -428,7 +428,7 @@ const YouthVoices = () => {
                       </div>
                     )}
                   </div>
-                  <div className='grid lg:grid-cols-3 gap-4'>
+                  <div className='flex flex-wrap justify-between gap-5'>
                     {item.stories.map((story) => (
                       <StoryCard key={story.name} story={story} />
                     ))}

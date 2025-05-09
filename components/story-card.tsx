@@ -80,7 +80,7 @@ const StoryCard: React.FC<{ story: StoryProps }> = ({ story }) => {
           animation: mobile-card-hint 1.5s ease-in-out;
         }
       `}</style>    <div
-        className="story-card-container h-[500px] w-full group"
+        className="story-card-container h-[500px] w-full sm:w-1/2 lg:w-3/10 flex-shrink-0 flex-grow-0 group"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onClick={() => isMobile && setManualFlip(!manualFlip)}
