@@ -12,16 +12,19 @@ interface PolicyAreaProps {
   toggleOpen: () => void
 }
 
-function PolicyArea({ title, summary, points, isOpen, toggleOpen }: PolicyAreaProps) {
+function PolicyArea({ title, summary, points, isOpen, toggleOpen, icon }: PolicyAreaProps & { icon: string }) {
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b-3 border-gray-200 hover:border-brand-green transition-colors duration-300">
       <button
         onClick={toggleOpen}
         className="flex w-full items-center justify-between py-4 text-left focus:outline-none"
       >
         <div>
-          <h3 className="text-xl font-semibold text-brand-orange">{title}</h3>
-          <p className="">{summary}</p>
+          <div className="flex items-center gap-2 mb-2">
+            <img src={icon} alt={`${title} icon`} className="h-12 w-12" />
+            <h3 className="text-3xl font-semibold text-brand-blue">{title}</h3>
+          </div>
+          <p className="text-brand-green">{summary}</p>
         </div>
         <ChevronDown className={cn("h-5 w-5 text-orange-500 transition-transform", isOpen && "rotate-180")} />
       </button>
@@ -52,6 +55,7 @@ export default function YouthPolicyCall() {
   const policyAreas = [
     {
       title: "Expand Access",
+      icon: '/images/svg/expand-access.svg',
       summary: "Increase accessibility of TVET education for all youth",
       points: [
         "Invest in new TVET centers in rural areas with modern facilities and technology.",
@@ -61,6 +65,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Modernise and Ensure Curriculum Relevance",
+      icon: '/images/svg/modernise.svg',
       summary: "Align training with current market needs and future trends",
       points: [
         "Revise curricula in collaboration with industry stakeholders to meet market needs (e.g., renewable energy, healthcare, digital tech).",
@@ -71,6 +76,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Promote Entrepreneurship",
+      icon: '/images/svg/promote-entrepreneurship.svg',
       summary: "Equip youth with business skills and startup support",
       points: [
         "Introduce entrepreneurship modules in TVET curricula, including business planning and financial management.",
@@ -80,6 +86,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Promote Gender Inclusivity",
+      icon: '/images/svg/gender.svg',
       summary: "Create equal opportunities across all genders and backgrounds",
       points: [
         "Encourage women in male-dominated fields (e.g., STEM) through outreach campaigns and financial incentives.",
@@ -90,6 +97,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Leverage Digital Platforms",
+      icon: '/images/svg/leverage.svg',
       summary: "Utilize technology to expand reach and enhance learning",
       points: [
         "Develop online and hybrid TVET programs to accommodate remote learners.",
@@ -99,6 +107,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Amplify Youth Voices",
+      icon: '/images/svg/amplify.svg',
       summary: "Ensure youth participation in policy and program development",
       points: [
         "Establish youth advisory councils to incorporate young people's perspectives into TVET policy and curriculum.",
@@ -107,6 +116,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Strengthen Partnerships",
+      icon: '/images/svg/strengthen.svg',
       summary: "Foster collaboration between education, government and industry",
       points: [
         "Create collaborations between governments, private sector, and educational institutions to co-create TVET programs.",
@@ -117,6 +127,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Reshape TVET Narratives",
+      icon: '/images/svg/reshape.svg',
       summary: "Change perceptions about technical and vocational education",
       points: [
         "Launch nationwide campaigns highlighting diverse success stories of TVET graduates.",
@@ -126,6 +137,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Align with Agenda 2063",
+      icon: '/images/svg/align.svg',
       summary: "Connect TVET programs with Africa's development goals",
       points: [
         "Integrate climate-smart and sustainable practices like renewable energy and sustainable agriculture into TVET training.",
@@ -136,7 +148,7 @@ export default function YouthPolicyCall() {
   ]
 
   return (
-    <div id="policymakers" className="container mx-auto py-12 px-4 lg:px-[40px]">
+    <div id="policymakers" className="container mx-auto pt-12 pb-20 px-4 lg:px-[40px]">
       <h2 className="text-4xl lg:text-5xl text-center font-bold text-brand-blue uppercase">YOUTH CALL TO POLICYMAKERS</h2>
       <svg className="text-center w-fit mx-auto mt-4" width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="112" height="9" fill="#F38E22" />
@@ -157,14 +169,13 @@ export default function YouthPolicyCall() {
               points={area.points}
               isOpen={openSection === index}
               toggleOpen={() => toggleSection(index)}
+              icon={area.icon}
             />
           ))}
         </div>
       </div>
 
-      <ChevronDown
-        className="text-brand-orange w-16 h-16 duration-500 mx-auto mt-12 animate-bounce ease-in-out"
-      />
+    
     </div>
   )
 }

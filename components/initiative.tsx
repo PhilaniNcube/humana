@@ -85,7 +85,7 @@ const Initiative = () => {
             <p className='text-xl  mx-auto font-light  '>
               AUDA-NEPAD and Humana People to People launched the campaign to spotlight TVET as both a path to employment and a catalyst for inclusive growth, innovation, and youth-led development.
             </p>
-            <svg className='rotate-45' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className='rotate-45 translate-x-44 lg:-translate-y-16' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
 
               <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
@@ -93,7 +93,7 @@ const Initiative = () => {
             </svg>
           </div>
           <div className='grid md:grid-cols-2 lg:max-w-5xl mx-auto gap-8'>
-            <svg className='rotate-45' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className='rotate-45 lg:-translate-y-16 ' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
 
               <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
@@ -106,7 +106,7 @@ const Initiative = () => {
             <p className='text-xl  mx-auto font-light  '>
               We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
             </p>
-            <svg className='rotate-45' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className='rotate-45 translate-x-44 -translate-y-16 hidden lg:block' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
 
               <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />

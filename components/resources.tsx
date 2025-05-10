@@ -18,16 +18,16 @@ interface ResourceCardProps {
   description: string
   quote?: string
   downloadUrl?: string
+  imageSrc: string
 }
 
-function ResourceCard({ icon, title, description, quote, downloadUrl }: ResourceCardProps) {
+function ResourceCard({ icon, title, description, quote, downloadUrl, imageSrc }: ResourceCardProps) {
   return (
-    <Card className="resource-card h-full flex flex-col">
+    <Card className="resource-card h-full flex flex-col pt-0">
+      <img src={imageSrc} alt={`${title} image`} className="h-52 w-full object-cover" />
       <CardHeader>
-        <div className="flex items-center gap-3 mb-2">
-          {icon}
-          <CardTitle className="text-xl text-brand-blue">{title}</CardTitle>
-        </div>
+        <CardTitle className="text-xl text-brand-blue">{title}</CardTitle>
+
         <CardDescription className="text-base">{description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
@@ -122,7 +122,7 @@ export default function YouthResources() {
         <svg className='text-center w-fit mx-auto mt-4 mb-8' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
-        <p className="text-center text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
           Want to know more? Download here the full reports of the Africa Skills Revolution Campaign. Each resource
           captures critical insights, youth-led recommendations, and powerful evidence to inform policy, practice, and
           future programming.
@@ -132,6 +132,7 @@ export default function YouthResources() {
           ref={cardsRef}>
           <ResourceCard
             icon={<FileText className="h-8 w-8 text-brand-orange" />}
+            imageSrc="/images/skills-revolution.png"
             title="Hearing the Voices of Young People"
             description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Campaign. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change."
             quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
@@ -140,6 +141,7 @@ export default function YouthResources() {
 
           <ResourceCard
             icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
+            imageSrc="/images/call-to-policy-makers.png"
             title="Youth Call to Policymakers"
             description="This policy brief captures the voices of over 350 young Africans who shared their insights through the Make Yourself Heard survey. It highlights what youth want from TVET: education that is inclusive, practical, and aligned with the realities of their lives and future industries."
             quote="Put us, the youth, at the centre of the TVET revolution in Africa."
@@ -148,6 +150,7 @@ export default function YouthResources() {
 
           <ResourceCard
             icon={<BarChart className="h-8 w-8 text-brand-orange" />}
+            imageSrc="/images/tvet-in-africa.png"
             title="How the Youth View TVET in Africa"
             description="This one-pager offers a snapshot of the Make Yourself Heard survey findings — spotlighting the priorities, challenges, and aspirations of young Africans in TVET. It captures where participants came from, what skills they value most, and the barriers they face."
             quote="Explore the numbers. Understand the need. Join the revolution."

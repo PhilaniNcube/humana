@@ -4,7 +4,7 @@ import { bebasNeue } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { ChevronDown, GitGraph } from 'lucide-react'
+import { ChevronDown, GitGraph, icons } from 'lucide-react'
 import Link from 'next/link'
 import StoryCard, { StoryProps } from './story-card'
 import { useIsMobile } from '@/hooks/use-mobile'
@@ -35,6 +35,11 @@ const youthVoices = [
       value: 80,
       label: 'socioeconomic development'
     },
+    ],
+    icons: [
+      '/images/stats/42_relevant_job.svg',
+      '/images/stats/72_per_relevant.svg',
+      '/images/stats/41_practical_training.svg',
     ],
     stats: [
       '42% of young people chose TVET to secure a relevant job, and 41% sought more practical training',
@@ -103,6 +108,11 @@ const youthVoices = [
       },
 
     ],
+    icons: [
+      '/images/stats/72_financial_barriers.svg',
+      '/images/stats/54_lack_of_information.svg',
+      '/images/stats/38_rural_accessibility.svg',
+    ],
     stats: [
       '72% of youth cite financial constraints as the top barrier to accessing TVET programmes',
       '54% point to a lack of information, and 38% to poor rural accessibility',
@@ -158,6 +168,11 @@ const youthVoices = [
         label: 'networking opportunities'
       }
     ],
+    icons: [
+      '/images/stats/46_financial_support.svg',
+      '/images/stats/job_placement.svg',
+      '/images/stats/networking_opportunities.svg',
+    ],
     stats: [
       '46% say financial support or scholarships are the most important enabler of career success after graduating',
       'This is followed by job placement assistance and internships (19%) and networking opportunities (16%).'
@@ -200,6 +215,9 @@ const youthVoices = [
         value: 62,
         label: 'leads to likley career success'
       }
+    ],
+    icons: [
+      '/images/stats/practical_experience.png',
     ],
     stats: [
       '86% of youth would recommend TVET to their peers',
@@ -307,16 +325,36 @@ const YouthVoices = () => {
 
 
         <div className='lg:px-[40px] px-4'>
+          <div className='grid md:grid-cols-2 lg:max-w-5xl mx-auto gap-x-8'>
+            <p className='text-xl  mx-auto font-light'>
+              The Africa Skills Revolution stands as a powerful testament to the potential of young people when they are empowered with the right tools, opportunities, and platforms to lead.</p>
 
-          <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
-            The Africa Skills Revolution stands as a powerful testament to the potential of young people when they are empowered with the right tools, opportunities, and platforms to lead.    </p>
+            <svg className='rotate-45 translate-x-44 ' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
 
+              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
 
+            </svg>
 
-          <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
-            Discover the insights gathered from the advocacy campaign, the competition, and the youth survey — now forming a powerful foundation for action. These findings reflect the real experiences, challenges, and aspirations of young people across Africa.
-          </p>
-          <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>Their voices won’t be left behind, they’re being brought to the heart of the conversation on TVET and skills development. </p>
+            <svg className='rotate-45 lg:-translate-y-16 ' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
+
+              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
+
+            </svg>
+
+            <p className='text-xl  mx-auto font-light'>
+              Discover the insights gathered from the advocacy campaign, the competition, and the youth survey — now forming a powerful foundation for action. These findings reflect the real experiences, challenges, and aspirations of young people across Africa.
+            </p>
+
+            <p className='text-xl  mx-auto font-light'>Their voices won’t be left behind, they’re being brought to the heart of the conversation on TVET and skills development. </p>
+            <svg className='rotate-45 translate-x-44 lg:-translate-y-16' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
+
+              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
+
+            </svg>
+          </div>
 
 
           {/* 
@@ -371,7 +409,7 @@ const YouthVoices = () => {
         </div>
       */}
           <div>
-            <h4 className='text-center uppercase text-brand-blue text-6xl mt-16 font-bold'>Stories</h4>
+            <h4 className='text-center uppercase text-brand-blue text-6xl font-bold'>Stories</h4>
             {/* <div className='w-full grid lg:grid-cols-2 gap-10  mx-auto'>
             <div className='flex flex-col justify-center'>
               <h3 className={cn(bebasNeue.className, 'text-brand-blue text-6xl text-balance')}>PERCEPTIONS AND MOTIVATIONS BEHIND TVET</h3>
@@ -402,14 +440,10 @@ const YouthVoices = () => {
                   <div className='mt-10 mb-12'>
                     {item.data && item.data.length > 0 ? (
                       <Card className="p-6 shadow-md border-t-4 border-t-brand-orange">
-                        <DataVisualization
-                          data={item.data}
-                          title="Key Statistics"
-                        />
-                        <div className='mt-6 border-t pt-4'>
-                          <h5 className="font-medium text-gray-800 mb-2">Key Insights:</h5>
-                          {item.stats && item.stats.map((stat, index) => (
-                            <p key={index} className='text-sm text-gray-600 mt-2'>• {stat}</p>
+                       
+                        <div className='mt-6 flex flex-row gap-4 justify-center items-center'>                     
+                          {item.icons && item.icons.map((stat, index) => (
+                            <img key={index} src={stat} alt={`Stat ${index}`} className="max-w-sm mx-auto mb-2" />
                           ))}
                         </div>
                       </Card>
@@ -428,7 +462,7 @@ const YouthVoices = () => {
                       </div>
                     )}
                   </div>
-                  <div className='flex flex-wrap justify-center gap-5'>
+                  <div className='flex flex-wrap justify-center gap-5 pb-16'>
                     {item.stories.map((story) => (
                       <StoryCard key={story.name} story={story} />
                     ))}

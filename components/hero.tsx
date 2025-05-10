@@ -30,7 +30,7 @@ const Hero = () => {
             alt="hero"
             width={2480}
             height={1469}
-            className="w-[75vw] max-w-[1100px] mx-auto object-cover object-bottom"
+            className="w-[82vw] max-w-[1200px] mx-auto object-cover object-bottom"
           />
         </div>
 
