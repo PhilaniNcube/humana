@@ -2,14 +2,9 @@
 
 import { bebasNeue } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import React, { useState } from 'react'
-import { ChevronDown, GitGraph, icons } from 'lucide-react'
-import Link from 'next/link'
-import StoryCard, { StoryProps } from './story-card'
-import { useIsMobile } from '@/hooks/use-mobile'
+import React from 'react'
+import StoryCard from './story-card'
 import { Card, CardContent } from './ui/card'
-import DataVisualization from './data-visualization'
 import SurveyDashboard from './survey-dashboard'
 import Africa from './africa'
 
