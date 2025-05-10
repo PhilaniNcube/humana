@@ -2,13 +2,16 @@
 
 import { bebasNeue } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import React from 'react'
+import React, { useRef } from 'react' // Added useRef
 import StoryCard from './story-card'
 import { Card, CardContent } from './ui/card'
 import SurveyDashboard from './survey-dashboard'
 import Africa from './africa'
+import { useGSAP } from '@gsap/react' // Added useGSAP
+import gsap from 'gsap' // Added gsap
+import { ScrollTrigger } from 'gsap/ScrollTrigger' // Added ScrollTrigger
 
-
+gsap.registerPlugin(useGSAP, ScrollTrigger); // Register ScrollTrigger
 
 const youthVoices = [
   {
@@ -250,6 +253,39 @@ const youthVoices = [
 
 
 const YouthVoices = () => {
+  const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
+  iconRefs.current = []; // Initialize as an empty array
+
+  const addToRefs = (el: HTMLDivElement | null) => {
+    if (el && !iconRefs.current.includes(el)) {
+      iconRefs.current.push(el);
+    }
+  };
+
+  useGSAP(() => {
+    iconRefs.current.forEach((iconContainer) => {
+      if (iconContainer) {
+        const icons = iconContainer.querySelectorAll('img');
+        gsap.fromTo(
+          icons,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: iconContainer,
+              start: 'top 80%', // When the top of the trigger hits 80% of the viewport height
+              end: 'bottom 20%', // When the bottom of the trigger hits 20% of the viewport height
+              toggleActions: 'play reverse play reverse', // Play on enter, reverse on leave, play on re-enter, reverse on re-leave
+            },
+          }
+        );
+      }
+    });
+  }, { scope: iconRefs });
+
   return (
     <section id='youth' className='mb-16'>
       <div className='pt-20 container mx-auto'>
@@ -436,7 +472,7 @@ const YouthVoices = () => {
                     {item.data && item.data.length > 0 ? (
                       <Card className="p-6 shadow-md border-t-4 border-t-brand-orange">
                        
-                        <div className='mt-6 flex flex-row gap-4 justify-center items-center'>                     
+                        <div ref={addToRefs} className='mt-6 flex flex-row gap-4 justify-center items-center'>                     
                           {item.icons && item.icons.map((stat, index) => (
                             <img key={index} src={stat} alt={`Stat ${index}`} className="max-w-sm mx-auto mb-2" />
                           ))}
