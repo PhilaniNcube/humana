@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 import SurveyDashboard from './survey-dashboard';
 import { title } from 'process';
 import { text } from 'stream/consumers';
+import Image from 'next/image';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
@@ -81,41 +82,25 @@ const Initiative = () => {
 
 
         <div className='mt-6 lg:mt-12'>
-          <div className='grid md:grid-cols-2 lg:max-w-5xl mx-auto gap-8'>
-            <p className='text-xl  mx-auto font-light  '>
-              AUDA-NEPAD and Humana People to People launched the campaign to spotlight TVET as both a path to employment and a catalyst for inclusive growth, innovation, and youth-led development.
-            </p>
-            <svg className='rotate-45 translate-x-44 lg:-translate-y-16' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto'>
+            <div className='flex flex-col justify-center'>
+              <p className='text-xl  mx-auto font-light  '>
+                AUDA-NEPAD and Humana People to People launched the campaign to spotlight TVET as both a path to employment and a catalyst for inclusive growth, innovation, and youth-led development.
+              </p>
 
-              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
+              <p className='text-xl  mx-auto font-light  my-3'>
+                This pan-African initiative unfolded through months of virtual events, youth dialogues, storytelling, data collection, and a continent-wide competition.
+              </p>
 
-            </svg>
+              <p className='text-xl  mx-auto font-light  '>
+                We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
+              </p>
+            </div>
+            <img src="/images/element.svg" alt="Element"  className='w-full translate-y-16 scale-95 object-cover' />
           </div>
-          <div className='grid md:grid-cols-2 lg:max-w-5xl mx-auto gap-8'>
-            <svg className='rotate-45 lg:-translate-y-16 ' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
-
-              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
-
-            </svg>
-            <p className='text-xl  mx-auto font-light  '>
-              This pan-African initiative unfolded through months of virtual events, youth dialogues, storytelling, data collection, and a continent-wide competition.
-            </p>
-
-            <p className='text-xl  mx-auto font-light  '>
-              We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
-            </p>
-            <svg className='rotate-45 translate-x-44 -translate-y-16 hidden lg:block' id='triangles' width="200" height="200" viewBox="0 0 451 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M152.5 253.499L0 310.999L183.5 366.499L152.5 253.499Z" fill="#D9D9D9" />
-
-              <path d="M364.715 140.308L450.172 0.683103L308.449 38.1447L364.715 140.308Z" fill="#00b8cc" />
-
-            </svg>
+          <div>
+            <Image src="/images/working.png" alt="Africa Skills Revolution" width='1191' height='376' className='w-screen object-cover' />
           </div>
-
-
-
         </div>
 
 
