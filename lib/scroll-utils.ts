@@ -15,26 +15,24 @@ if (typeof window !== 'undefined') {
  * @param offset Offset from the target in pixels
  */
 export const scrollToElement = (
-  target: string | HTMLElement | number,
-  duration: number = 1,
-  offset: number = 0
+  target: string,
 ) => {
   if (typeof window === 'undefined') return;
-  
+
   if (window.smoothScroller) {
     window.smoothScroller.scrollTo(target);
     return;
   }
-  
+
   // Fallback to regular GSAP scrolling
   gsap.to(window, {
-    duration,
     scrollTo: {
-      y: target,
-      offsetY: offset,
-      autoKill: false
+      y: `#${target}`,
+      autoKill: false,
+      offsetY: 100,
     },
-    ease: 'power3.out'
+    duration: 1,
+    ease: "power2.inOut",
   });
 };
 
@@ -44,17 +42,18 @@ export const scrollToElement = (
  */
 export const scrollToTop = (duration: number = 1) => {
   if (typeof window === 'undefined') return;
-  
+
   if (window.smoothScroller) {
     window.smoothScroller.scrollTop();
     return;
   }
-  
+
   // Fallback to regular GSAP scrolling
   gsap.to(window, {
     duration,
     scrollTo: {
       y: 0,
+      offsetY: 100,
       autoKill: false
     },
     ease: 'power3.out'

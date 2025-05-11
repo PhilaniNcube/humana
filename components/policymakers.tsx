@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { scrollToElement } from "@/lib/scroll-utils"
 
 interface PolicyAreaProps {
   title: string
@@ -148,17 +149,19 @@ export default function YouthPolicyCall() {
   ]
 
   return (
-    <div id="policymakers" className="container mx-auto pt-12 pb-20 px-4 lg:px-[40px]">
+    <section id="policymakers" className="container mx-auto pt-12 pb-20 px-4 lg:px-[40px] relative">
+      <ChevronDown className='text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full' onClick={() =>
+        scrollToElement('resources')
+      } />
       <h2 className="text-4xl lg:text-5xl text-center font-bold text-brand-blue uppercase">YOUTH CALL TO POLICYMAKERS</h2>
       <svg className="text-center w-fit mx-auto mt-4" width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="112" height="9" fill="#F38E22" />
       </svg>
 
       <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
-        We have now heard what young people have to say about TVET, but what’s the way forward? Click through the tiles to explore what young Africans are asking of policymakers. From access and equity to digital innovation and entrepreneurship, these recommendations are rooted in lived experience.</p>
+       We’ve heard what young people have to say about TVET — but what’s the way forward? Click through the tiles to explore what they’re asking of policymakers. Each priority reflects their vision for change and marks the start of a movement placing Africa’s youth at the centre of a more resilient, skilled future.</p>
 
-      <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
-        Each priority reflects their vision for change and marks the beginning of a movement that places Africa’s youth at the heart of building a more resilient, skilled future. </p>
+  
       <div className="bg-white rounded-lg shadow-lg max-w-5xl mx-auto p-6 mt-10">
         <div className="space-y-1">
           {policyAreas.map((area, index) => (
@@ -176,6 +179,6 @@ export default function YouthPolicyCall() {
       </div>
 
 
-    </div>
+    </section>
   )
 }

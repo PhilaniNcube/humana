@@ -8,9 +8,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className="bg-brand-orange relative isolate">
-   
-
+    <div className="bg-brand-orange relative isolate">
       <div className="px-4 lg:px-[40px] pt-24 text-center flex flex-col items-center w-full h-full">
         <h1 className={cn(bebasNeue.className, 'text-6xl lg:text-[100px] text-center text-white')}>
           Africa Skills Revolution</h1>
@@ -36,7 +34,7 @@ const Hero = () => {
 
 
       </div>
-    </section>
+    </div>
   )
 }
 

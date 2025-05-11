@@ -13,6 +13,9 @@ import SurveyDashboard from './survey-dashboard';
 import { title } from 'process';
 import { text } from 'stream/consumers';
 import Image from 'next/image';
+import { Button } from './ui/button';
+import ScrollToNextSection from './scroll-to-next';
+import { scrollToElement } from '@/lib/scroll-utils';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
@@ -69,7 +72,10 @@ const Initiative = () => {
   }, []);
 
   return (
-    <section id='initiative' ref={container}>
+    <section id='initiative' ref={container} className='relative'>
+        <ChevronDown className='text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full' onClick={() =>
+              scrollToElement('youth')
+            } />
       <div className='px-4 lg:px-[40px] pt-12 container mx-auto'>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>The Initiative</h2>
         <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +102,7 @@ const Initiative = () => {
                 We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
               </p>
             </div>
-            <img src="/images/element.svg" alt="Element"  className='w-full translate-y-16 scale-95 object-cover' />
+            <img src="/images/element.svg" alt="Element" className='w-full translate-y-16 scale-95 object-cover' />
           </div>
           <div>
             <Image src="/images/working.png" alt="Africa Skills Revolution" width='1191' height='376' className='w-screen object-cover' />
@@ -253,9 +259,12 @@ const Initiative = () => {
           </div>
         </div>
       </div>
-
+      {/* ScrollToNextSection moved to page level */}
     </section>
   )
 }
 
 export default Initiative
+
+
+

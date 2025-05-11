@@ -10,6 +10,8 @@ import Africa from './africa'
 import { useGSAP } from '@gsap/react' // Added useGSAP
 import gsap from 'gsap' // Added gsap
 import { ScrollTrigger } from 'gsap/ScrollTrigger' // Added ScrollTrigger
+import { scrollToElement } from '@/lib/scroll-utils'
+import { ChevronDown } from 'lucide-react'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger); // Register ScrollTrigger
 
@@ -306,7 +308,10 @@ const YouthVoices = () => {
   }, { scope: iconRefs });
 
   return (
-    <section id='youth' className='mb-16'>
+    <section id='youth' className='mb-16 relative isolate'>
+      <ChevronDown className='text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full' onClick={() =>
+        scrollToElement('policymakers')
+      } />
       <div className='pt-20 container mx-auto'>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>Youth Voices</h2>
         <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -447,6 +452,7 @@ const YouthVoices = () => {
           </div>
         </div>
       </div>
+
     </section>
   )
 }

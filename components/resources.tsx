@@ -1,7 +1,7 @@
 'use client'
 
 import type React from "react"
-import { FileText, Download, BarChart, FileCheck } from "lucide-react"
+import { FileText, Download, BarChart, FileCheck, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { useRef, useEffect } from "react"
@@ -9,6 +9,7 @@ import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/all"
 import { useIsMobile } from "@/hooks/use-mobile"
+import { scrollToElement } from "@/lib/scroll-utils"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -116,17 +117,18 @@ export default function YouthResources() {
   }, [isMobile]) // Add isMobile as a dependency so the effect reruns if mobile status changes
 
   return (
-    <div id="resources" className="bg-stone-100 py-16">
+    <section id="resources" className="bg-stone-100 py-16 relative isolate">
+      <ChevronDown className='text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full' onClick={() =>
+        scrollToElement('initiative')
+      } />
       <div className="container mx-auto px-4 lg:px-[40px]" ref={resourcesRef}>
         <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>Resources</h2>
         <svg className='text-center w-fit mx-auto mt-4 mb-8' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
-          Want to know more? <br />
-          Download here the full Youth Voices Report which captures critical insights, youth-led recommendations, and powerful evidence to inform policy, practice, and future programming.<br />
-          Whether you're a policymaker, educator, or development partner, this report is designed to support more inclusive, responsive, and impactful TVET systems across Africa.
-        </p>
+          <strong>Want to know more?</strong><br/>
+          Download here the full Youth Voices Report which captures critical insights, youth-led recommendations, and powerful evidence to inform policy, practice, and future programming. </p>
         <div
           className={`grid lg:grid-cols-3 gap-6 mt-10 ${isMobile ? "opacity-100" : ""}`}
           ref={cardsRef}>
@@ -161,6 +163,6 @@ export default function YouthResources() {
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
