@@ -6,8 +6,9 @@ import '../styles/tooltip.css';
 import { Progress } from './ui/progress';
 import { mapData } from '@/data/countries';
 import { Button } from './ui/button';
-import { PlayCircle, X } from 'lucide-react';
+import { Globe, Lightbulb, PlayCircle, X } from 'lucide-react';
 import Link from 'next/link';
+import { Badge } from './ui/badge';
 
 
 
@@ -101,7 +102,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
           className="overflow-y-scroll overflow-x-hidden pointer-events-auto absolute z-30 bg-white border border-gray-300 shadow-lg rounded p-2 w-[350px] max-h-[500px] tooltip-card"
           style={{
             left: `${Math.max(20, -tooltip.x)}px`,
-            top: `${tooltip.y}px`,
+            top: tooltip.countryData?.country?.toLocaleLowerCase() === 'namibia' ? `${tooltip.y - 150}px` : `${tooltip.y - 50}px`,  
             transform: 'translateY(-50%)'
           }}
         >
@@ -121,14 +122,24 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
                     <img
                       src={tooltip.countryData.image}
                       alt={tooltip.countryData.name}
-                      className="w-full aspect-square object-cover"
+                      className="w-2/3 mx-auto aspect-square object-cover"
                     />
                   )}
-
+               
                   <div>
                     <h4 className="font-medium text-lg text-gray-700">{tooltip.countryData.name}</h4>
-                   
-           
+                    {tooltip.countryData.innovation && (
+                      <Badge className="bg-brand-orange rounded-full text-xs mb-2 text-white">
+                        <Lightbulb className="mr-1" />
+                        {tooltip.countryData.innovation}
+                      </Badge>
+                    )}
+                    {tooltip.countryData.sector && (
+                      <Badge className="bg-brand-blue rounded-full text-xs text-white">
+                        <Globe className="mr-1" />
+                        {tooltip.countryData.sector}
+                      </Badge>
+                    )}
                     {tooltip.countryData.video && (
                       <div className='flex items-center justify-between mt-2'>
                         <Link
