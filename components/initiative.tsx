@@ -20,19 +20,19 @@ const initiativeCards = [
     title: 'Engage',
     description: 'Dialogue and Youth-Centred Advocacy Campaign',
     icon: <EarIcon className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
-    text: 'The Campaign engaged young people across Africa to reshape perceptions of TVET by sharing accurate, data-driven insights and showcasing its role in building skills, advancing careers, and driving societal progress.'
+    text: 'We engaged young people across Africa to reshape perceptions of TVET by sharing accurate, data-driven insights and showcasing its role in building skills, advancing careers, and driving societal progress.'
   },
   {
     title: 'Elevate',
     description: 'The 2024 Africa Skills Revolution Competition',
     icon: <ArrowBigUpDashIcon className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
-    text: 'The competition was launched to celebrate youth innovation and spotlight how African TVET graduates are driving change in their communities. Open to young graduates across the continent, it drew 490 entries from 36 countries, showcasing youth-led solutions in agriculture, health, tech, fashion, and more.'
+    text: 'We celebrated youth innovation and spotlighted how African TVET graduates are driving change in their communities and countries. More than a contest, it was a powerful reminder that with the right skills, youth don’t just imagine change — they lead it.'
   },
   {
     title: 'Connect',
     description: 'The “Make Yourself Heard” Survey',
     icon: <Link className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
-    text: 'The survey centred youth perspectives in TVET policy discussions across Africa, capturing their motivations, experiences, challenges, and aspirations as students or graduates of TVET institutions.'
+    text: 'We created a platform to capture how youth experience and perceive TVET, from barriers to enablers and their vision for building a more inclusive and efficient TVET system across the continent.'
   }
 ]
 
@@ -123,7 +123,7 @@ const Initiative = () => {
 
         <div>
           <p className='text-2xl md:text-3xl lg:text-5xl max-w-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4'>
-            Anchored on three pillars — Engage, Elevate, and Connect — the campaign sparked dialogue, competitions, and surveys to actively involve Africa’s youth.
+            Anchored on three pillars, the Africa Skills Revolution sparked dialogue, competitions, and surveys to actively involve the youth.
           </p>
           {/* <h3 className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-bold text-center mt-12 leading-10'>
             Engage <span className='text-brand-orange font-extrabold'>|</span> Elevate <span className='text-brand-orange font-extrabold'>|</span> Connect
@@ -268,7 +268,7 @@ const Initiative = () => {
           </div>
         </div>
       </div>
-    
+
     </section>
   )
 }

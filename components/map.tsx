@@ -6,7 +6,8 @@ import '../styles/tooltip.css';
 import { Progress } from './ui/progress';
 import { mapData } from '@/data/countries';
 import { Button } from './ui/button';
-import { X } from 'lucide-react';
+import { PlayCircle, X } from 'lucide-react';
+import Link from 'next/link';
 
 
 
@@ -110,7 +111,7 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
               <div className="flex items-center justify-between">
                 <CardTitle className="text-xl font-bold truncate">{tooltip.name}</CardTitle>
                 {tooltip.countryData?.flag && (
-                  <img src={tooltip.countryData.flag} alt={`${tooltip.name} flag`} className="h-6 w-auto ml-2" />
+                  <img src={tooltip.countryData.flag} alt={`${tooltip.name} flag`} className="h-12 w-auto ml-2" />
                 )}
               </div>
 
@@ -120,37 +121,29 @@ function AfricaMap({ width = "100%", height = "100%", ...props }) {
                     <img
                       src={tooltip.countryData.image}
                       alt={tooltip.countryData.name}
-                      className="w-1/3 object-cover"
+                      className="w-full aspect-square object-cover"
                     />
                   )}
 
                   <div>
-                    <h4 className="font-medium text-gray-700">{tooltip.countryData.name}</h4>
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium">Sector:</span> {tooltip.countryData.sector}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium">Innovation:</span> {tooltip.countryData.innovation}
-                    </p>
-                    {tooltip.countryData.story && (
-                      <p className="text-xs text-gray-500 mt-2 line-clamp-4">
-                        {tooltip.countryData.story}
-                      </p>
-                    )}
+                    <h4 className="font-medium text-lg text-gray-700">{tooltip.countryData.name}</h4>
+                   
+           
                     {tooltip.countryData.video && (
                       <div className='flex items-center justify-between mt-2'>
-                        <a
+                        <Link
                           href={tooltip.countryData.video}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs bg-brand-blue text-white px-2 py-2 rounded-md inline-block"
+                          className="text-xs w-full bg-brand-red flex items-center justify-center text-white px-2 py-2 text-center rounded-md "
                           onClick={(e) => e.stopPropagation()}
                         >
+                          <PlayCircle className="h-4 w-4 mr-1" />
                           Watch video
-                        </a>
-                        <Button variant='ghost' size='icon' className="text-xs text-white bg-red-700">
+                        </Link>
+                        {/* <Button variant='ghost' size='icon' className="text-xs text-white bg-red-700">
                           <X className="h-4 w-4" />
-                        </Button>
+                        </Button> */}
                       </div>
                     )}
                   </div>

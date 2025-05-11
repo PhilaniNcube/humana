@@ -123,9 +123,9 @@ export default function YouthResources() {
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
         <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
-          Want to know more? Download here the full reports of the Africa Skills Revolution Campaign. Each resource
-          captures critical insights, youth-led recommendations, and powerful evidence to inform policy, practice, and
-          future programming.
+          Want to know more? <br />
+          Download here the full Youth Voices Report which captures critical insights, youth-led recommendations, and powerful evidence to inform policy, practice, and future programming.<br />
+          Whether you're a policymaker, educator, or development partner, this report is designed to support more inclusive, responsive, and impactful TVET systems across Africa.
         </p>
         <div
           className={`grid lg:grid-cols-3 gap-6 mt-10 ${isMobile ? "opacity-100" : ""}`}
@@ -134,7 +134,8 @@ export default function YouthResources() {
             icon={<FileText className="h-8 w-8 text-brand-orange" />}
             imageSrc="/images/skills-revolution.png"
             title="Hearing the Voices of Young People"
-            description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Campaign. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change."
+            description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Campaign. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change.
+            Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what’s working — and what must change — to make skills development more inclusive, impactful, and future-ready."
             quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
             downloadUrl="#"
           />
@@ -143,7 +144,8 @@ export default function YouthResources() {
             icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
             imageSrc="/images/call-to-policy-makers.png"
             title="Youth Call to Policymakers"
-            description="This policy brief captures the voices of over 350 young Africans who shared their insights through the Make Yourself Heard survey. It highlights what youth want from TVET: education that is inclusive, practical, and aligned with the realities of their lives and future industries."
+            description="This policy brief captures the voices of over 350 young Africans who shared their insights through the Make Yourself Heard survey. It highlights what youth want from TVET: education that is inclusive, practical, and aligned with the realities of their lives and future industries.
+            Through bold, youth-led recommendations, the brief calls on policymakers to place young people at the centre of Africa’s skills revolution — not just as participants, but as partners in shaping a more equitable, innovative, and resilient future."
             quote="Put us, the youth, at the centre of the TVET revolution in Africa."
             downloadUrl="#"
           />
@@ -152,7 +154,8 @@ export default function YouthResources() {
             icon={<BarChart className="h-8 w-8 text-brand-orange" />}
             imageSrc="/images/tvet-in-africa.png"
             title="How the Youth View TVET in Africa"
-            description="This one-pager offers a snapshot of the Make Yourself Heard survey findings — spotlighting the priorities, challenges, and aspirations of young Africans in TVET. It captures where participants came from, what skills they value most, and the barriers they face."
+            description="This one-pager offers a snapshot of the Make Yourself Heard survey findings — spotlighting the priorities, challenges, and aspirations of young Africans in TVET.
+            It captures where participants came from, what skills they value most, and the barriers they face, such as limited internship access and training opportunities. With sharp data visuals and regional insights, the document provides a quick yet powerful overview of the youth-driven realities shaping Africa’s skills landscape."
             quote="Explore the numbers. Understand the need. Join the revolution."
             downloadUrl="#"
           />

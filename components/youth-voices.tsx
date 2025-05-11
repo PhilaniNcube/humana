@@ -17,6 +17,10 @@ const youthVoices = [
   {
     title: 'PERCEPTIONS AND MOTIVATIONS BEHIND TVET',
     description: 'Understanding the motivations driving young Africans to pursue TVET is foundational to addressing barriers, enhancing accessibility, and designing systems that resonate with their aspirations.',
+    text: [
+      'Across Africa, TVET is seen by young people as a launchpad to entrepreneurship, positive purpose and economic progress. Nearly half enrolled to secure a relevant job (42%) or gain hands-on training (41%). These choices reflect a growing demand for learning that leads directly to opportunity. Notably, 38% are motivated by a desire to make a positive impact on society, underscoring their belief in TVET’s transformative potential.',
+      'A strong majority of people who have experienced TVET (80%) believe it is vital to their country’s socioeconomic development, with 72% agreeing that it aligns with real-world job markets. Vocational education isn’t just seen as training programmes — they’re launchpads for livelihoods, dignity, and sustainable development and growth.'
+    ],
     data: [{
       value: 42,
       label: 'secured a relevant job'
@@ -35,9 +39,9 @@ const youthVoices = [
     },
     ],
     icons: [
-      '/images/stats/42_relevant_job.svg',
+      '/images/stats/42_relevant_job.png',
       '/images/stats/72_per_relevant.svg',
-      '/images/stats/41_practical_training.svg',
+      '/images/stats/41_practical_training.png',
     ],
     stats: [
       '42% of young people chose TVET to secure a relevant job, and 41% sought more practical training',
@@ -79,6 +83,11 @@ const youthVoices = [
   {
     title: 'TVET PROGRAMMES',
     description: 'Addressing the barriers that prevent African youth from accessing TVET is crucial to advancing inclusive systems, ensuring equitable access, and strengthening the continent’s young workforce.',
+    subtitle: 'Challenges in accessing TVET Programmes',
+    text: [
+      'Access to TVET remains uneven. For most young people (72%), the biggest barrier is financial — many simply can’t afford it. Others struggle with a lack of information (54%) or live too far from training centres (38%), especially in rural areas.',
+      'But their ambitions are clear: today’s youth want more than technical know-how. They’re calling for digital skills (68%), entrepreneurship training (70%), and soft skills (66%) that prepare them for a fast-changing economy — and for life. They view vocational education as a launchpad for self-sufficiency and entrepreneurship, not merely a pathway to employment.'
+    ],
     data: [
       {
         value: 72,
@@ -152,6 +161,11 @@ const youthVoices = [
   {
     title: 'CAREER DEVELOPMENT',
     description: 'The survey offers a multi-dimensional view of the enablers and barriers young Africans face when entering the job market after graduating from vocational education.',
+    subtitle: 'Effective Support for Career Development',
+    text: [
+      'For young Africans, financial support remains the biggest game-changer — nearly half say scholarships or funding (46%) are key to building a career after TVET. But money isn’t everything. Many also call for job placement opportunities (19%), and stronger networking opportunities (19%).',
+      'These responses point to a clear message: success after training depends not only on skills but also on the systems that connect youth to real-world work and support students after graduation as they transition into the labor market.'
+    ],
     data: [
       {
         value: 46,
@@ -201,6 +215,11 @@ const youthVoices = [
   {
     title: 'YOUTH ARE HELPING RESHAPE THE TVET NARRATIVE',
     description: 'Advocating for TVET and making it competitive with traditional higher education',
+    subtitle: 'The role of young people in shaping TVET',
+    text: [
+      'Young Africans are not just participating in vocational education — they’re transforming it. Over 80% of young people see themselves as key actors in shaping and advocating for TVET, helping it compete with traditional higher education pathways. Young people do not want to be just beneficiaries, but active agents and co-designers of TVET strategies.',
+      'They also recognize that changing perceptions requires them to lead by example. In fact, 86% of youth say they would recommend TVET to their peers.'
+    ],
     data: [
       {
         value: 86,
@@ -215,7 +234,7 @@ const youthVoices = [
       }
     ],
     icons: [
-      '/images/stats/practical_experience.png',
+      '/images/stats/demanded_skills.png',
     ],
     stats: [
       '86% of youth would recommend TVET to their peers',
@@ -332,12 +351,10 @@ const YouthVoices = () => {
                   it&apos;s time to put their voices
                   at the center.
                 </h4>
-                <p className='mt-8'><strong>Explore the voices behind the Africa Skills Revolution.</strong></p>
+                <p className='mt-8'><strong>Meet the changemakers of the Africa Skills Revolution.</strong></p>
                 <p className='mt-6'>
-
-
-                  Use the map to discover where our youth survey respondents and competition winners come from. From rural communities to refugee camps, these young people are reimagining vocational education — and using their skills to respond to Africa’s evolving challenges and opportunities.
-
+                  Use the map to explore where our competition winners come from. From bustling cities to rural towns and refugee communities, these young innovators are redefining what vocational education can achieve — using their skills to tackle Africa’s most pressing challenges and unlock new opportunities.
+                  Each dot marks a story of vision, resilience, and impact. Discover how these trailblazers are shaping the future of work through TVET.
                 </p>
               </div>
             </div>
@@ -440,7 +457,7 @@ const YouthVoices = () => {
         </div>
       */}
           <div>
-            <h4 className='text-center uppercase text-brand-blue text-6xl font-bold'>Stories</h4>
+            {/* <h4 className='text-center uppercase text-brand-blue text-6xl font-bold'>Stories</h4> */}
             {/* <div className='w-full grid lg:grid-cols-2 gap-10  mx-auto'>
             <div className='flex flex-col justify-center'>
               <h3 className={cn(bebasNeue.className, 'text-brand-blue text-6xl text-balance')}>PERCEPTIONS AND MOTIVATIONS BEHIND TVET</h3>
@@ -459,7 +476,7 @@ const YouthVoices = () => {
               />
             </div>
           </div> */}
-            <div className='h-1 rounded-full max-w-3xl mx-auto bg-brand-orange gap-6 my-10' />
+            {/* <div className='h-1 rounded-full max-w-3xl mx-auto bg-brand-orange gap-6 my-10' /> */}
 
             {youthVoices.map((item) => {
 
@@ -471,8 +488,8 @@ const YouthVoices = () => {
                   <div className='mt-10 mb-12'>
                     {item.data && item.data.length > 0 ? (
                       <Card className="p-6 shadow-md border-t-4 border-t-brand-orange">
-                       
-                        <div ref={addToRefs} className='mt-6 flex flex-row gap-4 justify-center items-center'>                     
+                        {item.subtitle && <h4 className='text-center text-xl  text-brand-orange font-bold my-3'>{item.subtitle}</h4>}
+                        <div ref={addToRefs} className='mt-6 flex flex-row gap-4 justify-center items-center'>
                           {item.icons && item.icons.map((stat, index) => (
                             <img key={index} src={stat} alt={`Stat ${index}`} className="max-w-sm mx-auto mb-2" />
                           ))}
@@ -480,6 +497,7 @@ const YouthVoices = () => {
                       </Card>
                     ) : (
                       <div className='flex flex-col lg:flex-row gap-4 justify-center items-center'>
+
                         {item.stats.map((stat, index) => (
                           <Card key={index} className='flex items-center gap-2'>
                             <CardContent>
@@ -493,7 +511,10 @@ const YouthVoices = () => {
                       </div>
                     )}
                   </div>
-                  <div className='flex flex-wrap justify-center gap-5 pb-16'>
+                  {item.text.map((text, index) => (
+                    <p key={index} className='text-center text-md max-w-4xl mx-auto font-light mt-4'>{text}</p>
+                  ))}
+                  <div className='flex flex-wrap justify-center gap-5 mt-8 pb-16'>
                     {item.stories.map((story) => (
                       <StoryCard key={story.name} story={story} />
                     ))}
