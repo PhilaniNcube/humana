@@ -24,8 +24,8 @@ interface ResourceCardProps {
 
 function ResourceCard({ icon, title, description, quote, downloadUrl, imageSrc }: ResourceCardProps) {
   return (
-    <Card className="resource-card h-full flex flex-col pt-0">
-      <img src={imageSrc} alt={`${title} image`} className="h-52 w-full object-cover" />
+    <Card className="resource-card h-full grid grid-rows-[300px_1fr_auto] pt-0">
+      <img src={imageSrc} alt={`${title} image`} className="h-full w-full object-cover" />
       <CardHeader>
         <CardTitle className="text-xl text-brand-blue">{title}</CardTitle>
 
