@@ -1,19 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { scrollToElement } from "@/lib/scroll-utils"
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { scrollToElement } from "@/lib/scroll-utils";
 
 interface PolicyAreaProps {
-  title: string
-  summary: string
-  points: string[]
-  isOpen: boolean
-  toggleOpen: () => void
+  title: string;
+  summary: string;
+  points: string[];
+  isOpen: boolean;
+  toggleOpen: () => void;
 }
 
-function PolicyArea({ title, summary, points, isOpen, toggleOpen, icon }: PolicyAreaProps & { icon: string }) {
+function PolicyArea({
+  title,
+  summary,
+  points,
+  isOpen,
+  toggleOpen,
+  icon,
+}: PolicyAreaProps & { icon: string }) {
   return (
     <div className="border-b-3 border-gray-200 hover:border-brand-green transition-colors duration-300">
       <button
@@ -27,13 +34,18 @@ function PolicyArea({ title, summary, points, isOpen, toggleOpen, icon }: Policy
           </div>
           <p className="text-brand-green">{summary}</p>
         </div>
-        <ChevronDown className={cn("h-5 w-5 text-orange-500 transition-transform", isOpen && "rotate-180")} />
+        <ChevronDown
+          className={cn(
+            "h-5 w-5 text-orange-500 transition-transform",
+            isOpen && "rotate-180"
+          )}
+        />
       </button>
 
       <div
         className={cn(
           "overflow-hidden transition-all duration-300 ease-in-out",
-          isOpen ? "max-h-[500px] opacity-100 pb-4" : "max-h-0 opacity-0",
+          isOpen ? "max-h-[500px] opacity-100 pb-4" : "max-h-0 opacity-0"
         )}
       >
         <ul className="ml-6 space-y-2 list-disc text-gray-700">
@@ -43,20 +55,20 @@ function PolicyArea({ title, summary, points, isOpen, toggleOpen, icon }: Policy
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default function YouthPolicyCall() {
-  const [openSection, setOpenSection] = useState<number | null>(null)
+  const [openSection, setOpenSection] = useState<number | null>(null);
 
   const toggleSection = (index: number) => {
-    setOpenSection(openSection === index ? null : index)
-  }
+    setOpenSection(openSection === index ? null : index);
+  };
 
   const policyAreas = [
     {
       title: "Expand Access",
-      icon: '/images/svg/expand-access.svg',
+      icon: "/images/svg/expand-access.svg",
       summary: "Increase accessibility of TVET education for all youth",
       points: [
         "Invest in new TVET centers in rural areas with modern facilities and technology.",
@@ -66,7 +78,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Modernise and Ensure Curriculum Relevance",
-      icon: '/images/svg/modernise.svg',
+      icon: "/images/svg/modernise.svg",
       summary: "Align training with current market needs and future trends",
       points: [
         "Revise curricula in collaboration with industry stakeholders to meet market needs (e.g., renewable energy, healthcare, digital tech).",
@@ -77,7 +89,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Promote Entrepreneurship",
-      icon: '/images/svg/promote-entrepreneurship.svg',
+      icon: "/images/svg/promote-entrepreneurship.svg",
       summary: "Equip youth with business skills and startup support",
       points: [
         "Introduce entrepreneurship modules in TVET curricula, including business planning and financial management.",
@@ -87,7 +99,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Promote Gender Inclusivity",
-      icon: '/images/svg/gender.svg',
+      icon: "/images/svg/gender.svg",
       summary: "Create equal opportunities across all genders and backgrounds",
       points: [
         "Encourage women in male-dominated fields (e.g., STEM) through outreach campaigns and financial incentives.",
@@ -98,7 +110,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Leverage Digital Platforms",
-      icon: '/images/svg/leverage.svg',
+      icon: "/images/svg/leverage.svg",
       summary: "Utilize technology to expand reach and enhance learning",
       points: [
         "Develop online and hybrid TVET programs to accommodate remote learners.",
@@ -108,7 +120,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Amplify Youth Voices",
-      icon: '/images/svg/amplify.svg',
+      icon: "/images/svg/amplify.svg",
       summary: "Ensure youth participation in policy and program development",
       points: [
         "Establish youth advisory councils to incorporate young people's perspectives into TVET policy and curriculum.",
@@ -117,8 +129,9 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Strengthen Partnerships",
-      icon: '/images/svg/strengthen.svg',
-      summary: "Foster collaboration between education, government and industry",
+      icon: "/images/svg/strengthen.svg",
+      summary:
+        "Foster collaboration between education, government and industry",
       points: [
         "Create collaborations between governments, private sector, and educational institutions to co-create TVET programs.",
         "Encourage private sector investment in infrastructure and equipment to ensure industry standards.",
@@ -128,7 +141,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Reshape TVET Narratives",
-      icon: '/images/svg/reshape.svg',
+      icon: "/images/svg/reshape.svg",
       summary: "Change perceptions about technical and vocational education",
       points: [
         "Launch nationwide campaigns highlighting diverse success stories of TVET graduates.",
@@ -138,7 +151,7 @@ export default function YouthPolicyCall() {
     },
     {
       title: "Align with Agenda 2063",
-      icon: '/images/svg/align.svg',
+      icon: "/images/svg/align.svg",
       summary: "Connect TVET programs with Africa's development goals",
       points: [
         "Integrate climate-smart and sustainable practices like renewable energy and sustainable agriculture into TVET training.",
@@ -146,22 +159,44 @@ export default function YouthPolicyCall() {
         "Track alignment of TVET programs with Agenda 2063 goals for continuous improvement and relevance to Africa's development priorities.",
       ],
     },
-  ]
+  ];
 
   return (
-    <section id="policymakers" className="container mx-auto pt-12 pb-20 px-4 lg:px-[40px] relative">
-      <ChevronDown className='text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full' onClick={() =>
-        scrollToElement('resources')
-      } />
-      <h2 className="text-4xl lg:text-5xl text-center font-bold text-brand-blue uppercase">YOUTH CALL TO POLICYMAKERS</h2>
-      <svg className="text-center w-fit mx-auto mt-4" width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <section
+      id="policymakers"
+      className="container mx-auto pt-12 pb-20 px-4 lg:px-[40px] relative"
+    >
+      <ChevronDown
+        className="text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full"
+        onClick={() => scrollToElement("resources")}
+      />
+      <h2 className="text-4xl lg:text-5xl text-center font-bold text-brand-blue uppercase">
+        YOUTH CALL TO POLICYMAKERS
+      </h2>
+      <svg
+        className="text-center w-fit mx-auto mt-4"
+        width="112"
+        height="9"
+        viewBox="0 0 112 9"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <rect width="112" height="9" fill="#F38E22" />
       </svg>
 
-      <p className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-light text-center lg:leading-10 mt-10'>
-       We’ve heard what young people have to say about TVET — but what’s the way forward? Click through the tiles to explore what they’re asking of policymakers. Each priority reflects their vision for change and marks the start of a movement placing Africa’s youth at the centre of a more resilient, skilled future.</p>
+      <p className="text-xl lg:text-3xl text-brand-green mx-auto text-balance font-light text-center lg:leading-10 mt-10">
+        We have now heard what young people have to say about TVET, but what’s
+        the way forward? Click through the tiles to explore what young Africans
+        are asking of policymakers. From access and equity to digital innovation
+        and entrepreneurship, these recommendations are rooted in lived
+        experience.
+      </p>
+      <p className="text-xl lg:text-3xl text-brand-green mx-auto text-balance font-light text-center lg:leading-10 mt-2">
+        Each priority reflects their vision for change and marks the beginning
+        of a movement that places Africa’s youth at the heart of building a more
+        resilient, skilled future.
+      </p>
 
-  
       <div className="bg-white rounded-lg shadow-lg max-w-5xl mx-auto p-6 mt-10">
         <div className="space-y-1">
           {policyAreas.map((area, index) => (
@@ -177,8 +212,6 @@ export default function YouthPolicyCall() {
           ))}
         </div>
       </div>
-
-
     </section>
-  )
+  );
 }

@@ -1,48 +1,52 @@
-'use client';
+"use client";
 
-import { bebasNeue } from '@/lib/fonts'
-import React from 'react'
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
-import Africa from './africa';
-import { ArrowBigUpDashIcon, ChevronDown, EarIcon, Link } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import SurveyDashboard from './survey-dashboard';
-import { title } from 'process';
-import { text } from 'stream/consumers';
-import Image from 'next/image';
-import { Button } from './ui/button';
-import ScrollToNextSection from './scroll-to-next';
-import { scrollToElement } from '@/lib/scroll-utils';
+import { bebasNeue } from "@/lib/fonts";
+import React from "react";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from "gsap/all";
+import Africa from "./africa";
+import { ArrowBigUpDashIcon, ChevronDown, EarIcon, Link } from "lucide-react";
+import { cn } from "@/lib/utils";
+import SurveyDashboard from "./survey-dashboard";
+import { title } from "process";
+import { text } from "stream/consumers";
+import Image from "next/image";
+import { Button } from "./ui/button";
+import ScrollToNextSection from "./scroll-to-next";
+import { scrollToElement } from "@/lib/scroll-utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
 const initiativeCards = [
   {
-    title: 'Engage',
-    description: 'Dialogue and Youth-Centred Advocacy Campaign',
-    icon: <EarIcon className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
-    text: 'We engaged young people across Africa to reshape perceptions of TVET by sharing accurate, data-driven insights and showcasing its role in building skills, advancing careers, and driving societal progress.'
+    title: "Engage",
+    description: "Dialogue and Youth-Centred Advocacy Campaign",
+    icon: (
+      <EarIcon className="w-20 h-20 bg-brand-green p-6 rounded-md text-white" />
+    ),
+    text: "We engaged young people across Africa to reshape perceptions of TVET by sharing accurate, data-driven insights and showcasing its role in building skills, advancing careers, and driving societal progress.",
   },
   {
-    title: 'Elevate',
-    description: 'The 2024 Africa Skills Revolution Competition',
-    icon: <ArrowBigUpDashIcon className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
-    text: 'We celebrated youth innovation and spotlighted how African TVET graduates are driving change in their communities and countries. More than a contest, it was a powerful reminder that with the right skills, youth don’t just imagine change — they lead it.'
+    title: "Elevate",
+    description: "The 2024 Africa Skills Revolution Competition",
+    icon: (
+      <ArrowBigUpDashIcon className="w-20 h-20 bg-brand-green p-6 rounded-md text-white" />
+    ),
+    text: "We celebrated youth innovation and spotlighted how African TVET graduates are driving change in their communities and countries. More than a contest, it was a powerful reminder that with the right skills, youth don’t just imagine change — they lead it.",
   },
   {
-    title: 'Connect',
-    description: 'The “Make Yourself Heard” Survey',
-    icon: <Link className='w-20 h-20 bg-brand-green p-6 rounded-md text-white' />,
-    text: 'We created a platform to capture how youth experience and perceive TVET, from barriers to enablers and their vision for building a more inclusive and efficient TVET system across the continent.'
-  }
-]
-
+    title: "Connect",
+    description: "The “Make Yourself Heard” Survey",
+    icon: (
+      <Link className="w-20 h-20 bg-brand-green p-6 rounded-md text-white" />
+    ),
+    text: "We created a platform to capture how youth experience and perceive TVET, from barriers to enablers and their vision for building a more inclusive and efficient TVET system across the continent.",
+  },
+];
 
 const Initiative = () => {
-
   const container = useRef<HTMLElement>(null);
   const dashedLineRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +55,7 @@ const Initiative = () => {
       // Initial state - line at 0 height
       gsap.set(dashedLineRef.current, {
         height: 0,
-        opacity: 0.5
+        opacity: 0.5,
       });
 
       // Create the scroll trigger animation
@@ -64,57 +68,81 @@ const Initiative = () => {
             height: "calc(340% - 120px)", // Final height matching the original
             opacity: 1,
             duration: 2.5, // Animation duration in seconds
-            ease: "power2.out" // Easing function for smooth animation
+            ease: "power2.out", // Easing function for smooth animation
           });
-        }
+        },
       });
     }
   }, []);
 
   return (
-    <section id='initiative' ref={container} className='relative'>
-        <ChevronDown className='text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full' onClick={() =>
-              scrollToElement('youth')
-            } />
-      <div className='px-4 lg:px-[40px] pt-12 container mx-auto'>
-        <h2 className='text-5xl text-center font-bold text-brand-blue uppercase'>The Initiative</h2>
-        <svg className='text-center w-fit mx-auto mt-4' width="112" height="9" viewBox="0 0 112 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <section id="initiative" ref={container} className="relative">
+      <ChevronDown
+        className="text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full"
+        onClick={() => scrollToElement("youth")}
+      />
+      <div className="px-4 lg:px-[40px] pt-12 container mx-auto">
+        <h2 className="text-5xl text-center font-bold text-brand-blue uppercase">
+          The Initiative
+        </h2>
+        <svg
+          className="text-center w-fit mx-auto mt-4"
+          width="112"
+          height="9"
+          viewBox="0 0 112 9"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
-        <p className='text-2xl md:text-3xl lg:text-5xl max-w-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4'>
-          Africa Skills Revolution is an initiative focused on promoting youth-led dialogue on skills development and TVET in Africa, spotlighting the voices and talents of a generation ready to lead.
+        <p className="text-2xl md:text-3xl lg:text-5xl max-w-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4 text-brand-green">
+          Africa Skills Revolution is an initiative focused on promoting
+          youth-led dialogue on skills development and TVET in Africa,
+          spotlighting the voices and talents of a generation ready to lead.
         </p>
 
-
-
-        <div className='mt-6 lg:mt-12'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto'>
-            <div className='flex flex-col justify-center'>
-              <p className='text-xl  mx-auto font-light  '>
-                AUDA-NEPAD and Humana People to People launched the campaign to spotlight TVET as both a path to employment and a catalyst for inclusive growth, innovation, and youth-led development.
+        <div className="mt-6 lg:mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="flex flex-col justify-center">
+              <p className="text-xl  mx-auto font-light  ">
+                AUDA-NEPAD and Humana People to People launched the campaign to
+                spotlight TVET as both a path to employment and a catalyst for
+                inclusive growth, innovation, and youth-led development.
               </p>
 
-              <p className='text-xl  mx-auto font-light  my-3'>
-                This pan-African initiative unfolded through months of virtual events, youth dialogues, storytelling, data collection, and a continent-wide competition.
+              <p className="text-xl  mx-auto font-light  my-3">
+                This pan-African initiative unfolded through months of virtual
+                events, youth dialogues, storytelling, data collection, and a
+                continent-wide competition.
               </p>
 
-              <p className='text-xl  mx-auto font-light  '>
-                We’re proud to share the outcome - a  report, capturing the motivations, challenges, and aspirations of TVET youth. We hope it sparks action to shape stronger skills systems across Africa.
+              <p className="text-xl  mx-auto font-light  ">
+                We’re proud to share the outcome - a report, capturing the
+                motivations, challenges, and aspirations of TVET youth. We hope
+                it sparks action to shape stronger skills systems across Africa.
               </p>
             </div>
-            <img src="/images/element.svg" alt="Element" className='w-full translate-y-16 scale-95 object-cover' />
+            <img
+              src="/images/element.svg"
+              alt="Element"
+              className="w-full translate-y-16 scale-95 object-cover"
+            />
           </div>
           <div>
-            <Image src="/images/working.png" alt="Africa Skills Revolution" width='1191' height='376' className='w-screen object-cover' />
+            <Image
+              src="/images/working.png"
+              alt="Africa Skills Revolution"
+              width="1191"
+              height="376"
+              className="w-screen object-center object-cover"
+            />
           </div>
         </div>
 
-
-
-
         <div>
-          <p className='text-2xl md:text-3xl lg:text-5xl max-w-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4'>
-            Anchored on three pillars, the Africa Skills Revolution sparked dialogue, competitions, and surveys to actively involve the youth.
+          <p className="text-2xl md:text-3xl lg:text-5xl text-balance lg:leading-16 font-light text-center mt-12 mb-4 text-brand-green">
+            Anchored on three pillars, the Africa Skills Revolution sparked
+            dialogue, competitions, and surveys to actively involve the youth.
           </p>
           {/* <h3 className='text-xl lg:text-3xl max-w-5xl mx-auto text-balance font-bold text-center mt-12 leading-10'>
             Engage <span className='text-brand-orange font-extrabold'>|</span> Elevate <span className='text-brand-orange font-extrabold'>|</span> Connect
@@ -248,10 +276,14 @@ const Initiative = () => {
                       {card.icon}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-center mb-2">{card.title}</h3>
-                  <p className="text-gray-600 text-center mb-4">{card.description}</p>
+                  <h3 className="text-2xl font-bold text-center mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-600 text-center mb-4">
+                    {card.description}
+                  </p>
                   <div className="border-t border-gray-200 pt-4">
-                    <p className="text-gray-700">{card.text}</p>
+                    <p className="text-gray-700 text-center">{card.text}</p>
                   </div>
                 </div>
               </div>
@@ -261,10 +293,7 @@ const Initiative = () => {
       </div>
       {/* ScrollToNextSection moved to page level */}
     </section>
-  )
-}
+  );
+};
 
-export default Initiative
-
-
-
+export default Initiative;

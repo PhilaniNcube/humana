@@ -13,7 +13,7 @@ import SurveyOverview from "./survey-overview"
 export default function SurveyDashboard() {
   return (
     <div className="grid gap-6">
-      <SurveyOverview />
+      {/* <SurveyOverview /> */}
 
       <Tabs defaultValue="demographics" className="w-full">
         <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 bg-brand-blue/10">
