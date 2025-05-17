@@ -27,7 +27,7 @@ export default function YouthFooter() {
       <div className="container mx-auto px-4 lg:px-[40px]">
         {/* Acknowledgments */}
         <div className="text-center mb-10">
-          <p className="max-w-3xl mx-auto text-gray-500">
+          <p className="mx-auto text-gray-500">
             This project would not have been possible without the dedication and
             collaboration of many. AUDA-NEPAD and Humana People to People extend
             heartfelt thanks to our partners, contributors, and the young people
