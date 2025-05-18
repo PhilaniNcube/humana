@@ -95,7 +95,7 @@ const Initiative = () => {
         >
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
-        <p className="text-2xl md:text-3xl lg:text-5xl max-w-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4 text-brand-green">
+        <p className="text-2xl md:text-3xl lg:text-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4 text-brand-green">
           Africa Skills Revolution is an initiative focused on promoting
           youth-led dialogue on skills development and TVET in Africa,
           spotlighting the voices and talents of a generation ready to lead.

@@ -198,9 +198,9 @@ const youthVoices = [
       },
     ],
     icons: [
+      "/images/stats/networking_opportunities.png",
       "/images/stats/46_financial_support.png",
       "/images/stats/job_placement.png",
-      "/images/stats/networking_opportunities.png",
     ],
     stats: [
       "46% say financial support or scholarships are the most important enabler of career success after graduating",
@@ -458,20 +458,20 @@ const YouthVoices = () => {
 
         <div className="lg:px-[40px] px-4">
           <div className="grid md:grid-cols-2  mx-auto gap-x-8">
-            <div className="col-span-1 flex text-brand-green flex-col justify-center font-light">
-              <p className="text-md md:text-2xl lg:text-3xl   mx-auto ">
+            <div className="col-span-1 flex  flex-col justify-center font-light">
+              <p className="text-md md:text-lg lg:text-xl    mx-auto ">
                 The Africa Skills Revolution stands as a powerful testament to
                 the potential of young people when they are empowered with the
                 right tools, opportunities, and platforms to lead.
               </p>
-              <p className="text-md md:text-2xl lg:text-3xl  my-3  mx-auto ">
+              <p className="text-md md:text-lg lg:text-xl   my-3  mx-auto ">
                 Discover the insights gathered from the advocacy campaign, the
                 competition, and the youth survey — now forming a powerful
                 foundation for action. These findings reflect the real
                 experiences, challenges, and aspirations of young people across
                 Africa.
               </p>
-              <p className="text-md md:text-2xl lg:text-3xl  mx-auto ">
+              <p className="text-md md:text-lg lg:text-xl   mx-auto ">
                 Their voices won’t be left behind, they’re being brought to the
                 heart of the conversation on TVET and skills development.
               </p>
@@ -500,7 +500,7 @@ const YouthVoices = () => {
                   {item.text.map((text, index) => (
                     <p
                       key={index}
-                      className="text-center md:text-xl lg:text-3xl text-brand-green mx-auto font-light mt-4 "
+                      className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 "
                     >
                       {text}
                     </p>
