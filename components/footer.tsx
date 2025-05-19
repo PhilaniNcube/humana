@@ -11,12 +11,36 @@ import Image from "next/image";
 
 export default function YouthFooter() {
   const logos = [
-    "/images/ilo.png",
-    "/images/evbb.png",
-    "/images/giz.png",
-    "/images/trust.png",
-    "/images/unesco.png",
-    "/images/tupa.png",
+    {
+      image: "/images/ilo.png",
+      alt: "ILO Logo",
+      href: "https://www.ilo.org/",
+    },
+    {
+      image: "/images/evbb.png",
+      alt: "EVBB Logo",
+      href: "https://learning.evbb.eu/",
+    },
+    // {
+    //   image: "/images/giz.png",
+    //   alt: "GIZ Logo",
+    //   href: "https://www.giz.de/en/worldwide/68537.html",
+    // },
+    {
+      image: "/images/trust.png",
+      alt: "Trust Logo",
+      href: "https://trustafrica.org/",
+    },
+    {
+      image: "/images/unesco.png",
+      alt: "UNESCO Logo",
+      href: "https://unevoc.unesco.org/home/",
+    },
+    {
+      image: "/images/tupa.png",
+      alt: "TUPA Logo",
+      href: "https://atupa-sec.org/",
+    },
   ];
 
   // get the current year
@@ -37,50 +61,26 @@ export default function YouthFooter() {
 
         {/* Partner Logos */}
         <div className="py-8 border-t border-b border-gray-700">
-          <div className="flex flex-wrap items-center gap-8 justify-center">
+          <div className="flex flex-wrap items-center gap-8 justify-around">
             {/* Placeholder for logos - replace with actual logos */}
-            <img
-              src="/images/ilo.png"
-              alt="ILO Logo"
-              width={100}
-              height={50}
-              className="object-cover w-52 aspect-auto"
-            />
-            <img
-              src="/images/evbb.png"
-              alt="EVBB Logo"
-              width={100}
-              height={50}
-              className="object-cover w-52 aspect-auto"
-            />
-            <img
-              src="/images/giz.png"
-              alt="GIZ Logo"
-              width={100}
-              height={50}
-              className="object-cover w-52 aspect-auto"
-            />
-            <img
-              src="/images/trust.png"
-              alt="Trust Logo"
-              width={100}
-              height={50}
-              className="object-cover w-52 aspect-auto"
-            />
-            <img
-              src="/images/unesco.png"
-              alt="UNESCO Logo"
-              width={100}
-              height={50}
-              className="object-cover w-52 aspect-auto"
-            />
-            <img
-              src="/images/tupa.png"
-              alt="TUPA Logo"
-              width={100}
-              height={50}
-              className="object-cover w-52 aspect-auto"
-            />
+            {logos.map((logo, index) => (
+              <Link
+                key={index}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center"
+              >
+                <Image
+                  src={logo.image}
+                  alt={logo.alt}
+                  width={100}
+                  height={50}
+                  className="object-cover min-w-52 aspect-auto"
+                />
+              </Link>
+            ))}
+            {/* ILO Logo */}
           </div>
         </div>
 

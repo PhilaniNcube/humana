@@ -130,7 +130,7 @@ const Initiative = () => {
           </div>
           <div>
             <Image
-              src="/images/working.png"
+              src="/images/initiative.png"
               alt="Africa Skills Revolution"
               width="1191"
               height="376"

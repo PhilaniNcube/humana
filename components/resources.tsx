@@ -145,7 +145,10 @@ export default function YouthResources() {
   }, [isMobile]); // Add isMobile as a dependency so the effect reruns if mobile status changes
 
   return (
-    <section id="resources" className="bg-stone-100 py-16 relative isolate">
+    <section
+      id="resources"
+      className="bg-stone-100 pt-16 pb-24 relative isolate"
+    >
       <ChevronDown
         className="text-white absolute top-10 right-10 bg-brand-blue h-12 w-12 rounded-full"
         onClick={() => scrollToElement("initiative")}
@@ -177,17 +180,19 @@ export default function YouthResources() {
           }`}
           ref={cardsRef}
         >
-          <ResourceCard
-            icon={<FileText className="h-8 w-8 text-brand-orange" />}
-            imageSrc="/images/skills-revolution.png"
-            title="Youth Voices Report"
-            description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Initiative. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change.
-            Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what’s working — and what must change — to make skills development more inclusive, impactful, and future-ready."
-            quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
-            downloadUrl="#"
-            btnText="Download Report"
-          />
-
+          <div className="lg:transform lg:translate-y-20">
+            {" "}
+            <ResourceCard
+              icon={<FileText className="h-8 w-8 text-brand-orange" />}
+              imageSrc="/images/skills-revolution.png"
+              title="Youth Voices Report"
+              description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Initiative. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change.
+            Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what's working — and what must change — to make skills development more inclusive, impactful, and future-ready."
+              quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
+              downloadUrl="#"
+              btnText="Download Report"
+            />
+          </div>
           <ResourceCard
             icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
             imageSrc="/images/call-to-policy-makers.png"
@@ -197,16 +202,17 @@ export default function YouthResources() {
             downloadUrl="#"
             btnText="Download Policy Brief"
           />
-
-          <ResourceCard
-            icon={<BarChart className="h-8 w-8 text-brand-orange" />}
-            imageSrc="/images/tvet-in-africa.png"
-            title="Youth Voices Snapshot"
-            description="This one-page visual summary distills key data and insights from the Make Yourself Heard survey responses. It highlights youth priorities, valued skills, common challenges to access vocational education, as well as career barriers and enablers."
-            quote="Explore the numbers. Understand the need. Join the revolution."
-            downloadUrl="#"
-            btnText="Download One-Pager"
-          />
+          <div className="lg:transform lg:translate-y-20">
+            <ResourceCard
+              icon={<BarChart className="h-8 w-8 text-brand-orange" />}
+              imageSrc="/images/tvet-in-africa.png"
+              title="Youth Voices Snapshot"
+              description="This one-page visual summary distills key data and insights from the Make Yourself Heard survey responses. It highlights youth priorities, valued skills, common challenges to access vocational education, as well as career barriers and enablers."
+              quote="Explore the numbers. Understand the need. Join the revolution."
+              downloadUrl="#"
+              btnText="Download One-Pager"
+            />
+          </div>
         </div>
       </div>
     </section>
