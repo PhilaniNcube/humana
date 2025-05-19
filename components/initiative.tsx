@@ -7,7 +7,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import Africa from "./africa";
-import { ArrowBigUpDashIcon, ChevronDown, EarIcon, Link } from "lucide-react";
+import {
+  ArrowBigUpDashIcon,
+  ChevronDown,
+  EarIcon,
+  LucideLink,
+} from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import SurveyDashboard from "./survey-dashboard";
 import { title } from "process";
@@ -40,7 +46,7 @@ const initiativeCards = [
     title: "Connect",
     description: "The “Make Yourself Heard” Survey",
     icon: (
-      <Link className="w-20 h-20 bg-brand-green p-6 rounded-md text-white" />
+      <LucideLink className="w-20 h-20 bg-brand-green p-6 rounded-md text-white" />
     ),
     text: "We created a platform to capture how youth experience and perceive TVET, from barriers to enablers and their vision for building a more inclusive and efficient TVET system across the continent.",
   },
@@ -106,20 +112,34 @@ const Initiative = () => {
             <div className="flex flex-col justify-center">
               <p className="text-xl  mx-auto font-light  ">
                 AUDA-NEPAD and Humana People to People launched the campaign to
-                spotlight TVET as both a path to employment and a catalyst for
-                inclusive growth, innovation, and youth-led development.
+                spotlight TVET as both a path to employment and a catalyst for{" "}
+                <strong className="font-bold">
+                  inclusive growth, innovation, and youth-led development.
+                </strong>
               </p>
 
               <p className="text-xl  mx-auto font-light  my-3">
-                This pan-African initiative unfolded through months of virtual
-                events, youth dialogues, storytelling, data collection, and a
-                continent-wide competition.
+                This{" "}
+                <Link
+                  className="text-blue-500 underline"
+                  href="https://www.nepad.org/africaskillsrevolution"
+                >
+                  pan-African initiative
+                </Link>{" "}
+                unfolded through months of virtual events, youth dialogues,
+                storytelling, data collection, and a continent-wide competition.
               </p>
 
               <p className="text-xl  mx-auto font-light  ">
                 We’re proud to share the outcome - a report, capturing the
-                motivations, challenges, and aspirations of TVET youth. We hope
-                it sparks action to shape stronger skills systems across Africa.
+                <strong className="font-bold">
+                  motivations, challenges, and aspirations
+                </strong>{" "}
+                of TVET youth.{" "}
+                <strong className="font-bold">
+                  We hope it sparks action to shape stronger skills systems
+                  across Africa.
+                </strong>
               </p>
             </div>
             <img

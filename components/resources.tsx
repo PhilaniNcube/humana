@@ -58,11 +58,11 @@ function ResourceCard({
         <CardDescription className="text-base">{description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        {quote && (
+        {/* {quote && (
           <blockquote className="border-l-4 border-brand-orange pl-4 italic text-gray-600 my-4">
             "{quote}"
           </blockquote>
-        )}
+        )} */}
       </CardContent>
       <CardFooter>
         <Button className="w-full py-6 bg-brand-green hover:bg-green-900 text-white">
@@ -170,9 +170,12 @@ export default function YouthResources() {
         <p className="text-xl lg:text-3xl text-brand-green mx-auto text-balance font-light text-center lg:leading-10 mt-10">
           <strong>Want to know more?</strong>
           <br />
-          Download here the full Youth Voices Report which captures critical
+          Download below the full Youth Voices Report, which captures critical
           insights, youth-led recommendations, and powerful evidence to inform
-          policy, practice, and future programming.{" "}
+          policy, practice, and future programming. Whether you're a
+          policymaker, educator, or development partner, this report is designed
+          to support more inclusive, responsive, and impactful TVET systems
+          across Africa.
         </p>
         <div
           className={`grid lg:grid-cols-3 gap-6 mt-10 ${
@@ -210,7 +213,7 @@ export default function YouthResources() {
               description="This one-page visual summary distills key data and insights from the Make Yourself Heard survey responses. It highlights youth priorities, valued skills, common challenges to access vocational education, as well as career barriers and enablers."
               quote="Explore the numbers. Understand the need. Join the revolution."
               downloadUrl="#"
-              btnText="Download One-Pager"
+              btnText="Download Infographic"
             />
           </div>
         </div>

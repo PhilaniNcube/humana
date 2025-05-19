@@ -51,6 +51,7 @@ const youthVoices = [
       "42% of young people chose TVET to secure a relevant job, and 41% sought more practical training",
       "72% agree that TVET is aligned with labor market needs, and 80% believe it plays a major role in their country’s socioeconomic development",
     ],
+    storiesTitle: "YOUTH OVERCOMING BARRIERS ",
     stories: [
       {
         name: "Raina Augustus",
@@ -93,7 +94,7 @@ const youthVoices = [
     title: "TVET PROGRAMMES",
     description:
       "Addressing the barriers that prevent African youth from accessing TVET is crucial to advancing inclusive systems, ensuring equitable access, and strengthening the continent’s young workforce.",
-    subtitle: "Challenges in accessing TVET Programmes",
+    subtitle: "Challenges in Accessing TVET Programmes",
     text: [
       "Access to TVET remains uneven. For most young people (72%), the biggest barrier is financial — many simply can’t afford it. Others struggle with a lack of information (54%) or live too far from training centres (38%), especially in rural areas.",
       "But their ambitions are clear: today’s youth want more than technical know-how. They’re calling for digital skills (68%), entrepreneurship training (70%), and soft skills (66%) that prepare them for a fast-changing economy — and for life. They view vocational education as a launchpad for self-sufficiency and entrepreneurship, not merely a pathway to employment.",
@@ -134,6 +135,7 @@ const youthVoices = [
       "54% point to a lack of information, and 38% to poor rural accessibility",
       "Youth also call for more digital literacy (68%), soft skills (66%), and entrepreneurship (70%), indicating a desire for TVET programmes to evolve and stay relevant to today’s economy",
     ],
+    storiesTitle: "YOUTH OVERCOMING BARRIERS ",
     stories: [
       {
         name: "Malak Abshir Omar",
@@ -180,8 +182,8 @@ const youthVoices = [
       "The survey offers a multi-dimensional view of the enablers and barriers young Africans face when entering the job market after graduating from vocational education.",
     subtitle: "Effective Support for Career Development",
     text: [
-      "For young Africans, financial support remains the biggest game-changer — nearly half say scholarships or funding (46%) are key to building a career after TVET. But money isn’t everything. Many also call for job placement opportunities (19%), and stronger networking opportunities (19%).",
-      "These responses point to a clear message: success after training depends not only on skills but also on the systems that connect youth to real-world work and support students after graduation as they transition into the labor market.",
+      "Financial support continues to be the most significant factor influencing opportunities for young Africans. Nearly half say scholarships or funding (46%) are key to building a career after TVET. But money isn’t everything. Many also call for job placement opportunities (19%), and stronger networking opportunities (19%).",
+      "These responses point to a clear message: success after training depends not only on skills but also on the systems that connect youth to real-world work and support youth as they transition into the labor market.",
     ],
     data: [
       {
@@ -206,6 +208,7 @@ const youthVoices = [
       "46% say financial support or scholarships are the most important enabler of career success after graduating",
       "This is followed by job placement assistance and internships (19%) and networking opportunities (16%).",
     ],
+    storiesTitle: "UNLOCKING SUCCESS THROUGH ENABLERS",
     stories: [
       {
         name: "Naleh Befii Victory",
@@ -234,8 +237,8 @@ const youthVoices = [
   {
     title: "YOUTH ARE HELPING RESHAPE THE TVET NARRATIVE",
     description:
-      "Advocating for TVET and making it competitive with traditional higher education",
-    subtitle: "The role of young people in shaping TVET",
+      "Understanding young people’s perspectives and aspirations is essential to recognizing them as active contributors in shaping the direction and relevance of training.",
+    subtitle: "The Role of Young People in Shaping TVET",
     text: [
       "Young Africans are not just participating in vocational education — they’re transforming it. Over 80% of young people see themselves as key actors in shaping and advocating for TVET, helping it compete with traditional higher education pathways. Young people do not want to be just beneficiaries, but active agents and co-designers of TVET strategies.",
       "They also recognize that changing perceptions requires them to lead by example. In fact, 86% of youth say they would recommend TVET to their peers.",
@@ -260,6 +263,7 @@ const youthVoices = [
       "Over 80% believe young people themselves have a key role to play in advocating for TVET and making it competitive with traditional higher education",
       "62% believe that TVET likely leads to career success,",
     ],
+    storiesTitle: "THE REAL-WORLD RELEVANCE OF TVET",
     stories: [
       {
         name: "Adaugo Felix",
@@ -510,7 +514,7 @@ const YouthVoices = () => {
                     {item.data && item.data.length > 0 ? (
                       <Card className="p-6 border-brand-blue border-2 rounded-lg">
                         {item.subtitle && (
-                          <h4 className="text-center text-2xl lg:text-3xl font-medium capitalize text-brand-orange my-3">
+                          <h4 className="text-center text-2xl lg:text-3xl font-medium text-brand-orange my-3">
                             {item.subtitle}
                           </h4>
                         )}
@@ -547,7 +551,7 @@ const YouthVoices = () => {
 
                   {/* Add Subtitle Include a subtitle before introducing the youth stories below, just as we are doing in the report. e.g: Youth Overcoming Barriers (for this section and the others) */}
                   <h4 className="text-center text-2xl lg:text-3xl font-medium capitalize text-brand-orange my-3">
-                    Youth Overcoming Barriers
+                    {item.storiesTitle}
                   </h4>
 
                   <div className="flex flex-wrap justify-center gap-5 mt-12 pb-16">
