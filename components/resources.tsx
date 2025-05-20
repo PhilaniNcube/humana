@@ -210,7 +210,7 @@ export default function YouthResources() {
             <ResourceCard
               icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
               imageSrc="/images/call-to-policy-makers.png"
-              title="POLICY BRIEF: Youth Call to Policymakers"
+              title="Youth Call to Policymakers"
               description="A concise summary of key policy recommendations, highlighting youth calls to action for policymakers to strengthen TVET systems across Africa and position young people as co-creators of a more equitable, innovative, and resilient future."
               quote="Put us, the youth, at the centre of the TVET revolution in Africa."
               downloadUrl="#"

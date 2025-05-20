@@ -239,10 +239,28 @@ export default function YouthFooter() {
         {/* Copyright and Co-financing */}
         <div className="pt-8 border-t border-gray-700 text-sm text-gray-400">
           <div className="flex flex-col md:flex-row justify-between gap-4">
-            <p>
-              All visuals and stories featured on this site are shared with the
-              permission of participants and campaign partners.
-            </p>
+            <div>
+              <p>
+                All visuals and stories featured on this site are shared with
+                the permission of participants and campaign partners.
+              </p>
+              {/* Add the GIZ logo and link to their website */}
+              <Link
+                href="https://www.giz.de/en/worldwide/68537.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-500 hover:text-brand-blue mt-2"
+              >
+                <Image
+                  src="/images/giz.png"
+                  alt="GIZ Logo"
+                  width={100}
+                  height={50}
+                  className="object-cover min-w-52 aspect-auto"
+                />
+              </Link>
+            </div>
+
             <div>
               <p className="font-medium">Co-financed by:</p>
               <div className="flex flex-col lg:flex-row gap-x-3 items-center">
