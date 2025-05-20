@@ -19,8 +19,8 @@ const Hero = () => {
           Africa Skills Revolution
         </h1>
         <p className="text-muted text-3xl md:text-4xl text-balance max-w-5xl mx-auto font-light">
-          Putting youth at the centre of the TVET revolution across the
-          continent
+          Putting youth at the centre of the Technical and Vocational Education
+          and Training revolution across the continent
         </p>
 
         <div className="relative isolate">

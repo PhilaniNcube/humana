@@ -547,15 +547,20 @@ const YouthVoices = () => {
             <div className="col-span-1 flex  flex-col justify-center font-light">
               <p className="text-md md:text-lg lg:text-xl    mx-auto ">
                 The Africa Skills Revolution stands as a powerful testament to
-                the potential of young people when they are empowered with the
-                right tools, opportunities, and platforms to lead.
+                the potential of young people when they are{" "}
+                <strong className="font-medium">
+                  empowered with the right tools, opportunities, and platforms
+                  to lead.
+                </strong>
               </p>
               <p className="text-md md:text-lg lg:text-xl   my-3  mx-auto ">
                 Discover the insights gathered from the advocacy campaign, the
                 competition, and the youth survey — now forming a powerful
-                foundation for action. These findings reflect the real
-                experiences, challenges, and aspirations of young people across
-                Africa.
+                foundation for action.{" "}
+                <strong className="font-medium">
+                  These findings reflect the real experiences, challenges, and
+                  aspirations of young people across Africa.
+                </strong>
               </p>
               <p className="text-md md:text-lg lg:text-xl   mx-auto ">
                 Their voices won’t be left behind, they’re being brought to the
