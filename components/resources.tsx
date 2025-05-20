@@ -34,6 +34,7 @@ interface ResourceCardProps {
   downloadUrl?: string;
   imageSrc: string;
   btnText?: string;
+  main: boolean;
 }
 
 function ResourceCard({
@@ -42,20 +43,35 @@ function ResourceCard({
   description,
   quote,
   downloadUrl,
+  main,
   imageSrc,
   btnText = "Download Report",
 }: ResourceCardProps) {
   return (
-    <Card className="resource-card h-full grid grid-rows-[300px_auto_1fr_auto] pt-0">
+    <Card
+      className={`resource-card overflow-hidden h-full grid grid-rows-[300px_auto_1fr_auto] pt-0 ${
+        main ? "bg-brand-orange" : ""
+      }`}
+    >
       <img
         src={imageSrc}
         alt={`${title} image`}
         className="h-full w-full object-cover"
       />
-      <CardHeader className="grid grid-rows-subgrid row-span-2">
-        <CardTitle className="text-xl text-brand-blue">{title}</CardTitle>
+      <CardHeader
+        className={`grid grid-rows-subgrid row-span-2 ${
+          main ? "text-white" : ""
+        }`}
+      >
+        <CardTitle
+          className={`text-xl ${main ? "text-white" : "text-brand-blue"}`}
+        >
+          {title}
+        </CardTitle>
 
-        <CardDescription className="text-base">{description}</CardDescription>
+        <CardDescription className={`text-base ${main ? "text-white" : ""}`}>
+          {description}
+        </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
         {/* {quote && (
@@ -65,7 +81,13 @@ function ResourceCard({
         )} */}
       </CardContent>
       <CardFooter>
-        <Button className="w-full py-6 bg-brand-green hover:bg-green-900 text-white">
+        <Button
+          className={`w-full py-6 ${
+            main
+              ? "bg-white text-brand-orange hover:bg-gray-100"
+              : "bg-brand-green hover:bg-green-900 text-white"
+          }`}
+        >
           <Download className="mr-2 h-4 w-4" /> {btnText}
         </Button>
       </CardFooter>
@@ -186,25 +208,28 @@ export default function YouthResources() {
           <div className="lg:transform lg:translate-y-20">
             {" "}
             <ResourceCard
-              icon={<FileText className="h-8 w-8 text-brand-orange" />}
-              imageSrc="/images/skills-revolution.png"
-              title="Youth Voices Report"
-              description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Initiative. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change.
-            Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what's working — and what must change — to make skills development more inclusive, impactful, and future-ready."
-              quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
+              icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
+              imageSrc="/images/call-to-policy-makers.png"
+              title="POLICY BRIEF: Youth Call to Policymakers"
+              description="A concise summary of key policy recommendations, highlighting youth calls to action for policymakers to strengthen TVET systems across Africa and position young people as co-creators of a more equitable, innovative, and resilient future."
+              quote="Put us, the youth, at the centre of the TVET revolution in Africa."
               downloadUrl="#"
-              btnText="Download Report"
-            />
+              btnText="Download Policy Brief"
+              main={false}
+            />{" "}
           </div>
           <ResourceCard
-            icon={<FileCheck className="h-8 w-8 text-brand-orange" />}
-            imageSrc="/images/call-to-policy-makers.png"
-            title="POLICY BRIEF: Youth Call to Policymakers"
-            description="A concise summary of key policy recommendations, highlighting youth calls to action for policymakers to strengthen TVET systems across Africa and position young people as co-creators of a more equitable, innovative, and resilient future."
-            quote="Put us, the youth, at the centre of the TVET revolution in Africa."
+            icon={<FileText className="h-8 w-8 text-brand-orange" />}
+            imageSrc="/images/skills-revolution.png"
+            title="Youth Voices Report"
+            description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Initiative. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change.
+            Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what's working — and what must change — to make skills development more inclusive, impactful, and future-ready."
+            quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
             downloadUrl="#"
-            btnText="Download Policy Brief"
+            btnText="Download Report"
+            main={true}
           />
+
           <div className="lg:transform lg:translate-y-20">
             <ResourceCard
               icon={<BarChart className="h-8 w-8 text-brand-orange" />}
@@ -214,6 +239,7 @@ export default function YouthResources() {
               quote="Explore the numbers. Understand the need. Join the revolution."
               downloadUrl="#"
               btnText="Download Infographic"
+              main={false}
             />
           </div>
         </div>
