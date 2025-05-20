@@ -354,7 +354,7 @@ const YouthVoices = () => {
             <div className="flex items-start space-x-10">
               <div className="col-span-1 flex justify-center">
                 <svg
-                  className="min-w-[240px]"
+                  className="hidden lg:inline-block lg:min-w-[240px]"
                   width="272"
                   height="308"
                   viewBox="0 0 272 308"
