@@ -131,7 +131,7 @@ const Initiative = () => {
               </p>
 
               <p className="text-xl  mx-auto font-light  ">
-                We’re proud to share the outcome - a report, capturing the
+                We’re proud to share the outcome - a report, capturing the{" "}
                 <strong className="font-bold">
                   motivations, challenges, and aspirations
                 </strong>{" "}

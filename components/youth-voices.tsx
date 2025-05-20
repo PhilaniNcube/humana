@@ -20,10 +20,34 @@ const youthVoices = [
     title: "PERCEPTIONS AND MOTIVATIONS BEHIND TVET",
     description:
       "Understanding the motivations driving young Africans to pursue TVET is foundational to addressing barriers, enhancing accessibility, and designing systems that resonate with their aspirations.",
-    text: [
-      "Across Africa, TVET is seen by young people as a launchpad to entrepreneurship, positive purpose and economic progress. Nearly half enrolled to secure a relevant job (42%) or gain hands-on training (41%). These choices reflect a growing demand for learning that leads directly to opportunity. Notably, 38% are motivated by a desire to make a positive impact on society, underscoring their belief in TVET’s transformative potential.",
-      "A strong majority of people who have experienced TVET (80%) believe it is vital to their country’s socioeconomic development, with 72% agreeing that it aligns with real-world job markets. Vocational education isn’t just seen as training programmes — they’re launchpads for livelihoods, dignity, and sustainable development and growth.",
-    ],
+    text: (
+      <div>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          Across Africa,{" "}
+          <strong className="font-medium">
+            TVET is seen by young people as a launchpad to entrepreneurship,
+            positive purpose and economic progress.
+          </strong>{" "}
+          Nearly half enrolled to secure a relevant job (42%) or gain hands-on
+          training (41%). These choices reflect a growing demand for learning
+          that leads directly to opportunity. Notably, 38% are motivated by a
+          desire to make a positive impact on society,{" "}
+          <strong className="font-medium">
+            underscoring their belief in TVET’s transformative potential.
+          </strong>
+        </p>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          A strong majority of people who have experienced TVET (80%) believe it
+          is vital to their country’s socioeconomic development, with 72%
+          agreeing that it aligns with real-world job markets.{" "}
+          <strong className="font-medium">
+            Vocational education isn’t just seen as training programmes —
+            they’re launchpads for livelihoods, dignity, and sustainable
+            development and growth.
+          </strong>
+        </p>
+      </div>
+    ),
     data: [
       {
         value: 42,
@@ -95,10 +119,33 @@ const youthVoices = [
     description:
       "Addressing the barriers that prevent African youth from accessing TVET is crucial to advancing inclusive systems, ensuring equitable access, and strengthening the continent’s young workforce.",
     subtitle: "Challenges in Accessing TVET Programmes",
-    text: [
-      "Access to TVET remains uneven. For most young people (72%), the biggest barrier is financial — many simply can’t afford it. Others struggle with a lack of information (54%) or live too far from training centres (38%), especially in rural areas.",
-      "But their ambitions are clear: today’s youth want more than technical know-how. They’re calling for digital skills (68%), entrepreneurship training (70%), and soft skills (66%) that prepare them for a fast-changing economy — and for life. They view vocational education as a launchpad for self-sufficiency and entrepreneurship, not merely a pathway to employment.",
-    ],
+    text: (
+      <div>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          <strong className="font-medium">
+            Access to TVET remains uneven.
+          </strong>{" "}
+          For most young people (72%), the biggest barrier is financial — many
+          simply can’t afford it. Others struggle with a lack of information
+          (54%) or live too far from training centres (38%), especially in rural
+          areas.
+        </p>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          But their ambitions are clear:{" "}
+          <strong className="font-medium">
+            today’s youth want more than technical know-how.
+          </strong>{" "}
+          They’re calling for digital skills (68%), entrepreneurship training
+          (70%), and soft skills (66%) that prepare them for a fast-changing
+          economy — and for life. They view{" "}
+          <strong className="font-medium">
+            vocational education as a launchpad for self-sufficiency and
+            entrepreneurship,
+          </strong>{" "}
+          not merely a pathway to employment.
+        </p>
+      </div>
+    ),
     data: [
       {
         value: 72,
@@ -181,10 +228,25 @@ const youthVoices = [
     description:
       "The survey offers a multi-dimensional view of the enablers and barriers young Africans face when entering the job market after graduating from vocational education.",
     subtitle: "Effective Support for Career Development",
-    text: [
-      "Financial support continues to be the most significant factor influencing opportunities for young Africans. Nearly half say scholarships or funding (46%) are key to building a career after TVET. But money isn’t everything. Many also call for job placement opportunities (19%), and stronger networking opportunities (19%).",
-      "These responses point to a clear message: success after training depends not only on skills but also on the systems that connect youth to real-world work and support youth as they transition into the labor market.",
-    ],
+    text: (
+      <div>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          Financial support continues to be the most significant factor
+          influencing opportunities for young Africans. Nearly half say
+          scholarships or funding (46%) are key to building a career after TVET.
+          But money isn’t everything. Many also call for job placement
+          opportunities (19%), and stronger networking opportunities (19%).
+        </p>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          These responses point to a clear message: success after training
+          depends not only on skills but also on the{" "}
+          <strong className="font-medium">
+            systems that connect youth to real-world work and support youth
+          </strong>{" "}
+          as they transition into the labor market.
+        </p>
+      </div>
+    ),
     data: [
       {
         value: 46,
@@ -239,10 +301,30 @@ const youthVoices = [
     description:
       "Understanding young people’s perspectives and aspirations is essential to recognizing them as active contributors in shaping the direction and relevance of training.",
     subtitle: "The Role of Young People in Shaping TVET",
-    text: [
-      "Young Africans are not just participating in vocational education — they’re transforming it. Over 80% of young people see themselves as key actors in shaping and advocating for TVET, helping it compete with traditional higher education pathways. Young people do not want to be just beneficiaries, but active agents and co-designers of TVET strategies.",
-      "They also recognize that changing perceptions requires them to lead by example. In fact, 86% of youth say they would recommend TVET to their peers.",
-    ],
+    text: (
+      <div>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          <strong className="font-medium">
+            Young Africans are not just participating in vocational education —
+            they’re transforming it.
+          </strong>{" "}
+          Over 80% of young people see themselves as key actors in shaping and
+          advocating for TVET, helping it compete with traditional higher
+          education pathways. Young people do not want to be just beneficiaries,
+          but{" "}
+          <strong className="font-medium">
+            active agents and co-designers of TVET strategies.
+          </strong>
+        </p>
+        <p className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 ">
+          They also recognize that changing perceptions{" "}
+          <strong className="font-medium">
+            requires them to lead by example.
+          </strong>{" "}
+          In fact, 86% of youth say they would recommend TVET to their peers.
+        </p>
+      </div>
+    ),
     data: [
       {
         value: 86,
@@ -501,14 +583,7 @@ const YouthVoices = () => {
                       {item.description}
                     </p>
                   </div>
-                  {item.text.map((text, index) => (
-                    <p
-                      key={index}
-                      className="text-center text-md md:text-lg lg:text-xl mx-auto font-light mt-4 "
-                    >
-                      {text}
-                    </p>
-                  ))}
+                  {item.text}
 
                   <div className="mt-10 mb-12">
                     {item.data && item.data.length > 0 ? (
