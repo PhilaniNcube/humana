@@ -520,7 +520,7 @@ const YouthVoices = () => {
                         )}
                         <div
                           ref={addToRefs}
-                          className="mt-6 flex flex-row gap-4 justify-center items-center"
+                          className="mt-6 flex flex-col lg:flex-row gap-4 justify-center items-center"
                         >
                           {item.icons &&
                             item.icons.map((stat, index) => (
@@ -528,7 +528,7 @@ const YouthVoices = () => {
                                 key={index}
                                 src={stat}
                                 alt={`Stat ${index}`}
-                                className="max-w-md mx-auto mb-2"
+                                className="max-w-xs md:max-w-sm lg:max-w-md mx-auto mb-2"
                               />
                             ))}
                         </div>

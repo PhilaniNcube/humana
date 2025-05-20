@@ -245,7 +245,7 @@ export default function YouthFooter() {
             </p>
             <div>
               <p className="font-medium">Co-financed by:</p>
-              <div className="flex gap-x-3 items-center">
+              <div className="flex flex-col lg:flex-row gap-x-3 items-center">
                 <img
                   src="/images/hpp_et.png"
                   alt="HPP E&T"
