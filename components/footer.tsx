@@ -6,6 +6,9 @@ import {
   Linkedin,
   Facebook,
   Twitter,
+  Heart,
+  HeartIcon,
+  LucideHeart,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -278,8 +281,9 @@ export default function YouthFooter() {
             </div>
           </div>
           <p className="mt-6 text-center">
-            © {currentYear} Africa Skills Revolution Campaign. All rights
-            reserved.
+            © {currentYear} Designed and built with{" "}
+            <LucideHeart className="h-4 text-purple-600 fill-purple-600 inline" />{" "}
+            by  <Link href="https://conceptafrika.com/">Concept Afrika</Link>
           </p>
         </div>
       </div>
