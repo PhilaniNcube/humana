@@ -140,33 +140,83 @@ export default function YouthFooter() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-brand-orange mb-4">
-                Follow the campaign:
+              <h3 className="text-lg font-semibold text-brand-orange mb-1">
+                AUDA-NEPAD
               </h3>
               <div className="flex flex-wrap gap-4 mb-4">
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/auda_nepad/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
                 >
                   <Instagram className="h-5 w-5" />
                   <span>Instagram</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/nepad-planning-and-coordinating-agency/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
                 >
                   <Linkedin className="h-5 w-5" />
                   <span>LinkedIn</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/nepad.page/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
                 >
                   <Facebook className="h-5 w-5" />
                   <span>Facebook</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://x.com/NEPAD_Agency"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
+                >
+                  <Twitter className="h-5 w-5" />
+                  <span>Twitter</span>
+                </Link>
+              </div>
+
+              <h3 className="text-lg font-semibold text-brand-orange mb-1">
+                HUMANA PEOPLE TO PEOPLE
+              </h3>
+              <div className="flex flex-wrap gap-4 mb-4">
+                <Link
+                  href="https://www.instagram.com/humana_people_to_people/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
+                >
+                  <Instagram className="h-5 w-5" />
+                  <span>Instagram</span>
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/company/the-federation-humana-people-to-people/?originalSubdomain=zw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span>LinkedIn</span>
+                </Link>
+                <Link
+                  href="https://www.facebook.com/@FederationHPP/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
+                >
+                  <Facebook className="h-5 w-5" />
+                  <span>Facebook</span>
+                </Link>
+                <Link
+                  href="https://x.com/HumanaHPP"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-500 hover:text-brand-blue"
                 >
                   <Twitter className="h-5 w-5" />
