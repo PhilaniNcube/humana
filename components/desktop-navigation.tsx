@@ -43,9 +43,9 @@ const DesktopNavigation = () => {
             </SheetTrigger>
             <SheetContent 
               side="right" 
-              className="!w-full !max-w-full sm:!max-w-full"
+              className="w-[90vw] max-w-full p-0 border-0"
             >
-              <div className="py-6">
+              <div className="py-6 px-4 h-full overflow-y-auto">
                 <Link href="/" className="flex items-center justify-center mb-6">
                   <Image
                     src="/images/nepad-logo.png"
