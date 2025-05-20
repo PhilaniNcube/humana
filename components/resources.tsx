@@ -226,7 +226,7 @@ export default function YouthResources() {
             Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what's working — and what must change — to make skills development more inclusive, impactful, and future-ready."
             quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
             downloadUrl="#"
-            btnText="Download Report"
+            btnText="Download Full Report"
             main={true}
           />
 
