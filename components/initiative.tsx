@@ -288,22 +288,26 @@ const Initiative = () => {
             {initiativeCards.map((card, index) => (
               <div
                 key={index}
-                className="flex flex-col h-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
+                className="grid grid-rows-[auto_auto_auto_1fr] h-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
               >
-                <div className="p-6">
-                  <div className="flex justify-center mb-6">
+                <div className="p-6 grid grid-rows-[auto_auto_38px_auto_1fr] row-span-4 gap-4">
+                  <div className="flex justify-center">
                     <div className="rounded-md flex items-center justify-center">
                       {card.icon}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-center mb-2">
+                  <h3 className="text-2xl font-bold text-center">
                     {card.title}
                   </h3>
-                  <p className="text-gray-600 text-center mb-4">
+
+                  <p className="text-sm md:text-base text-gray-600 text-center">
                     {card.description}
                   </p>
-                  <div className="border-t border-gray-200 pt-4">
-                    <p className="text-gray-700 text-center">{card.text}</p>
+                  <hr className="w-full mt-auto mb-0" />
+                  <div className="pt-4">
+                    <p className="text-xs lg:text-base text-gray-700 text-center">
+                      {card.text}
+                    </p>
                   </div>
                 </div>
               </div>

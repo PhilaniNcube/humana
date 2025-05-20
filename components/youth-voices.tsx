@@ -75,7 +75,7 @@ const youthVoices = [
       "42% of young people chose TVET to secure a relevant job, and 41% sought more practical training",
       "72% agree that TVET is aligned with labor market needs, and 80% believe it plays a major role in their country’s socioeconomic development",
     ],
-    storiesTitle: "YOUTH OVERCOMING BARRIERS ",
+    storiesTitle: "THE DRIVE BEHIND TVET CHOICES",
     stories: [
       {
         name: "Raina Augustus",
