@@ -25,7 +25,7 @@ const Hero = () => {
 
         <div className="relative isolate">
           <svg
-            className="hidden lg:absolute -top-24 left-40 z-[-1] rotate-45"
+            className="hidden lg:block lg:absolute -top-24 left-40 z-[-1] rotate-45"
             id="triangles"
             width="451"
             height="400"

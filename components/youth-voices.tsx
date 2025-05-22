@@ -431,7 +431,12 @@ const YouthVoices = () => {
           <rect width="112" height="9" fill="#F38E22" />
         </svg>
 
-        <div className="mt-16 bg-brand-blue px-4 lg:px-[40px] py-12">
+        <p className="text-2xl md:text-3xl lg:text-5xl mx-auto text-balance lg:leading-16 font-light text-center mt-4 text-brand-green">
+          A generation ready to lead. It&apos;s time to put their voices at the
+          center.
+        </p>
+
+        {/* <div className="mt-16 bg-brand-blue px-4 lg:px-[40px] py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto">
             <div className="flex items-start space-x-10">
               <div className="col-span-1 flex justify-center">
@@ -537,10 +542,7 @@ const YouthVoices = () => {
               <Africa />
             </div>
           </div>
-        </div>
-        <div className="lg:px-[40px] px-4 container mx-auto py-8 ">
-          <SurveyDashboard />
-        </div>
+        </div> */}
 
         <div className="lg:px-[40px] px-4">
           <div className="grid md:grid-cols-2  mx-auto gap-x-8">
@@ -574,6 +576,10 @@ const YouthVoices = () => {
                 className="w-full object-cover"
               />
             </div>
+          </div>
+
+          <div className="lg:px-[40px] px-4 container mx-auto py-8 ">
+            <SurveyDashboard />
           </div>
 
           <div>

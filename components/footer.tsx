@@ -18,11 +18,15 @@ export default function YouthFooter() {
       image: "/images/ilo.png",
       alt: "ILO Logo",
       href: "https://www.ilo.org/",
+      width: 316,
+      height: 126,
     },
     {
       image: "/images/evbb.png",
       alt: "EVBB Logo",
       href: "https://learning.evbb.eu/",
+      width: 288,
+      height: 175,
     },
     // {
     //   image: "/images/giz.png",
@@ -33,16 +37,22 @@ export default function YouthFooter() {
       image: "/images/trust.png",
       alt: "Trust Logo",
       href: "https://trustafrica.org/",
+      width: 427,
+      height: 136,
     },
     {
       image: "/images/unesco.png",
       alt: "UNESCO Logo",
       href: "https://unevoc.unesco.org/home/",
+      width: 348,
+      height: 163,
     },
     {
-      image: "/images/tupa.png",
+      image: "/images/atupa.png",
       alt: "TUPA Logo",
       href: "https://atupa-sec.org/",
+      width: 225,
+      height: 225,
     },
   ];
 
@@ -77,9 +87,9 @@ export default function YouthFooter() {
                 <Image
                   src={logo.image}
                   alt={logo.alt}
-                  width={100}
-                  height={50}
-                  className="object-cover min-w-52 aspect-auto"
+                  width={logo.width}
+                  height={logo.height}
+                  className="object-cover max-w-52 aspect-auto"
                 />
               </Link>
             ))}
@@ -257,9 +267,9 @@ export default function YouthFooter() {
                 <Image
                   src="/images/giz.png"
                   alt="GIZ Logo"
-                  width={100}
-                  height={50}
-                  className="object-cover min-w-52 aspect-auto"
+                  width={2568}
+                  height={921}
+                  className="object-cover max-w-68 aspect-auto"
                 />
               </Link>
             </div>

@@ -300,12 +300,12 @@ const Initiative = () => {
                     {card.title}
                   </h3>
 
-                  <p className="text-sm md:text-base text-gray-600 text-center">
+                  <p className="text-sm md:text-lg text-gray-600 text-center">
                     {card.description}
                   </p>
                   <hr className="w-full mt-auto mb-0" />
                   <div className="pt-4">
-                    <p className="text-xs lg:text-base text-gray-700 text-center">
+                    <p className="text-xs lg:text-xl font-light text-gray-700 text-center">
                       {card.text}
                     </p>
                   </div>
