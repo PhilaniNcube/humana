@@ -130,7 +130,7 @@ export default function YouthResources() {
         // Create animation that triggers when the h2 comes into viewport
         ScrollTrigger.create({
           trigger: resourcesSection,
-          start: "top 80%", // When the section reaches 80% from the top of viewport
+          start: "top 10%", // When the section reaches 80% from the top of viewport
           end: "bottom 20%", // When the section bottom passes 20% from the bottom of viewport
           toggleActions: "play reverse restart reverse", // play on enter, reverse on leave, restart on enter back, reverse on leave back
           onEnter: () => {
