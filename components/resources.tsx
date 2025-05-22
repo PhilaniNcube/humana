@@ -23,6 +23,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { scrollToElement } from "@/lib/scroll-utils";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -31,7 +32,7 @@ interface ResourceCardProps {
   title: string;
   description: string;
   quote?: string;
-  downloadUrl?: string;
+  downloadUrl: string;
   imageSrc: string;
   btnText?: string;
   main: boolean;
@@ -81,15 +82,23 @@ function ResourceCard({
         )} */}
       </CardContent>
       <CardFooter>
-        <Button
-          className={`w-full py-6 ${
-            main
-              ? "bg-white text-brand-orange hover:bg-gray-100"
-              : "bg-brand-green hover:bg-green-900 text-white"
-          }`}
+        <Link
+          href={downloadUrl!}
+          target="_blank"
+          rel="noopener noreferrer"
+          prefetch={false}
+          className="w-full cursor-pointer"
         >
-          <Download className="mr-2 h-4 w-4" /> {btnText}
-        </Button>
+          <Button
+            className={`w-full py-6 ${
+              main
+                ? "bg-white text-brand-orange hover:bg-gray-100"
+                : "bg-brand-green hover:bg-green-900 text-white"
+            }`}
+          >
+            <Download className="mr-2 h-4 w-4" /> {btnText}
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
@@ -213,7 +222,7 @@ export default function YouthResources() {
               title="Youth Call to Policymakers"
               description="A concise summary of key policy recommendations, highlighting youth calls to action for policymakers to strengthen TVET systems across Africa and position young people as co-creators of a more equitable, innovative, and resilient future."
               quote="Put us, the youth, at the centre of the TVET revolution in Africa."
-              downloadUrl="#"
+              downloadUrl="https://drive.google.com/file/d/1oUVUzY4Dh9gX11BHomssO75IuiSbeeOK/view?usp=sharing"
               btnText="Download Policy Brief"
               main={false}
             />{" "}
@@ -225,7 +234,7 @@ export default function YouthResources() {
             description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Initiative. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change.
             Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what's working — and what must change — to make skills development more inclusive, impactful, and future-ready."
             quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
-            downloadUrl="#"
+            downloadUrl="https://drive.google.com/file/d/1eHXSITwpUvmOt0Cj_pDEpUWLSeX4Iaz5/view?usp=sharing"
             btnText="Download Full Report"
             main={true}
           />
@@ -237,7 +246,7 @@ export default function YouthResources() {
               title="Youth Voices Snapshot"
               description="This one-page visual summary distills key data and insights from the Make Yourself Heard survey responses. It highlights youth priorities, valued skills, common challenges to access vocational education, as well as career barriers and enablers."
               quote="Explore the numbers. Understand the need. Join the revolution."
-              downloadUrl="#"
+              downloadUrl="https://drive.google.com/file/d/1n0k1CNJLUhmb1t2H5DRxGNA-iBSfyoyE/view?usp=sharing"
               btnText="Download Infographic"
               main={false}
             />
