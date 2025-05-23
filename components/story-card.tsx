@@ -30,7 +30,7 @@ export interface StoryProps {
 }
 
 const StoryCard: React.FC<{ story: StoryProps }> = ({ story }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const [manualFlip, setManualFlip] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const isMobile = useIsMobile();
