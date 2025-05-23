@@ -7,8 +7,22 @@ import YouthFooter from "@/components/footer";
 import SmoothScrollWrapper from "@/components/smooth-scroll-wrapper";
 
 export const metadata: Metadata = {
-  title: "Humana | Africa Skills Revolution",
-  description: "Africa Skills Revolution",
+  title: "Africa Skills Revolution",
+  description:
+    "Putting youth at the centre of the Technical and Vocational Education and Training revolution across the continent",
+  keywords: [
+    "Africa Skills Revolution",
+    "Technical and Vocational Education",
+    "Youth Empowerment",
+    "Education",
+    "Skills Development",
+    "Youth",
+    "Africa",
+    "AUDA-NEPAD",
+    "Youth Initiative",
+    "Youth Voices",
+    "Humana People to People",
+  ],
 };
 
 export default function RootLayout({
@@ -18,9 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.className} antialiased overflow-x-hidden`}
-      >
+      <body className={`${roboto.className} antialiased overflow-x-hidden`}>
         {/* Navigation stays outside the smooth scroller */}
         <div className="fixed top-0 left-0 w-full z-50">
           <DesktopNavigation />
@@ -28,11 +40,8 @@ export default function RootLayout({
 
         {/* Main content area with smooth scrolling */}
 
-          <main className="pt-24 flex-grow">
-            {children}
-          </main>
-          <YouthFooter />
-     
+        <main className="pt-24 flex-grow">{children}</main>
+        <YouthFooter />
       </body>
     </html>
   );
