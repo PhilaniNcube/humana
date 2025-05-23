@@ -28,7 +28,9 @@ export default async function Image() {
           fontWeight: "bold",
         }}
       >
-        <h1>Africa Skills Revolution</h1>
+        <h1 style={{ color: "white", fontWeight: "extra-bold" }}>
+          Africa Skills Revolution
+        </h1>
         <p style={{ fontSize: 64 }}>
           Putting youth at the centre of the Technical and Vocational Education
           and Training revolution across the continent
