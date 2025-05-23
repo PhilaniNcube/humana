@@ -4,7 +4,7 @@ import "../styles/smooth-scroll.css";
 import { roboto } from "@/lib/fonts";
 import DesktopNavigation from "@/components/desktop-navigation";
 import YouthFooter from "@/components/footer";
-import SmoothScrollWrapper from "@/components/smooth-scroll-wrapper";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Africa Skills Revolution",
@@ -42,6 +42,7 @@ export default function RootLayout({
 
         <main className="pt-24 flex-grow">{children}</main>
         <YouthFooter />
+        <GoogleAnalytics gaId="G-0BED8T621K" />
       </body>
     </html>
   );

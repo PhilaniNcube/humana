@@ -24,6 +24,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { scrollToElement } from "@/lib/scroll-utils";
 import Link from "next/link";
+import { sendGAEvent } from "@next/third-parties/google";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -90,6 +91,14 @@ function ResourceCard({
           className="w-full cursor-pointer"
         >
           <Button
+            onClick={() => {
+              sendGAEvent("event", {
+                action: "download",
+                category: "resource",
+                label: title,
+                value: 1,
+              });
+            }}
             className={`w-full py-6 ${
               main
                 ? "bg-white text-brand-orange hover:bg-gray-100"
