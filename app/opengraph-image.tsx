@@ -21,11 +21,18 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
+          textAlign: "center",
           justifyContent: "center",
+          fontWeight: "bold",
         }}
       >
-        Africa Skills Revolution
+        <h1>Africa Skills Revolution</h1>
+        <p style={{ fontSize: 64 }}>
+          Putting youth at the centre of the Technical and Vocational Education
+          and Training revolution across the continent
+        </p>
       </div>
     ),
     // ImageResponse options
