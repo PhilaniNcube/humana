@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased overflow-x-hidden`}>
+        <GoogleAnalytics gaId="G-0BED8T621K" />
         {/* Navigation stays outside the smooth scroller */}
         <div className="fixed top-0 left-0 w-full z-50">
           <DesktopNavigation />
@@ -42,7 +43,6 @@ export default function RootLayout({
 
         <main className="pt-24 flex-grow">{children}</main>
         <YouthFooter />
-        <GoogleAnalytics gaId="G-0BED8T621K" />
       </body>
     </html>
   );
