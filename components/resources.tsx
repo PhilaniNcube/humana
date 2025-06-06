@@ -231,7 +231,7 @@ export default function YouthResources() {
               title="Youth Call to Policymakers"
               description="A concise summary of key policy recommendations, highlighting youth calls to action for policymakers to strengthen TVET systems across Africa and position young people as co-creators of a more equitable, innovative, and resilient future."
               quote="Put us, the youth, at the centre of the TVET revolution in Africa."
-              downloadUrl="/docs/policy_brief.pdf"
+              downloadUrl="https://g4mphlj2srfcdtsr.public.blob.vercel-storage.com/policy_brief-jUfJ2RnP63dTFFA4C1cOvP5FidDlzz.pdf"
               btnText="Download Policy Brief"
               main={false}
             />{" "}
@@ -243,7 +243,7 @@ export default function YouthResources() {
             description="This flagship report brings together powerful stories, data, and policy insights from the 2024 Africa Skills Revolution Initiative. It highlights the lived experiences of young people across the continent who are using TVET to build careers, solve local challenges, and drive social change.
             Through in-depth survey findings, youth profiles, and clear recommendations, the report offers a holistic view of what's working — and what must change — to make skills development more inclusive, impactful, and future-ready."
             quote="It's more than a report — it's a youth-led roadmap for reimagining the future of work in Africa."
-            downloadUrl="/docs/youth_voices.pdf"
+            downloadUrl="https://g4mphlj2srfcdtsr.public.blob.vercel-storage.com/youth_voices-7UAzHuej3eydhZMJk1rDIudnZHVI3A.pdf"
             btnText="Download Full Report"
             main={true}
           />
@@ -255,7 +255,7 @@ export default function YouthResources() {
               title="Youth Voices Snapshot"
               description="This one-page visual summary distills key data and insights from the Make Yourself Heard survey responses. It highlights youth priorities, valued skills, common challenges to access vocational education, as well as career barriers and enablers."
               quote="Explore the numbers. Understand the need. Join the revolution."
-              downloadUrl="/docs/snapshot.pdf"
+              downloadUrl="https://g4mphlj2srfcdtsr.public.blob.vercel-storage.com/snapshot-uTR1CuhlO9je5oZUs2O8fyLyZVXOi8.pdf"
               btnText="Download Infographic"
               main={false}
             />
